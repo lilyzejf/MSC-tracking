@@ -3,7 +3,8 @@ MSC Track-a-Fishery vessel list monitor.
 
 For each fishery in fisheries.json:
   1. Resolve its URL slug on fisheries.msc.org (if not already known).
-  2. Find the newest "Vessel List"-style PDF on its documents page.
+  2. Find the newest "Vessel List" PDF on its vessel-documentsets page — or,
+     if none exists, fall back to the certificate PDF itself.
   3. Download it and extract vessel names.
   4. Compare against the last saved snapshot in docs/data/<slug>.json.
   5. Record any additions/removals into docs/data/changelog.json.
@@ -29,8 +30,6 @@ DATA_DIR = ROOT / "docs" / "data"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 BASE = "https://fisheries.msc.org/en/fisheries"
-# Look like an ordinary browser request — some sites treat bare/non-browser
-# User-Agents (or requests missing Accept/Accept-Language) differently.
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -39,15 +38,11 @@ HEADERS = {
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
 }
-# One session so cookies set on the first request (if any) carry through to
-# later requests, the way a real browser session would behave.
 SESSION = requests.Session()
 SESSION.headers.update(HEADERS)
 
 
 def slugify_candidates(html: str, name: str):
-    """Pull every /en/fisheries/<slug>/ link out of a search results page,
-    paired with its visible link text, for fuzzy matching against `name`."""
     soup = BeautifulSoup(html, "html.parser")
     out = []
     for a in soup.select("a[href*='/en/fisheries/']"):
@@ -59,7 +54,6 @@ def slugify_candidates(html: str, name: str):
 
 
 def resolve_slug(name: str) -> str | None:
-    """Use the site search to find the slug whose link text best matches `name`."""
     resp = SESSION.get(f"{BASE}/@@search", params={"q": name}, timeout=30)
     resp.raise_for_status()
     candidates = slugify_candidates(resp.text, name)
@@ -72,17 +66,48 @@ def resolve_slug(name: str) -> str | None:
     return best[0]
 
 
-# Some certifiers label this document type slightly differently on the site.
-VESSEL_KEYWORDS = ("vessel", "eligible fisher")
+def find_certificate_numbers(slug: str, fishery_url: str) -> list[str]:
+    """Pull every distinct Certificate Code (e.g. 'MSC-F-30004') from the fishery's
+    main page — these link to @@certificate-documentsets?certificate_number=..."""
+    resp = SESSION.get(fishery_url, timeout=30)
+    if resp.status_code != 200:
+        return []
+    codes = re.findall(r"certificate_number=([A-Za-z0-9\-]+)", resp.text)
+    seen = []
+    for c in codes:
+        if c not in seen:
+            seen.append(c)
+    return seen
 
 
-def latest_vessel_list_pdf(slug: str) -> tuple[str, str] | None:
-    """Return (pdf_url, version_label) for the newest vessel-list-like document, or None.
+def latest_certificate_pdf(slug: str, certificate_number: str, fishery_url: str) -> tuple[str, str] | None:
+    """Return (pdf_url, label) for the newest certificate PDF under this code."""
+    url = f"{BASE}/{slug}/@@certificate-documentsets"
+    resp = SESSION.get(
+        url,
+        params={"certificate_number": certificate_number},
+        headers={"Referer": fishery_url},
+        timeout=30,
+    )
+    if resp.status_code != 200:
+        print(f"[DIAG] {slug}: certificate {certificate_number} -> HTTP {resp.status_code}", file=sys.stderr)
+        return None
+    soup = BeautifulSoup(resp.text, "html.parser")
+    link = soup.select_one("a[href*='cert.msc.org'], a[href$='.pdf']")
+    if not link:
+        return None
+    label_el = link.find_parent()
+    label = label_el.get_text(strip=True)[:60] if label_el else certificate_number
+    return link["href"], label
 
-    Important: do NOT filter server-side with ?file_type=... — fisheries.msc.org
-    returns HTTP 500 for that endpoint when a fishery has zero documents of the
-    requested type, instead of an empty page. So instead we fetch the unfiltered
-    document list and pick out anything vessel-related ourselves.
+
+def latest_vessel_list_pdf(slug: str) -> tuple[str, str, str] | None:
+    """Return (pdf_url, version_label, source) for the newest vessel-related document.
+
+    source is "vessel_list" for a dedicated Vessel List document, or "certificate"
+    when falling back to the certificate PDF (some fisheries — typically small
+    client groups — only publish their vessel/client-group info inside the
+    certificate itself, not as a separate document).
     """
     fishery_url = f"{BASE}/{slug}/"
     try:
@@ -91,43 +116,46 @@ def latest_vessel_list_pdf(slug: str) -> tuple[str, str] | None:
         print(f"[DIAG] warm-up request to {fishery_url} failed: {e}", file=sys.stderr)
 
     doc_url = f"{BASE}/{slug}/@@other-documentsets"
-    resp = SESSION.get(doc_url, headers={"Referer": fishery_url}, timeout=30)
-    if resp.status_code != 200:
-        print(f"[DIAG] {slug}: unfiltered @@other-documentsets -> HTTP {resp.status_code} "
-              f"(this usually means the slug itself is wrong/stale on the site)", file=sys.stderr)
+    resp = SESSION.get(
+        doc_url,
+        params={"file_type": "Vessel List"},
+        headers={"Referer": fishery_url},
+        timeout=30,
+    )
+    if resp.status_code == 200:
+        soup = BeautifulSoup(resp.text, "html.parser")
+        link = soup.select_one("a[href*='cert.msc.org'], a[href$='.pdf']")
+        if link:
+            label_el = link.find_parent()
+            label = label_el.get_text(strip=True)[:60] if label_el else ""
+            return link["href"], label, "vessel_list"
+    else:
+        print(f"[DIAG] {slug}: file_type=Vessel List -> HTTP {resp.status_code}, "
+              f"falling back to certificate document", file=sys.stderr)
+
+    # Fallback: use the certificate PDF itself.
+    cert_numbers = find_certificate_numbers(slug, fishery_url)
+    if not cert_numbers:
+        print(f"[DIAG] {slug}: no Vessel List doc and no certificate codes found on the fishery page", file=sys.stderr)
         return None
+    for cert_number in cert_numbers:
+        found = latest_certificate_pdf(slug, cert_number, fishery_url)
+        if found:
+            pdf_url, label = found
+            return pdf_url, label, "certificate"
 
-    soup = BeautifulSoup(resp.text, "html.parser")
-
-    # Each document is a row/section; look for any block of text containing a
-    # vessel-related keyword, then take the first PDF-ish link within it.
-    candidates = []
-    for el in soup.find_all(["li", "tr", "div"]):
-        text = el.get_text(" ", strip=True)
-        if text and any(k in text.lower() for k in VESSEL_KEYWORDS):
-            link = el.select_one("a[href*='cert.msc.org'], a[href$='.pdf']")
-            if link:
-                candidates.append((link["href"], text[:80]))
-
-    if candidates:
-        # Listings are newest-first on this site; take the first match.
-        return candidates[0]
-
-    snippet = re.sub(r"\s+", " ", soup.get_text())[:200]
-    print(f"[DIAG] {slug}: page loaded but nothing vessel-related found. Body starts: {snippet!r}", file=sys.stderr)
+    print(f"[DIAG] {slug}: found certificate codes {cert_numbers} but couldn't fetch any of their PDFs", file=sys.stderr)
     return None
 
 
 def extract_vessel_names(pdf_bytes: bytes) -> list[str]:
-    """Best-effort extraction of vessel names from a vessel-list PDF.
-
-    Vessel list PDFs vary by certifier (table vs. plain list), so this pulls every
-    table row's first column AND every plausible text line, then de-dupes. Expect
-    to tune EXCLUDE_PATTERNS for your specific certifiers after the first run.
-    """
+    """Best-effort extraction of vessel names from a vessel-list or certificate PDF."""
     EXCLUDE_PATTERNS = re.compile(
         r"^(page \d|msc|vessel list|certificate|version|effective|issued|prepared|"
-        r"client|fishery|ifn|imo|flag|gear|species|date|notes?|total|continued)\b",
+        r"client|fishery|ifn|imo|flag|gear|species|date|notes?|total|continued|"
+        r"marine stewardship council|this certificate|certify|certifies|scope|standard|"
+        r"schedule|annex|signed|signature|authoris|accredit|conformity|assessment body|"
+        r"www\.|http|copyright|all rights|page \d+ of|unit of certification|unit of assessment)\b",
         re.IGNORECASE,
     )
     names = set()
@@ -182,13 +210,13 @@ def main():
             print(f"[WARN] no vessel list found for: {name} ({slug})", file=sys.stderr)
             summary.append({"name": name, "slug": slug, "status": "no_vessel_list"})
             continue
-        pdf_url, version_label = found
+        pdf_url, version_label, source = found
 
         snapshot_path = DATA_DIR / f"{slug}.json"
         prev = load_json(snapshot_path, {"vessels": [], "source_pdf": None})
 
         if prev.get("source_pdf") == pdf_url:
-            summary.append({"name": name, "slug": slug, "status": "unchanged", "vessel_count": len(prev["vessels"])})
+            summary.append({"name": name, "slug": slug, "status": "unchanged", "vessel_count": len(prev["vessels"]), "source": prev.get("source")})
             continue
 
         try:
@@ -209,6 +237,7 @@ def main():
             "vessels": vessels,
             "source_pdf": pdf_url,
             "version_label": version_label,
+            "source": source,
             "last_updated": now,
         })
 
@@ -222,7 +251,7 @@ def main():
             })
         summary.append({
             "name": name, "slug": slug, "status": "updated",
-            "vessel_count": len(vessels), "added": len(added), "removed": len(removed),
+            "vessel_count": len(vessels), "added": len(added), "removed": len(removed), "source": source,
         })
 
     save_json(DATA_DIR / "changelog.json", changelog)
