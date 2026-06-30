@@ -1,13 +1,11 @@
 {
-  "last_run": "2026-06-30T15:57:11.363449+00:00",
+  "last_run": "2026-06-30T16:30:07.169871+00:00",
   "fisheries": [
     {
       "name": "American Samoa EEZ tuna longline fishery",
       "slug": "american-samoa-eez-tuna-longline-fishery",
-      "status": "updated",
+      "status": "unchanged",
       "vessel_count": 46,
-      "added": 46,
-      "removed": 0,
       "source": "certificate"
     },
     {
@@ -27,10 +25,8 @@
     {
       "name": "Consolidated Atlantic Ocean albacore tuna longline fishery",
       "slug": "consolidated-atlantic-ocean-albacore-tuna-longline-fishery",
-      "status": "updated",
+      "status": "unchanged",
       "vessel_count": 35,
-      "added": 35,
-      "removed": 0,
       "source": "certificate"
     },
     {
@@ -43,10 +39,8 @@
     {
       "name": "Consolidated Pacific Ocean albacore, bigeye, and yellowfin tuna fishery",
       "slug": "consolidated-pacific-ocean-albacore-bigeye-and-yellowfin-tuna-fishery",
-      "status": "updated",
+      "status": "unchanged",
       "vessel_count": 24,
-      "added": 24,
-      "removed": 0,
       "source": "certificate"
     },
     {
@@ -59,10 +53,8 @@
     {
       "name": "DFC/HEC Pacific longline bigeye, yellowfin and albacore tuna fishery",
       "slug": "dfc-hec-pacific-longline-bigeye-yellowfin-and-albacore-tuna-fishery",
-      "status": "updated",
+      "status": "unchanged",
       "vessel_count": 53,
-      "added": 53,
-      "removed": 0,
       "source": "certificate"
     },
     {
@@ -75,28 +67,22 @@
     {
       "name": "French Polynesia albacore, yellowfin and swordfish longline fishery",
       "slug": "french-polynesia-albacore-yellowfin-and-swordfish-longline-fishery",
-      "status": "updated",
+      "status": "unchanged",
       "vessel_count": 139,
-      "added": 139,
-      "removed": 0,
       "source": "certificate"
     },
     {
       "name": "Fukuichi WCPO purse seine and longline yellowfin, skipjack, albacore and bigeye tuna fishery",
       "slug": "fukuichi-wcpo-purse-seine-and-longline-yellowfin-skipjack-albacore-and-bigeye-tuna-fishery",
-      "status": "updated",
+      "status": "unchanged",
       "vessel_count": 45,
-      "added": 45,
-      "removed": 0,
       "source": "certificate"
     },
     {
       "name": "Hawaii longline swordfish, bigeye and yellowfin tuna fishery",
       "slug": "hawaii-longline-swordfish-bigeye-and-yellowfin-tuna-fishery",
-      "status": "updated",
+      "status": "unchanged",
       "vessel_count": 93,
-      "added": 93,
-      "removed": 0,
       "source": "certificate"
     },
     {
@@ -107,28 +93,22 @@
     {
       "name": "Pingtairong Pacific tuna deep set longline fishery",
       "slug": "pingtairong-pacific-tuna-deep-set-longline-fishery",
-      "status": "updated",
+      "status": "unchanged",
       "vessel_count": 18,
-      "added": 18,
-      "removed": 0,
       "source": "certificate"
     },
     {
       "name": "SATHOAN French Mediterranean Bluefin tuna artisanal longline and handline fishery",
       "slug": "sathoan-french-mediterranean-bluefin-tuna-artisanal-longline-and-handline-fishery",
-      "status": "updated",
+      "status": "unchanged",
       "vessel_count": 100,
-      "added": 100,
-      "removed": 0,
       "source": "certificate"
     },
     {
       "name": "Silla WCPO longline tuna fishery",
       "slug": "silla-wcpo-longline-tuna-fishery",
-      "status": "updated",
+      "status": "unchanged",
       "vessel_count": 40,
-      "added": 40,
-      "removed": 0,
       "source": "certificate"
     },
     {
@@ -139,19 +119,15 @@
     {
       "name": "SZLC, CSFC & FMLC Cook Islands EEZ albacore, yellowfin and bigeye longline",
       "slug": "szlc-csfc-fmlc-cook-islands-eez-albacore-yellowfin-and-bigeye-longline",
-      "status": "updated",
+      "status": "unchanged",
       "vessel_count": 92,
-      "added": 92,
-      "removed": 0,
       "source": "certificate"
     },
     {
       "name": "SZLC, CSFC, FMLC & MIFV RMI EEZ longline yellowfin, bigeye and albacore tuna",
       "slug": "szlc-csfc-fmlc-mifv-rmi-eez-longline-yellowfin-bigeye-and-albacore-tuna",
-      "status": "updated",
+      "status": "unchanged",
       "vessel_count": 95,
-      "added": 95,
-      "removed": 0,
       "source": "certificate"
     },
     {
@@ -178,10 +154,8 @@
     {
       "name": "Usufuku Honten Northeast Atlantic longline bluefin tuna fishery",
       "slug": "usufuku-honten-northeast-atlantic-longline-bluefin-tuna-fishery",
-      "status": "updated",
+      "status": "unchanged",
       "vessel_count": 29,
-      "added": 29,
-      "removed": 0,
       "source": "certificate"
     }
   ]
