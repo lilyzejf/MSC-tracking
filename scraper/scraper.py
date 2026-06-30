@@ -3,7 +3,7 @@ MSC Track-a-Fishery vessel list monitor.
 
 For each fishery in fisheries.json:
   1. Resolve its URL slug on fisheries.msc.org (if not already known).
-  2. Find the newest "Vessel List" PDF on its vessel-documentsets page.
+  2. Find the newest "Vessel List"-style PDF on its documents page.
   3. Download it and extract vessel names.
   4. Compare against the last saved snapshot in docs/data/<slug>.json.
   5. Record any additions/removals into docs/data/changelog.json.
@@ -72,11 +72,18 @@ def resolve_slug(name: str) -> str | None:
     return best[0]
 
 
-VESSEL_LIST_TYPES = ["Vessel List", "Vessel list", "Eligible Fishers list", "Eligible fishers list"]
+# Some certifiers label this document type slightly differently on the site.
+VESSEL_KEYWORDS = ("vessel", "eligible fisher")
 
 
 def latest_vessel_list_pdf(slug: str) -> tuple[str, str] | None:
-    """Return (pdf_url, version_label) for the newest Vessel List document, or None."""
+    """Return (pdf_url, version_label) for the newest vessel-list-like document, or None.
+
+    Important: do NOT filter server-side with ?file_type=... — fisheries.msc.org
+    returns HTTP 500 for that endpoint when a fishery has zero documents of the
+    requested type, instead of an empty page. So instead we fetch the unfiltered
+    document list and pick out anything vessel-related ourselves.
+    """
     fishery_url = f"{BASE}/{slug}/"
     try:
         SESSION.get(fishery_url, timeout=30)
@@ -84,24 +91,30 @@ def latest_vessel_list_pdf(slug: str) -> tuple[str, str] | None:
         print(f"[DIAG] warm-up request to {fishery_url} failed: {e}", file=sys.stderr)
 
     doc_url = f"{BASE}/{slug}/@@other-documentsets"
-    for file_type in VESSEL_LIST_TYPES:
-        resp = SESSION.get(
-            doc_url,
-            params={"file_type": file_type},
-            headers={"Referer": fishery_url},
-            timeout=30,
-        )
-        if resp.status_code != 200:
-            print(f"[DIAG] {slug} / file_type={file_type!r} -> HTTP {resp.status_code}", file=sys.stderr)
-            continue
-        soup = BeautifulSoup(resp.text, "html.parser")
-        link = soup.select_one("a[href*='cert.msc.org'], a[href$='.pdf']")
-        if link:
-            label_el = link.find_parent()
-            label = label_el.get_text(strip=True)[:60] if label_el else ""
-            return link["href"], label
-        snippet = re.sub(r"\s+", " ", soup.get_text())[:200]
-        print(f"[DIAG] {slug} / file_type={file_type!r} -> 200 OK but no PDF link. Body starts: {snippet!r}", file=sys.stderr)
+    resp = SESSION.get(doc_url, headers={"Referer": fishery_url}, timeout=30)
+    if resp.status_code != 200:
+        print(f"[DIAG] {slug}: unfiltered @@other-documentsets -> HTTP {resp.status_code} "
+              f"(this usually means the slug itself is wrong/stale on the site)", file=sys.stderr)
+        return None
+
+    soup = BeautifulSoup(resp.text, "html.parser")
+
+    # Each document is a row/section; look for any block of text containing a
+    # vessel-related keyword, then take the first PDF-ish link within it.
+    candidates = []
+    for el in soup.find_all(["li", "tr", "div"]):
+        text = el.get_text(" ", strip=True)
+        if text and any(k in text.lower() for k in VESSEL_KEYWORDS):
+            link = el.select_one("a[href*='cert.msc.org'], a[href$='.pdf']")
+            if link:
+                candidates.append((link["href"], text[:80]))
+
+    if candidates:
+        # Listings are newest-first on this site; take the first match.
+        return candidates[0]
+
+    snippet = re.sub(r"\s+", " ", soup.get_text())[:200]
+    print(f"[DIAG] {slug}: page loaded but nothing vessel-related found. Body starts: {snippet!r}", file=sys.stderr)
     return None
 
 
