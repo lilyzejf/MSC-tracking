@@ -1,25 +1,94 @@
 [
-  {"name": "American Samoa EEZ tuna longline fishery", "slug": "american-samoa-eez-tuna-longline-fishery"},
-  {"name": "Australia Eastern Tuna and Billfish Fishery (albacore tuna, yellowfin tuna, bigeye tuna and swordfish)", "slug": null},
-  {"name": "Australia southern bluefin tuna longline and minor line fishery", "slug": null},
-  {"name": "Consolidated Atlantic Ocean albacore tuna longline fishery", "slug": null},
-  {"name": "Consolidated Indian Ocean longline albacore tuna fishery", "slug": null},
-  {"name": "Consolidated Pacific Ocean albacore, bigeye, and yellowfin tuna fishery", "slug": null},
-  {"name": "Dae Hae Pacific Yellowfin, Bigeye, and Albacore Longline", "slug": null},
-  {"name": "DFC/HEC Pacific longline bigeye, yellowfin and albacore tuna fishery", "slug": null},
-  {"name": "Fiji Albacore, Yellowfin and Bigeye Tuna longline", "slug": "fiji-albacore-yellowfin-and-bigeye-tuna-longline"},
-  {"name": "French Polynesia albacore, yellowfin and swordfish longline fishery", "slug": null},
-  {"name": "Fukuichi WCPO purse seine and longline yellowfin, skipjack, albacore and bigeye tuna fishery", "slug": null},
-  {"name": "Hawaii longline swordfish, bigeye and yellowfin tuna fishery", "slug": null},
-  {"name": "Owase Bussan Co. Ltd. Longline Fishery for North Pacific Albacore", "slug": null},
-  {"name": "Pingtairong Pacific tuna deep set longline fishery", "slug": null},
-  {"name": "SATHOAN French Mediterranean Bluefin tuna artisanal longline and handline fishery", "slug": null},
-  {"name": "Silla WCPO longline tuna fishery", "slug": null},
-  {"name": "SZLC CSFC & FMLC FSM EEZ Longline Yellowfin, Bigeye and Albacore Tuna", "slug": null},
-  {"name": "SZLC, CSFC & FMLC Cook Islands EEZ albacore, yellowfin and bigeye longline", "slug": null},
-  {"name": "SZLC, CSFC, FMLC & MIFV RMI EEZ longline yellowfin, bigeye and albacore tuna", "slug": "szlc-csfc-fmlc-mifv-rmi-eez-longline-yellowfin-bigeye-and-albacore-tuna"},
-  {"name": "Tri Marine Atlantic Albacore longline fishery", "slug": null},
-  {"name": "Tri Marine Pacific Ocean longline tuna fishery", "slug": null},
-  {"name": "Tuna Alliance Atlantic albacore longline fishery", "slug": null},
-  {"name": "Usufuku Honten Northeast Atlantic longline bluefin tuna fishery", "slug": null}
+  {
+    "name": "American Samoa EEZ tuna longline fishery",
+    "slug": "american-samoa-eez-tuna-longline-fishery"
+  },
+  {
+    "name": "Australia Eastern Tuna and Billfish Fishery (albacore tuna, yellowfin tuna, bigeye tuna and swordfish)",
+    "slug": "australia-eastern-tuna-and-billfish-fishery-albacore-tuna-yellowfin-tuna-bigeye-tuna-and-swordfish"
+  },
+  {
+    "name": "Australia southern bluefin tuna longline and minor line fishery",
+    "slug": "australia-southern-bluefin-tuna-longline-and-minor-line-fishery"
+  },
+  {
+    "name": "Consolidated Atlantic Ocean albacore tuna longline fishery",
+    "slug": "consolidated-atlantic-ocean-albacore-tuna-longline-fishery"
+  },
+  {
+    "name": "Consolidated Indian Ocean longline albacore tuna fishery",
+    "slug": "consolidated-indian-ocean-longline-albacore-and-yellowfin-tuna-fishery"
+  },
+  {
+    "name": "Consolidated Pacific Ocean albacore, bigeye, and yellowfin tuna fishery",
+    "slug": "consolidated-pacific-ocean-albacore-bigeye-and-yellowfin-tuna-fishery"
+  },
+  {
+    "name": "Dae Hae Pacific Yellowfin, Bigeye, and Albacore Longline",
+    "slug": "dae-hae-pacific-yellowfin-bigeye-and-albacore-longline"
+  },
+  {
+    "name": "DFC/HEC Pacific longline bigeye, yellowfin and albacore tuna fishery",
+    "slug": "dfc-hec-pacific-longline-bigeye-yellowfin-and-albacore-tuna-fishery"
+  },
+  {
+    "name": "Fiji Albacore, Yellowfin and Bigeye Tuna longline",
+    "slug": "fiji-albacore-yellowfin-and-bigeye-tuna-longline"
+  },
+  {
+    "name": "French Polynesia albacore, yellowfin and swordfish longline fishery",
+    "slug": "french-polynesia-albacore-yellowfin-and-swordfish-longline-fishery"
+  },
+  {
+    "name": "Fukuichi WCPO purse seine and longline yellowfin, skipjack, albacore and bigeye tuna fishery",
+    "slug": "fukuichi-wcpo-purse-seine-and-longline-yellowfin-skipjack-albacore-and-bigeye-tuna-fishery"
+  },
+  {
+    "name": "Hawaii longline swordfish, bigeye and yellowfin tuna fishery",
+    "slug": "hawaii-longline-swordfish-bigeye-and-yellowfin-tuna-fishery"
+  },
+  {
+    "name": "Owase Bussan Co. Ltd. Longline Fishery for North Pacific Albacore",
+    "slug": "owase-bussan-co"
+  },
+  {
+    "name": "Pingtairong Pacific tuna deep set longline fishery",
+    "slug": "pingtairong-pacific-tuna-deep-set-longline-fishery"
+  },
+  {
+    "name": "SATHOAN French Mediterranean Bluefin tuna artisanal longline and handline fishery",
+    "slug": "sathoan-french-mediterranean-bluefin-tuna-artisanal-longline-and-handline-fishery"
+  },
+  {
+    "name": "Silla WCPO longline tuna fishery",
+    "slug": "silla-wcpo-longline-tuna-fishery"
+  },
+  {
+    "name": "SZLC CSFC & FMLC FSM EEZ Longline Yellowfin, Bigeye and Albacore Tuna",
+    "slug": "szlc-csfc-fmlc-fsm-eez-longline-yellowfin-bigeye-and-albacore-tuna-fishery"
+  },
+  {
+    "name": "SZLC, CSFC & FMLC Cook Islands EEZ albacore, yellowfin and bigeye longline",
+    "slug": "szlc-csfc-fmlc-cook-islands-eez-albacore-yellowfin-and-bigeye-longline"
+  },
+  {
+    "name": "SZLC, CSFC, FMLC & MIFV RMI EEZ longline yellowfin, bigeye and albacore tuna",
+    "slug": "szlc-csfc-fmlc-mifv-rmi-eez-longline-yellowfin-bigeye-and-albacore-tuna"
+  },
+  {
+    "name": "Tri Marine Atlantic Albacore longline fishery",
+    "slug": "tri-marine-atlantic-albacore-longline-fishery"
+  },
+  {
+    "name": "Tri Marine Pacific Ocean longline tuna fishery",
+    "slug": "tri-marine-pacific-ocean-longline-tuna-fishery"
+  },
+  {
+    "name": "Tuna Alliance Atlantic albacore longline fishery",
+    "slug": "tuna-alliance-atlantic-albacore-longline-fishery"
+  },
+  {
+    "name": "Usufuku Honten Northeast Atlantic longline bluefin tuna fishery",
+    "slug": "usufuku-honten-northeast-atlantic-longline-bluefin-tuna-fishery"
+  }
 ]
