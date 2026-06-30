@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-06-30T15:17:50.088866+00:00",
+  "last_run": "2026-06-30T15:33:50.324596+00:00",
   "fisheries": [
     {
       "name": "American Samoa EEZ tuna longline fishery",
@@ -9,14 +9,12 @@
     {
       "name": "Australia Eastern Tuna and Billfish Fishery (albacore tuna, yellowfin tuna, bigeye tuna and swordfish)",
       "slug": "australia-eastern-tuna-and-billfish-fishery-albacore-tuna-yellowfin-tuna-bigeye-tuna-and-swordfish",
-      "status": "unchanged",
-      "vessel_count": 22
+      "status": "no_vessel_list"
     },
     {
       "name": "Australia southern bluefin tuna longline and minor line fishery",
       "slug": "australia-southern-bluefin-tuna-longline-and-minor-line-fishery",
-      "status": "unchanged",
-      "vessel_count": 23
+      "status": "no_vessel_list"
     },
     {
       "name": "Consolidated Atlantic Ocean albacore tuna longline fishery",
@@ -26,8 +24,7 @@
     {
       "name": "Consolidated Indian Ocean longline albacore tuna fishery",
       "slug": "consolidated-indian-ocean-longline-albacore-and-yellowfin-tuna-fishery",
-      "status": "unchanged",
-      "vessel_count": 75
+      "status": "no_vessel_list"
     },
     {
       "name": "Consolidated Pacific Ocean albacore, bigeye, and yellowfin tuna fishery",
@@ -37,8 +34,7 @@
     {
       "name": "Dae Hae Pacific Yellowfin, Bigeye, and Albacore Longline",
       "slug": "dae-hae-pacific-yellowfin-bigeye-and-albacore-longline",
-      "status": "unchanged",
-      "vessel_count": 0
+      "status": "no_vessel_list"
     },
     {
       "name": "DFC/HEC Pacific longline bigeye, yellowfin and albacore tuna fishery",
@@ -48,8 +44,7 @@
     {
       "name": "Fiji Albacore, Yellowfin and Bigeye Tuna longline",
       "slug": "fiji-albacore-yellowfin-and-bigeye-tuna-longline",
-      "status": "unchanged",
-      "vessel_count": 0
+      "status": "no_vessel_list"
     },
     {
       "name": "French Polynesia albacore, yellowfin and swordfish longline fishery",
@@ -104,20 +99,17 @@
     {
       "name": "Tri Marine Atlantic Albacore longline fishery",
       "slug": "tri-marine-atlantic-albacore-longline-fishery",
-      "status": "unchanged",
-      "vessel_count": 40
+      "status": "no_vessel_list"
     },
     {
       "name": "Tri Marine Pacific Ocean longline tuna fishery",
       "slug": "tri-marine-pacific-ocean-longline-tuna-fishery",
-      "status": "unchanged",
-      "vessel_count": 1
+      "status": "no_vessel_list"
     },
     {
       "name": "Tuna Alliance Atlantic albacore longline fishery",
       "slug": "tuna-alliance-atlantic-albacore-longline-fishery",
-      "status": "unchanged",
-      "vessel_count": 0
+      "status": "no_vessel_list"
     },
     {
       "name": "Usufuku Honten Northeast Atlantic longline bluefin tuna fishery",
