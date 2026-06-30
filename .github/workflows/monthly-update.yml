@@ -1,4 +1,4 @@
-yamlname: Monthly vessel list update
+name: Monthly vessel list update
 
 on:
   schedule:
