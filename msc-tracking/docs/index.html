@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MSC Vessel Watch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --chart: #e9eef0;       /* nautical-chart paper */
+    --chart-line: #c7d3d6;  /* grid lines */
+    --ink: #0b2e33;         /* deep teal-black, headings */
+    --teal: #0f4a52;        /* primary */
+    --teal-deep: #0a363c;
+    --buoy: #c1502c;        /* rust/coral accent */
+    --buoy-deep: #9c3e21;
+    --paper: #ffffff;
+    --muted: #5b6e71;
+    --added: #1f7a4d;
+    --removed: #b23b3b;
+    --radius: 2px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, var(--chart-line) 39px, var(--chart-line) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, var(--chart-line) 39px, var(--chart-line) 40px),
+      var(--chart);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    min-height:100vh;
+  }
+  a{color:inherit;}
+  .wrap{max-width:980px;margin:0 auto;padding:48px 24px 96px;}
+
+  header{
+    border-bottom:3px solid var(--ink);
+    padding-bottom:20px;
+    margin-bottom:32px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .brand{display:flex;align-items:baseline;gap:14px;}
+  .brand .mark{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:.12em;
+    color:var(--buoy);
+    border:1px solid var(--buoy);
+    padding:3px 7px;
+  }
+  h1{
+    font-family:'Roboto Slab', serif;
+    font-weight:700;
+    font-size:clamp(28px,4vw,40px);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .status{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--muted);
+    text-align:right;
+    line-height:1.6;
+  }
+  .status strong{color:var(--ink);}
+
+  .tabs{display:flex;gap:2px;margin-bottom:24px;}
+  .tab{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    padding:9px 16px;
+    background:var(--paper);
+    border:1px solid var(--chart-line);
+    cursor:pointer;
+    color:var(--muted);
+  }
+  .tab.active{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+
+  .panel{display:none;}
+  .panel.active{display:block;}
+
+  .fishery{
+    background:var(--paper);
+    border:1px solid var(--chart-line);
+    border-left:4px solid var(--teal);
+    margin-bottom:10px;
+  }
+  .fishery.has-changes{border-left-color:var(--buoy);}
+  .fishery summary{
+    list-style:none;
+    cursor:pointer;
+    padding:16px 18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+  }
+  .fishery summary::-webkit-details-marker{display:none;}
+  .fname{font-weight:600;font-size:15px;}
+  .fmeta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--muted);
+    white-space:nowrap;
+    display:flex;
+    gap:14px;
+    align-items:center;
+  }
+  .badge{
+    font-size:10px;
+    padding:2px 7px;
+    border-radius:999px;
+    letter-spacing:.04em;
+  }
+  .badge.changed{background:#fbe9e3;color:var(--buoy-deep);}
+  .vessel-body{padding:0 18px 18px;border-top:1px solid var(--chart-line);}
+  .vessel-list{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    columns:2;
+    column-gap:24px;
+    padding-top:14px;
+    color:var(--ink);
+    line-height:1.9;
+  }
+  @media (max-width:640px){.vessel-list{columns:1;}}
+  .empty-note{color:var(--muted);font-size:13px;padding-top:14px;}
+
+  .log-entry{
+    background:var(--paper);
+    border:1px solid var(--chart-line);
+    padding:16px 18px;
+    margin-bottom:10px;
+  }
+  .log-date{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--muted);
+    letter-spacing:.04em;
+    text-transform:uppercase;
+  }
+  .log-fishery{font-weight:600;margin:4px 0 10px;font-size:15px;}
+  .diff-row{font-family:'IBM Plex Mono', monospace;font-size:12.5px;margin:3px 0;}
+  .diff-row.add{color:var(--added);}
+  .diff-row.rem{color:var(--removed);}
+  .diff-row::before{display:inline-block;width:16px;}
+  .diff-row.add::before{content:"+";}
+  .diff-row.rem::before{content:"–";}
+
+  .loading, .error{font-family:'IBM Plex Mono', monospace;font-size:13px;color:var(--muted);padding:24px 0;}
+  footer{margin-top:48px;font-size:11px;color:var(--muted);font-family:'IBM Plex Mono', monospace;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brand">
+      <span class="mark">TRACK·A·FISHERY</span>
+      <h1>Vessel Watch</h1>
+    </div>
+    <div class="status" id="status">loading…</div>
+  </header>
+
+  <div class="tabs">
+    <div class="tab active" data-panel="fisheries">Fisheries</div>
+    <div class="tab" data-panel="changelog">Changelog</div>
+  </div>
+
+  <section class="panel active" id="panel-fisheries">
+    <div class="loading">Loading fisheries…</div>
+  </section>
+
+  <section class="panel" id="panel-changelog">
+    <div class="loading">Loading changelog…</div>
+  </section>
+
+  <footer>Data sourced monthly from fisheries.msc.org Track a Fishery vessel lists. Parsing is automated and best-effort — verify against the source PDF before acting on a change.</footer>
+</div>
+
+<script>
+const $ = (s, el=document) => el.querySelector(s);
+const $$ = (s, el=document) => [...el.querySelectorAll(s)];
+
+document.addEventListener('click', e => {
+  const tab = e.target.closest('.tab');
+  if (!tab) return;
+  $$('.tab').forEach(t => t.classList.toggle('active', t === tab));
+  $$('.panel').forEach(p => p.classList.toggle('active', p.id === 'panel-' + tab.dataset.panel));
+});
+
+function fmtDate(iso){
+  if(!iso) return '—';
+  const d = new Date(iso);
+  return d.toLocaleDateString(undefined, {year:'numeric', month:'short', day:'numeric'});
+}
+
+async function loadJSON(path){
+  const res = await fetch(path, {cache:'no-store'});
+  if(!res.ok) throw new Error(path + ' -> ' + res.status);
+  return res.json();
+}
+
+async function init(){
+  let summary, changelog;
+  try{
+    [summary, changelog] = await Promise.all([
+      loadJSON('data/summary.json'),
+      loadJSON('data/changelog.json'),
+    ]);
+  }catch(err){
+    $('#status').textContent = 'no data yet';
+    $('#panel-fisheries').innerHTML = '<div class="error">No data found yet. Run the scraper (or wait for the first scheduled run) to populate docs/data/.</div>';
+    $('#panel-changelog').innerHTML = '';
+    return;
+  }
+
+  $('#status').innerHTML = `<strong>${summary.fisheries.length}</strong> fisheries tracked &middot; last run <strong>${fmtDate(summary.last_run)}</strong>`;
+
+  const recentChangedSlugs = new Set(changelog.slice(0, 50).map(c => c.slug));
+
+  const list = $('#panel-fisheries');
+  list.innerHTML = '';
+  summary.fisheries
+    .slice()
+    .sort((a,b) => a.name.localeCompare(b.name))
+    .forEach(f => {
+      const el = document.createElement('details');
+      el.className = 'fishery' + (recentChangedSlugs.has(f.slug) ? ' has-changes' : '');
+      const countLabel = f.status === 'updated' || f.status === 'unchanged'
+        ? `${f.vessel_count ?? '?'} vessels`
+        : f.status.replace(/_/g, ' ');
+      el.innerHTML = `
+        <summary>
+          <span class="fname">${f.name}</span>
+          <span class="fmeta">
+            ${recentChangedSlugs.has(f.slug) ? '<span class="badge changed">changed</span>' : ''}
+            <span>${countLabel}</span>
+          </span>
+        </summary>
+        <div class="vessel-body" data-slug="${f.slug || ''}"></div>
+      `;
+      el.addEventListener('toggle', async () => {
+        if (!el.open) return;
+        const body = $('.vessel-body', el);
+        if (body.dataset.loaded || !f.slug) return;
+        body.innerHTML = '<div class="empty-note">loading vessels…</div>';
+        try{
+          const detail = await loadJSON(`data/${f.slug}.json`);
+          body.dataset.loaded = '1';
+          body.innerHTML = detail.vessels?.length
+            ? `<div class="vessel-list">${detail.vessels.map(v => `<div>${v}</div>`).join('')}</div>`
+            : '<div class="empty-note">No vessels parsed for this fishery yet.</div>';
+        }catch{
+          body.innerHTML = '<div class="empty-note">Could not load vessel list.</div>';
+        }
+      });
+      list.appendChild(el);
+    });
+
+  const logPanel = $('#panel-changelog');
+  logPanel.innerHTML = '';
+  if (!changelog.length){
+    logPanel.innerHTML = '<div class="empty-note">No changes recorded yet — this fills in after the first couple of monthly runs.</div>';
+  }
+  changelog.forEach(entry => {
+    const el = document.createElement('div');
+    el.className = 'log-entry';
+    el.innerHTML = `
+      <div class="log-date">${fmtDate(entry.date)}</div>
+      <div class="log-fishery">${entry.fishery}</div>
+      ${entry.added.map(v => `<div class="diff-row add">${v}</div>`).join('')}
+      ${entry.removed.map(v => `<div class="diff-row rem">${v}</div>`).join('')}
+    `;
+    logPanel.appendChild(el);
+  });
+}
+
+init();
+</script>
+</body>
+</html>
