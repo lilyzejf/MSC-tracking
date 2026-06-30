@@ -29,7 +29,20 @@ DATA_DIR = ROOT / "docs" / "data"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 BASE = "https://fisheries.msc.org/en/fisheries"
-HEADERS = {"User-Agent": "Mozilla/5.0 (vessel-list-monitor; contact: owner of this repo)"}
+# Look like an ordinary browser request — some sites treat bare/non-browser
+# User-Agents (or requests missing Accept/Accept-Language) differently.
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+}
+# One session so cookies set on the first request (if any) carry through to
+# later requests, the way a real browser session would behave.
+SESSION = requests.Session()
+SESSION.headers.update(HEADERS)
 
 
 def slugify_candidates(html: str, name: str):
@@ -47,12 +60,11 @@ def slugify_candidates(html: str, name: str):
 
 def resolve_slug(name: str) -> str | None:
     """Use the site search to find the slug whose link text best matches `name`."""
-    resp = requests.get(f"{BASE}/@@search", params={"q": name}, headers=HEADERS, timeout=30)
+    resp = SESSION.get(f"{BASE}/@@search", params={"q": name}, timeout=30)
     resp.raise_for_status()
     candidates = slugify_candidates(resp.text, name)
     if not candidates:
         return None
-    # Pick the candidate whose visible text is most similar to the fishery name.
     best = max(candidates, key=lambda c: difflib.SequenceMatcher(None, c[1].lower(), name.lower()).ratio())
     score = difflib.SequenceMatcher(None, best[1].lower(), name.lower()).ratio()
     if score < 0.5:
@@ -60,20 +72,37 @@ def resolve_slug(name: str) -> str | None:
     return best[0]
 
 
+VESSEL_LIST_TYPES = ["Vessel List", "Vessel list", "Eligible Fishers list", "Eligible fishers list"]
+
+
 def latest_vessel_list_pdf(slug: str) -> tuple[str, str] | None:
     """Return (pdf_url, version_label) for the newest Vessel List document, or None."""
-    url = f"{BASE}/{slug}/@@other-documentsets"
-    resp = requests.get(url, params={"file_type": "Vessel List"}, headers=HEADERS, timeout=30)
-    if resp.status_code != 200:
-        return None
-    soup = BeautifulSoup(resp.text, "html.parser")
-    # Versions are listed newest-first; grab the first PDF link.
-    link = soup.select_one("a[href*='cert.msc.org'], a[href$='.pdf']")
-    if not link:
-        return None
-    label_el = link.find_parent()
-    label = label_el.get_text(strip=True)[:60] if label_el else ""
-    return link["href"], label
+    fishery_url = f"{BASE}/{slug}/"
+    try:
+        SESSION.get(fishery_url, timeout=30)
+    except requests.RequestException as e:
+        print(f"[DIAG] warm-up request to {fishery_url} failed: {e}", file=sys.stderr)
+
+    doc_url = f"{BASE}/{slug}/@@other-documentsets"
+    for file_type in VESSEL_LIST_TYPES:
+        resp = SESSION.get(
+            doc_url,
+            params={"file_type": file_type},
+            headers={"Referer": fishery_url},
+            timeout=30,
+        )
+        if resp.status_code != 200:
+            print(f"[DIAG] {slug} / file_type={file_type!r} -> HTTP {resp.status_code}", file=sys.stderr)
+            continue
+        soup = BeautifulSoup(resp.text, "html.parser")
+        link = soup.select_one("a[href*='cert.msc.org'], a[href$='.pdf']")
+        if link:
+            label_el = link.find_parent()
+            label = label_el.get_text(strip=True)[:60] if label_el else ""
+            return link["href"], label
+        snippet = re.sub(r"\s+", " ", soup.get_text())[:200]
+        print(f"[DIAG] {slug} / file_type={file_type!r} -> 200 OK but no PDF link. Body starts: {snippet!r}", file=sys.stderr)
+    return None
 
 
 def extract_vessel_names(pdf_bytes: bytes) -> list[str]:
@@ -119,7 +148,7 @@ def save_json(path: Path, data):
 def main():
     fisheries = json.loads(FISHERIES_FILE.read_text())
     changelog = load_json(DATA_DIR / "changelog.json", [])
-    summary = []  # for index page "last run" panel
+    summary = []
     now = datetime.now(timezone.utc).isoformat()
     slugs_dirty = False
 
@@ -146,12 +175,11 @@ def main():
         prev = load_json(snapshot_path, {"vessels": [], "source_pdf": None})
 
         if prev.get("source_pdf") == pdf_url:
-            # Already have this exact version saved — nothing changed.
             summary.append({"name": name, "slug": slug, "status": "unchanged", "vessel_count": len(prev["vessels"])})
             continue
 
         try:
-            pdf_resp = requests.get(pdf_url, headers=HEADERS, timeout=60)
+            pdf_resp = SESSION.get(pdf_url, timeout=60)
             pdf_resp.raise_for_status()
             vessels = extract_vessel_names(pdf_resp.content)
         except Exception as e:
