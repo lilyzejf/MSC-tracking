@@ -190,7 +190,7 @@ const FISHERIES = [
   {name:"Usufuku Honten Northeast Atlantic longline bluefin tuna fishery",slug:"usufuku-honten"}
 ];
 
-const BOILERPLATE = ["page ","msc ","vessel list","certificate","version","effective date","issued","prepared by","client group","fishery","flag state","gear type","species","notes:","total vessels","continued","marine stewardship council","this certificate","certify","certifies","scope","standard","schedule","annex","signed","signature","authoris","accredit","conformity","assessment body","www.","http","copyright","all rights","unit of certification","unit of assessment","siret","cooperative","coopérative","criée","port de p","promenade","quai ","geographical range","method of capture","fishing vessel","operated by","compliant with","registered in","be checked online","established by","parties entitled","the certificate:","use this in accordance","accreditation code","terms & conditions","terms and conditions","n/a","control union","lrqa","lloyd's register","mrag","bureau veritas","intertek","moody marine","acoura","global trust","sgs","scs global","food certification","(msci)","imo no","ifn"];
+const BOILERPLATE = ["page ","msc ","vessel list","certificate","version","effective date","issued","prepared by","client group","fishery","flag state","gear type","species","notes:","total vessels","continued","marine stewardship council","this certificate","certify","certifies","scope","standard","schedule","annex","signed","signature","authoris","accredit","conformity","assessment body","www.","http","copyright","all rights","unit of certification","unit of assessment","siret","cooperative","coopérative","criée","port de p","promenade","quai ","geographical range","method of capture","fishing vessel","operated by","compliant with","registered in","be checked online","established by","parties entitled","the certificate:","use this in accordance","accreditation code","terms & conditions","terms and conditions","n/a","control union","lrqa","lloyd's register","mrag","bureau veritas","intertek","moody marine","acoura","global trust","sgs","scs global","food certification","(msci)","imo no","ifn", "conditions of","listed below","any other limits","eligible","permit holder","vessel length","vessel name","vessel registration","cu uk","longline services","wearefish","feli fisheries","tuna ventures","adelita fishing","tracey c fishing"];
 const PROSE = new Set(["and","the","of","with","in","to","by","this","that","for","from","de","la","du","des","et","en","le","les"]);
 const CODE_RE = /^[A-Z0-9][A-Z0-9\-\/]{3,20}$/;
 
@@ -201,7 +201,11 @@ function isBoilerplate(line) {
   if (/^(dr|mr|mrs|ms|prof)\./.test(l)) return true;
   if (/\d{2,}[-–]?\d{2,}/.test(line)) return true;
   if (/@/.test(line) || (line.match(/\./g)||[]).length >= 3) return true;
+  if (/\bllc\b|\binc\.|\bltd\.|\bcorp\.|\bl\.l\.c\./i.test(line)) return true;
+  if (line.includes(';')) return true;
+  if (/^(asi|cu uk|pln|n\/a)$/i.test(line.trim())) return true;
   const words = line.split(/\s+/);
+  if (words.length >= 4 && words.some(w => PROSE.has(w.toLowerCase()))) return true;
   if (words.length >= 5 && words.some(w => PROSE.has(w.toLowerCase()))) return true;
   return false;
 }
