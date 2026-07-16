@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MSC Vessel Watch</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--chart:#e9eef0;--chart-line:#c7d3d6;--ink:#0b2e33;--teal:#0f4a52;--buoy:#c1502c;--buoy-deep:#9c3e21;--paper:#fff;--muted:#5b6e71;--added:#1f7a4d;--added-bg:#e8f5ee;--removed:#b23b3b;--removed-bg:#faeaea;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:repeating-linear-gradient(0deg,transparent,transparent 39px,var(--chart-line) 39px,var(--chart-line) 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,var(--chart-line) 39px,var(--chart-line) 40px),var(--chart);font-family:'Inter',sans-serif;color:var(--ink);min-height:100vh}
+.wrap{max-width:980px;margin:0 auto;padding:40px 24px 80px}
+header{border-bottom:3px solid var(--ink);padding-bottom:16px;margin-bottom:28px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+.brand{display:flex;align-items:baseline;gap:12px}
+.mark{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:var(--buoy);border:1px solid var(--buoy);padding:3px 7px}
+h1{font-family:'Roboto Slab',serif;font-size:clamp(24px,3vw,34px);font-weight:700}
+.meta{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);text-align:right;line-height:1.8}
+.meta strong{color:var(--ink)}
+
+.tabs{display:flex;gap:2px;margin-bottom:20px}
+.tab{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:8px 16px;background:var(--paper);border:1px solid var(--chart-line);cursor:pointer;color:var(--muted)}
+.tab.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.panel{display:none}.panel.active{display:block}
+
+.fishery{background:var(--paper);border:1px solid var(--chart-line);border-left:4px solid var(--teal);margin-bottom:8px}
+.fishery.has-changes{border-left-color:var(--buoy)}
+.fishery.no-data{border-left-color:var(--chart-line);opacity:.6}
+.fishery summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.fishery summary::-webkit-details-marker{display:none}
+.fname{font-weight:600;font-size:14px;flex:1}
+.fmeta{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);white-space:nowrap;display:flex;gap:10px;align-items:center}
+.pill{font-size:10px;padding:2px 8px;border-radius:99px;font-family:'IBM Plex Mono',monospace}
+.pill.added{background:var(--added-bg);color:var(--added)}
+.pill.removed{background:var(--removed-bg);color:var(--removed)}
+.pill.cert{background:#fef3e2;color:#92550a}
+
+.fishery-body{border-top:1px solid var(--chart-line);padding:16px}
+.section-head{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:5px 0 3px;margin-top:14px;border-bottom:1px solid var(--chart-line);margin-bottom:2px}
+.section-head.add{color:var(--added)}.section-head.rem{color:var(--removed)}.section-head.all{color:var(--muted)}
+.vessel-row{font-family:'IBM Plex Mono',monospace;font-size:12px;padding:3px 0;border-bottom:1px solid #f4f6f7;display:flex;gap:12px}
+.vessel-row:last-child{border:none}
+.v-name{flex:1}.v-code{color:var(--muted)}
+.vessel-row.add-row .v-name{color:var(--added)}
+.vessel-row.rem-row .v-name{color:var(--removed);text-decoration:line-through}
+.vessel-grid{columns:2;column-gap:24px}
+@media(max-width:600px){.vessel-grid{columns:1}}
+
+.log-entry{background:var(--paper);border:1px solid var(--chart-line);padding:16px;margin-bottom:8px}
+.log-date{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.log-fishery{font-weight:600;font-size:15px;margin:4px 0 12px}
+.diff-head{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin:10px 0 4px}
+.diff-head.add{color:var(--added)}.diff-head.rem{color:var(--removed)}
+.diff-row{font-family:'IBM Plex Mono',monospace;font-size:12px;margin:2px 0}
+.diff-row.add{color:var(--added)}.diff-row.rem{color:var(--removed);text-decoration:line-through}
+
+.empty{padding:40px;text-align:center;color:var(--muted);font-size:14px}
+.loading{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);padding:20px 0}
+footer{margin-top:48px;font-size:11px;color:var(--muted);font-family:'IBM Plex Mono',monospace;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="brand">
+    <span class="mark">TRACK·A·FISHERY</span>
+    <h1>Vessel Watch</h1>
+  </div>
+  <div class="meta" id="meta">Loading…</div>
+</header>
+
+<div class="tabs">
+  <div class="tab active" data-panel="fisheries">Fisheries</div>
+  <div class="tab" data-panel="changelog">Changelog</div>
+</div>
+
+<section class="panel active" id="panel-fisheries">
+  <div class="loading">Loading fisheries…</div>
+</section>
+<section class="panel" id="panel-changelog">
+  <div class="loading">Loading changelog…</div>
+</section>
+
+<footer>
+  <span>Data updated monthly via manual PDF upload. Verify changes against source PDFs before acting.</span>
+  <a href="upload.html" style="color:var(--muted);text-decoration:none;font-size:11px">Upload ↗</a>
+</footer>
+
+</div>
+<script>
+const $ = (s,el=document) => el.querySelector(s);
+const $$ = (s,el=document) => [...el.querySelectorAll(s)];
+
+document.addEventListener('click', e => {
+  const t = e.target.closest('.tab');
+  if (!t) return;
+  $$('.tab').forEach(tab => tab.classList.toggle('active', tab===t));
+  $$('.panel').forEach(p => p.classList.toggle('active', p.id==='panel-'+t.dataset.panel));
+});
+
+function fmt(iso) {
+  if (!iso) return '—';
+  return new Date(iso).toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});
+}
+
+async function load(path) {
+  const r = await fetch(path+'?_='+Date.now());
+  if (!r.ok) throw new Error(path+' '+r.status);
+  return r.json();
+}
+
+async function loadFishery(slug) {
+  const r = await fetch(`data/${slug}.json?_=`+Date.now());
+  if (!r.ok) return null;
+  return r.json();
+}
+
+async function init() {
+  let summary, changelog;
+  try {
+    [summary, changelog] = await Promise.all([load('data/summary.json'), load('data/changelog.json')]);
+  } catch {
+    $('#meta').textContent = 'No data yet';
+    $('#panel-fisheries').innerHTML = '<div class="empty">No data uploaded yet. The upload tool will appear here once the first PDFs are processed.</div>';
+    $('#panel-changelog').innerHTML = '';
+    return;
+  }
+
+  const total = summary.fisheries.length;
+  const withData = summary.fisheries.filter(f=>f.has_baseline).length;
+  const withCurrent = summary.fisheries.filter(f=>f.has_current).length;
+  $('#meta').innerHTML = `<strong>${total}</strong> fisheries &middot; <strong>${withData}</strong> with baseline &middot; <strong>${withCurrent}</strong> updated &middot; last upload <strong>${fmt(summary.last_updated)}</strong>`;
+
+  const recentChanged = new Set(changelog.slice(0,100).map(c=>c.slug));
+
+  const fp = $('#panel-fisheries');
+  fp.innerHTML = '';
+  [...summary.fisheries].sort((a,b)=>a.name.localeCompare(b.name)).forEach(f => {
+    const hasChanges = recentChanged.has(f.slug) && (f.added_count||f.removed_count);
+    const el = document.createElement('details');
+    el.className = 'fishery' + (hasChanges?' has-changes':'') + (!f.has_baseline?' no-data':'');
+    const label = f.has_current ? `${f.vessel_count} vessels` : f.has_baseline ? `${f.vessel_count} vessels (baseline only)` : 'no data';
+    el.innerHTML = `
+      <summary>
+        <span class="fname">${f.name}</span>
+        <span class="fmeta">
+          ${f.added_count ? `<span class="pill added">+${f.added_count}</span>` : ''}
+          ${f.removed_count ? `<span class="pill removed">−${f.removed_count}</span>` : ''}
+          <span>${label}</span>
+          ${f.has_current ? `<span style="color:var(--chart-line)">|</span><span>${f.current_month||''}</span>` : ''}
+        </span>
+      </summary>
+      <div class="fishery-body" data-slug="${f.slug}" data-loaded="0"></div>
+    `;
+    el.addEventListener('toggle', async () => {
+      if (!el.open) return;
+      const body = $('[data-slug]', el);
+      if (body.dataset.loaded === '1') return;
+      body.dataset.loaded = '1';
+      body.innerHTML = '<div style="font-size:12px;color:var(--muted);font-family:IBM Plex Mono,monospace">Loading…</div>';
+      const data = await loadFishery(f.slug);
+      if (!data) { body.innerHTML = '<div style="font-size:13px;color:var(--muted)">No data available.</div>'; return; }
+      body.innerHTML = renderFisheryBody(data);
+    });
+    fp.appendChild(el);
+  });
+
+  const cp = $('#panel-changelog');
+  cp.innerHTML = '';
+  if (!changelog.length) {
+    cp.innerHTML = '<div class="empty">No changes recorded yet. Changes appear here from the second monthly upload onward.</div>';
+    return;
+  }
+  changelog.forEach(entry => {
+    const el = document.createElement('div');
+    el.className = 'log-entry';
+    const fmtV = v => `${v.name}${v.code?' — '+v.code:''}`;
+    el.innerHTML = `
+      <div class="log-date">${fmt(entry.date)}</div>
+      <div class="log-fishery">${entry.fishery}</div>
+      ${entry.added?.length ? `<div class="diff-head add">Added (${entry.added.length})</div>${entry.added.map(v=>`<div class="diff-row add">+ ${fmtV(v)}</div>`).join('')}` : ''}
+      ${entry.removed?.length ? `<div class="diff-head rem">Removed (${entry.removed.length})</div>${entry.removed.map(v=>`<div class="diff-row rem">− ${fmtV(v)}</div>`).join('')}` : ''}
+    `;
+    cp.appendChild(el);
+  });
+}
+
+function renderFisheryBody(data) {
+  let html = '';
+  const cur = data.current;
+  const base = data.baseline;
+  if (!base) return '<div style="font-size:13px;color:var(--muted)">No baseline uploaded yet.</div>';
+  if (!cur) {
+    html += `<div class="section-head all">Baseline — ${base.month_label} — ${base.vessels.length} vessels</div>`;
+    html += `<div class="vessel-grid">${base.vessels.map(v=>`<div class="vessel-row"><span class="v-name">${v.name}</span><span class="v-code">${v.code||''}</span></div>`).join('')}</div>`;
+    return html;
+  }
+  const fmtV = v => `<div class="vessel-row ${''}" style=""><span class="v-name">${v.name}</span><span class="v-code">${v.code||''}</span></div>`;
+  if (cur.added?.length) {
+    html += `<div class="section-head add">Added this month (${cur.added.length})</div>`;
+    html += cur.added.map(v=>`<div class="vessel-row add-row"><span class="v-name">${v.name}</span><span class="v-code">${v.code||''}</span></div>`).join('');
+  }
+  if (cur.removed?.length) {
+    html += `<div class="section-head rem">Removed this month (${cur.removed.length})</div>`;
+    html += cur.removed.map(v=>`<div class="vessel-row rem-row"><span class="v-name">${v.name}</span><span class="v-code">${v.code||''}</span></div>`).join('');
+  }
+  if (!cur.added?.length && !cur.removed?.length) {
+    html += `<div style="font-size:13px;color:var(--added);padding:12px 0">✓ No changes from baseline</div>`;
+  }
+  html += `<div class="section-head all">All current vessels — ${cur.vessels.length}</div>`;
+  html += `<div class="vessel-grid">${cur.vessels.map(v=>`<div class="vessel-row"><span class="v-name">${v.name}</span><span class="v-code">${v.code||''}</span></div>`).join('')}</div>`;
+  return html;
+}
+
+init();
+</script>
+</body>
+</html>
