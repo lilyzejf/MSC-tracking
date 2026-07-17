@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-17T13:15:48.179Z",
+  "last_updated": "2026-07-17T13:16:42.544Z",
   "fisheries": [
     {
       "name": "American Samoa EEZ tuna longline fishery",
@@ -147,11 +147,11 @@
     {
       "name": "Pingtairong Pacific tuna deep set longline fishery",
       "slug": "pingtairong-pacific",
-      "has_baseline": false,
-      "baseline_month": null,
+      "has_baseline": true,
+      "baseline_month": "May 2025",
       "has_current": false,
       "current_month": null,
-      "vessel_count": 0,
+      "vessel_count": 47,
       "added_count": 0,
       "removed_count": 0
     },
