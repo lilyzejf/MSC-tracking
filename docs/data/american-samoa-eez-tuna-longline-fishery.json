@@ -64,5 +64,69 @@
     "month_label": "May 2025",
     "pdf_name": "05_05_26 (1).pdf"
   },
-  "current": null
+  "current": {
+    "vessels": [
+      {
+        "name": "Adelita",
+        "code": "1102667"
+      },
+      {
+        "name": "America",
+        "code": "1053984"
+      },
+      {
+        "name": "Fetuolemoana",
+        "code": "1107783"
+      },
+      {
+        "name": "Lady Christinna",
+        "code": "1119771"
+      },
+      {
+        "name": "Manaolemoana",
+        "code": "992500"
+      },
+      {
+        "name": "Princess Karlinna",
+        "code": "1119722"
+      },
+      {
+        "name": "Princess Yasminn",
+        "code": "507268"
+      },
+      {
+        "name": "Rival",
+        "code": "631410"
+      },
+      {
+        "name": "Samoan Boy",
+        "code": "604584"
+      },
+      {
+        "name": "Sivaimoana",
+        "code": "1107782"
+      },
+      {
+        "name": "Survivor",
+        "code": "1051462"
+      },
+      {
+        "name": "Taimane",
+        "code": "1108206"
+      },
+      {
+        "name": "Tifaimoana",
+        "code": "611929"
+      },
+      {
+        "name": "Tracey C.",
+        "code": "1102666"
+      }
+    ],
+    "date": "2026-07-17T13:33:05.608Z",
+    "month_label": "July 2026",
+    "pdf_name": "MSC-F-30004 v2.2.pdf",
+    "added": [],
+    "removed": []
+  }
 }
