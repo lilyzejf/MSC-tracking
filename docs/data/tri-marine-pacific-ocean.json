@@ -284,5 +284,340 @@
     "month_label": "May 2025",
     "pdf_name": "05_05_26 (1).pdf"
   },
-  "current": null
+  "current": {
+    "vessels": [
+      {
+        "name": "Chien Yuan Ming",
+        "code": "8564715"
+      },
+      {
+        "name": "Ching Cheng Fu 66",
+        "code": "8795479"
+      },
+      {
+        "name": "Chuan Fa Shian 88",
+        "code": "8792946"
+      },
+      {
+        "name": "Chuan Hsiang 368",
+        "code": "8777374"
+      },
+      {
+        "name": "Chuan Hsiang 866",
+        "code": "8542262"
+      },
+      {
+        "name": "Chuan Hsin 128",
+        "code": "8777386"
+      },
+      {
+        "name": "Chuan Shyang 22",
+        "code": "8534904"
+      },
+      {
+        "name": "Chuan Shyang 98",
+        "code": "8777398"
+      },
+      {
+        "name": "Fong Chun 136",
+        "code": "8628640"
+      },
+      {
+        "name": "Fong Chun 166",
+        "code": "8749494"
+      },
+      {
+        "name": "Fong Chun 36",
+        "code": "8947319"
+      },
+      {
+        "name": "Fong Chun 66",
+        "code": "8628652"
+      },
+      {
+        "name": "Fu Long Shun",
+        "code": "8778421"
+      },
+      {
+        "name": "Hou Chun 1",
+        "code": "8628444"
+      },
+      {
+        "name": "Hsiang Hsin 6",
+        "code": "8947400"
+      },
+      {
+        "name": "Hsieh Ta",
+        "code": "8961494"
+      },
+      {
+        "name": "Jin Chin Fu 68",
+        "code": "8790821"
+      },
+      {
+        "name": "Jin Fong Shuun",
+        "code": "8651128"
+      },
+      {
+        "name": "Jin Hsiang Fa",
+        "code": "8777740"
+      },
+      {
+        "name": "Jin Hsiang Wang",
+        "code": "9772644"
+      },
+      {
+        "name": "Jin Hung Cheng",
+        "code": "8550635"
+      },
+      {
+        "name": "Jin Hwei Shiang",
+        "code": "8651130"
+      },
+      {
+        "name": "Jin Jinn Yi 16",
+        "code": "8523955"
+      },
+      {
+        "name": "Jin Jinn Yi 168",
+        "code": "8661836"
+      },
+      {
+        "name": "Jin Jinn Yi 26",
+        "code": "8792958"
+      },
+      {
+        "name": "Jin Jinn Yi 268",
+        "code": "8792960"
+      },
+      {
+        "name": "Jin Jinn Yi 36",
+        "code": "8749080"
+      },
+      {
+        "name": "Jin Jinn Yi 368",
+        "code": "9907146"
+      },
+      {
+        "name": "Jin Jinn Yi 626",
+        "code": "8629266"
+      },
+      {
+        "name": "Jin Jinn Yi 66",
+        "code": "8749092"
+      },
+      {
+        "name": "Jin Jinn Yi 668",
+        "code": "8524284"
+      },
+      {
+        "name": "Jin Jinn Yi 818",
+        "code": "1026116"
+      },
+      {
+        "name": "Jin Jinn Yi 828",
+        "code": "9639000"
+      },
+      {
+        "name": "Jin Shun 88",
+        "code": "8795261"
+      },
+      {
+        "name": "Jin Tsai Fu 888",
+        "code": "8649498"
+      },
+      {
+        "name": "Kai Sheng",
+        "code": "8777776"
+      },
+      {
+        "name": "Li Cheng 28",
+        "code": "8782915"
+      },
+      {
+        "name": "Li Hung 666",
+        "code": "8792659"
+      },
+      {
+        "name": "Li Hung 868",
+        "code": "8782927"
+      },
+      {
+        "name": "Maan Yih Feng 16",
+        "code": "8783725"
+      },
+      {
+        "name": "Maan Yih Feng 166",
+        "code": "8526086"
+      },
+      {
+        "name": "Maan Yih Feng 26",
+        "code": "8791239"
+      },
+      {
+        "name": "Maan Yih Feng 266",
+        "code": "8777788"
+      },
+      {
+        "name": "Man Fu Long",
+        "code": "8778445"
+      },
+      {
+        "name": "Man Yi Feng 66",
+        "code": "8791241"
+      },
+      {
+        "name": "Man Ying Cai 6",
+        "code": "8547212"
+      },
+      {
+        "name": "Nian Sheng 168",
+        "code": "8795352"
+      },
+      {
+        "name": "Nian Sheng 3",
+        "code": "8795534"
+      },
+      {
+        "name": "Shin Chun 8",
+        "code": "8652419"
+      },
+      {
+        "name": "Shin Jaan Shin",
+        "code": "8790819"
+      },
+      {
+        "name": "Shin Jaan Shin 7",
+        "code": "8792984"
+      },
+      {
+        "name": "Shin Jyi Wang 6",
+        "code": "8792685"
+      },
+      {
+        "name": "Sing Man Yi",
+        "code": "8777843"
+      },
+      {
+        "name": "Sing Man Yi 188",
+        "code": "9887138"
+      },
+      {
+        "name": "Sing Man Yi 3",
+        "code": "8777829"
+      },
+      {
+        "name": "Sing Man Yi 6",
+        "code": "8777831"
+      },
+      {
+        "name": "Yi Man",
+        "code": "8777879"
+      },
+      {
+        "name": "Yi Man 3",
+        "code": "8778380"
+      },
+      {
+        "name": "Yi Man 8",
+        "code": "8788878"
+      },
+      {
+        "name": "Yi Siang 1",
+        "code": "8525795"
+      },
+      {
+        "name": "Yi Siang 128",
+        "code": "9783021"
+      },
+      {
+        "name": "Yi Siang 168",
+        "code": "1015002"
+      },
+      {
+        "name": "Yi Siang 6",
+        "code": "8525812"
+      },
+      {
+        "name": "Yi Siang 8",
+        "code": "8525824"
+      },
+      {
+        "name": "Yu Feng 128",
+        "code": "8526098"
+      },
+      {
+        "name": "Yu Feng 513",
+        "code": "8649034"
+      },
+      {
+        "name": "Yu Long Fa 168",
+        "code": "8526074"
+      },
+      {
+        "name": "Yu Long Fa 22",
+        "code": "8526050"
+      },
+      {
+        "name": "Yu Long Fa 36",
+        "code": "8526062"
+      }
+    ],
+    "date": "2026-07-17T14:50:12.208Z",
+    "month_label": "July 2026",
+    "pdf_name": "LRQA MSC Vessel List - Tri Marine PO LL June 26.pdf",
+    "added": [
+      {
+        "name": "Jin Jinn Yi 268",
+        "code": "8792960"
+      },
+      {
+        "name": "Jin Jinn Yi 626",
+        "code": "8629266"
+      },
+      {
+        "name": "Jin Jinn Yi 668",
+        "code": "8524284"
+      },
+      {
+        "name": "Jin Jinn Yi 828",
+        "code": "9639000"
+      },
+      {
+        "name": "Yi Man 3",
+        "code": "8778380"
+      },
+      {
+        "name": "Yi Man 8",
+        "code": "8788878"
+      }
+    ],
+    "removed": [
+      {
+        "name": "Jin Jinn Yi No. 668",
+        "code": "8524284"
+      },
+      {
+        "name": "Jin Jinn Yi No.268",
+        "code": "8792960"
+      },
+      {
+        "name": "Jin Jinn Yi No.626",
+        "code": "8629266"
+      },
+      {
+        "name": "Jin Jinn Yi No.828",
+        "code": "9639000"
+      },
+      {
+        "name": "Yi Man No.3",
+        "code": "8778380"
+      },
+      {
+        "name": "Yi Man No.8",
+        "code": "8788878"
+      }
+    ]
+  },
+  "status": "active"
 }
