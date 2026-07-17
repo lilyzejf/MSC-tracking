@@ -1,0 +1,258 @@
+{
+  "last_updated": "2026-07-17T11:31:36.297Z",
+  "fisheries": [
+    {
+      "name": "American Samoa EEZ tuna longline fishery",
+      "slug": "american-samoa-eez-tuna-longline-fishery",
+      "has_baseline": true,
+      "baseline_month": "May 2025",
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 14,
+      "added_count": 0,
+      "removed_count": 0
+    },
+    {
+      "name": "Australia Eastern Tuna and Billfish Fishery",
+      "slug": "australia-eastern-tuna-and-billfish-fishery",
+      "has_baseline": false,
+      "baseline_month": null,
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 0,
+      "added_count": 0,
+      "removed_count": 0
+    },
+    {
+      "name": "Australia southern bluefin tuna longline and minor line fishery",
+      "slug": "australia-southern-bluefin-tuna-longline",
+      "has_baseline": false,
+      "baseline_month": null,
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 0,
+      "added_count": 0,
+      "removed_count": 0
+    },
+    {
+      "name": "Consolidated Atlantic Ocean albacore tuna longline fishery",
+      "slug": "consolidated-atlantic-ocean-albacore",
+      "has_baseline": false,
+      "baseline_month": null,
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 0,
+      "added_count": 0,
+      "removed_count": 0
+    },
+    {
+      "name": "Consolidated Indian Ocean longline albacore tuna fishery",
+      "slug": "consolidated-indian-ocean-albacore",
+      "has_baseline": false,
+      "baseline_month": null,
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 0,
+      "added_count": 0,
+      "removed_count": 0
+    },
+    {
+      "name": "Consolidated Pacific Ocean albacore, bigeye, and yellowfin tuna fishery",
+      "slug": "consolidated-pacific-ocean-albacore",
+      "has_baseline": false,
+      "baseline_month": null,
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 0,
+      "added_count": 0,
+      "removed_count": 0
+    },
+    {
+      "name": "Dae Hae Pacific Yellowfin, Bigeye, and Albacore Longline",
+      "slug": "dae-hae-pacific-yellowfin",
+      "has_baseline": false,
+      "baseline_month": null,
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 0,
+      "added_count": 0,
+      "removed_count": 0
+    },
+    {
+      "name": "DFC/HEC Pacific longline bigeye, yellowfin and albacore tuna fishery",
+      "slug": "dfc-hec-pacific-longline",
+      "has_baseline": false,
+      "baseline_month": null,
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 0,
+      "added_count": 0,
+      "removed_count": 0
+    },
+    {
+      "name": "Fiji Albacore, Yellowfin and Bigeye Tuna longline",
+      "slug": "fiji-albacore-yellowfin-and-bigeye-tuna-longline",
+      "has_baseline": false,
+      "baseline_month": null,
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 0,
+      "added_count": 0,
+      "removed_count": 0
+    },
+    {
+      "name": "French Polynesia albacore, yellowfin and swordfish longline fishery",
+      "slug": "french-polynesia-albacore",
+      "has_baseline": false,
+      "baseline_month": null,
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 0,
+      "added_count": 0,
+      "removed_count": 0
+    },
+    {
+      "name": "Fukuichi WCPO purse seine and longline yellowfin, skipjack, albacore and bigeye tuna fishery",
+      "slug": "fukuichi-wcpo",
+      "has_baseline": false,
+      "baseline_month": null,
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 0,
+      "added_count": 0,
+      "removed_count": 0
+    },
+    {
+      "name": "Hawaii longline swordfish, bigeye and yellowfin tuna fishery",
+      "slug": "hawaii-longline-swordfish",
+      "has_baseline": false,
+      "baseline_month": null,
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 0,
+      "added_count": 0,
+      "removed_count": 0
+    },
+    {
+      "name": "Owase Bussan Co. Ltd. Longline Fishery for North Pacific Albacore",
+      "slug": "owase-bussan",
+      "has_baseline": false,
+      "baseline_month": null,
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 0,
+      "added_count": 0,
+      "removed_count": 0
+    },
+    {
+      "name": "Pingtairong Pacific tuna deep set longline fishery",
+      "slug": "pingtairong-pacific",
+      "has_baseline": false,
+      "baseline_month": null,
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 0,
+      "added_count": 0,
+      "removed_count": 0
+    },
+    {
+      "name": "SATHOAN French Mediterranean Bluefin tuna artisanal longline and handline fishery",
+      "slug": "sathoan-french-mediterranean",
+      "has_baseline": false,
+      "baseline_month": null,
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 0,
+      "added_count": 0,
+      "removed_count": 0
+    },
+    {
+      "name": "Silla WCPO longline tuna fishery",
+      "slug": "silla-wcpo-longline",
+      "has_baseline": false,
+      "baseline_month": null,
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 0,
+      "added_count": 0,
+      "removed_count": 0
+    },
+    {
+      "name": "SZLC CSFC & FMLC FSM EEZ Longline Yellowfin, Bigeye and Albacore Tuna",
+      "slug": "szlc-csfc-fmlc-fsm-eez",
+      "has_baseline": false,
+      "baseline_month": null,
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 0,
+      "added_count": 0,
+      "removed_count": 0
+    },
+    {
+      "name": "SZLC, CSFC & FMLC Cook Islands EEZ albacore, yellowfin and bigeye longline",
+      "slug": "szlc-csfc-cook-islands",
+      "has_baseline": false,
+      "baseline_month": null,
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 0,
+      "added_count": 0,
+      "removed_count": 0
+    },
+    {
+      "name": "SZLC, CSFC, FMLC & MIFV RMI EEZ longline yellowfin, bigeye and albacore tuna",
+      "slug": "szlc-csfc-fmlc-mifv-rmi",
+      "has_baseline": false,
+      "baseline_month": null,
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 0,
+      "added_count": 0,
+      "removed_count": 0
+    },
+    {
+      "name": "Tri Marine Atlantic Albacore longline fishery",
+      "slug": "tri-marine-atlantic-albacore",
+      "has_baseline": false,
+      "baseline_month": null,
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 0,
+      "added_count": 0,
+      "removed_count": 0
+    },
+    {
+      "name": "Tri Marine Pacific Ocean longline tuna fishery",
+      "slug": "tri-marine-pacific-ocean",
+      "has_baseline": false,
+      "baseline_month": null,
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 0,
+      "added_count": 0,
+      "removed_count": 0
+    },
+    {
+      "name": "Tuna Alliance Atlantic albacore longline fishery",
+      "slug": "tuna-alliance-atlantic",
+      "has_baseline": false,
+      "baseline_month": null,
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 0,
+      "added_count": 0,
+      "removed_count": 0
+    },
+    {
+      "name": "Usufuku Honten Northeast Atlantic longline bluefin tuna fishery",
+      "slug": "usufuku-honten",
+      "has_baseline": false,
+      "baseline_month": null,
+      "has_current": false,
+      "current_month": null,
+      "vessel_count": 0,
+      "added_count": 0,
+      "removed_count": 0
+    }
+  ]
+}
