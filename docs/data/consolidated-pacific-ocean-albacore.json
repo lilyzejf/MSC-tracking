@@ -20,5 +20,51 @@
     "month_label": "May 2025",
     "pdf_name": "05_05_26 (1).pdf"
   },
-  "current": null
+  "current": {
+    "vessels": [
+      {
+        "name": "TUNA PEAK NO.6",
+        "code": "9211092"
+      },
+      {
+        "name": "TUNA PEAK NO.66",
+        "code": "8977625"
+      },
+      {
+        "name": "Tunago 51",
+        "code": "9230608"
+      },
+      {
+        "name": "Tunago 52",
+        "code": "9230610"
+      },
+      {
+        "name": "YI SHUN NO.102",
+        "code": "8947462"
+      }
+    ],
+    "date": "2026-07-17T13:53:23.417Z",
+    "month_label": "July 2026",
+    "pdf_name": "FCF CO., LTD._MSC Fisheries_MSC-F-31626.pdf",
+    "added": [
+      {
+        "name": "TUNA PEAK NO.6",
+        "code": "9211092"
+      },
+      {
+        "name": "TUNA PEAK NO.66",
+        "code": "8977625"
+      },
+      {
+        "name": "YI SHUN NO.102",
+        "code": "8947462"
+      }
+    ],
+    "removed": [
+      {
+        "name": "Tunago 62",
+        "code": "9260225"
+      }
+    ]
+  }
 }
