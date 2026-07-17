@@ -43,9 +43,14 @@ button{font-family:'Inter',sans-serif;font-size:13px;cursor:pointer;border:none}
 .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;background:var(--chart-line)}
 .dot.baseline{background:#f59e0b}
 .dot.current{background:var(--added)}
+.dot.suspended{background:#e65100}
+.dot.ended{background:#9e9e9e}
 #detail{background:var(--paper);border:1px solid var(--chart-line);padding:24px;min-height:400px}
 .fishery-title{font-size:16px;font-weight:600;margin-bottom:4px}
 .fishery-sub{font-size:13px;color:var(--muted);margin-bottom:20px}
+.status-row{margin-bottom:20px}
+.status-label{font-size:11px;color:var(--muted);display:block;margin-bottom:6px;font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.06em}
+.status-select{padding:8px 12px;border:1px solid var(--chart-line);background:var(--paper);font-family:'Inter',sans-serif;font-size:13px;color:var(--ink);width:280px;border-radius:2px}
 .drop-zone{border:2px dashed var(--chart-line);border-radius:2px;padding:40px 24px;text-align:center;cursor:pointer;transition:all .15s;background:#fafbfc}
 .drop-zone:hover,.drop-zone.over{border-color:var(--teal);background:#f0f7f7}
 .drop-zone input{display:none}
@@ -101,14 +106,13 @@ button{font-family:'Inter',sans-serif;font-size:13px;cursor:pointer;border:none}
   <div class="token-row" style="margin-bottom:20px">
     <input type="password" id="token-input" placeholder="Paste GitHub token here…">
   </div>
-  <p><strong>2. Google Gemini API key</strong> — lets the tool intelligently read vessel names from any PDF format.</p>
+  <p><strong>2. Anthropic API key</strong> — lets the tool intelligently read vessel names from any PDF format.</p>
   <ol>
-    <li>Go to <a href="https://aistudio.google.com/apikey" target="_blank">aistudio.google.com/apikey</a></li>
-    <li>Sign in with your Google account</li>
-    <li>Click "Create API key", copy it</li>
+    <li>Go to <a href="https://console.anthropic.com/settings/keys" target="_blank">console.anthropic.com/settings/keys</a></li>
+    <li>Click "Create Key", copy it (starts with sk-ant-)</li>
   </ol>
   <div class="token-row" style="margin-bottom:20px">
-<input type="password" id="gemini-input" placeholder="Paste Anthropic API key here (starts with sk-ant-)…">
+    <input type="password" id="gemini-input" placeholder="Paste Anthropic API key here (sk-ant-…)">
   </div>
   <button class="btn" onclick="saveToken()">Connect</button>
   <p style="margin-top:12px;font-size:12px;color:var(--muted)">Both keys are stored only in this browser and never committed to GitHub.</p>
@@ -117,9 +121,11 @@ button{font-family:'Inter',sans-serif;font-size:13px;cursor:pointer;border:none}
 <div id="main">
   <div>
     <div class="panel-label">Fisheries</div>
-    <div style="font-size:11px;color:var(--muted);margin-bottom:10px;display:flex;gap:12px;font-family:'IBM Plex Mono',monospace">
-      <span><span class="dot baseline" style="display:inline-block;vertical-align:middle;margin-right:4px"></span>baseline saved</span>
-      <span><span class="dot current" style="display:inline-block;vertical-align:middle;margin-right:4px"></span>up to date</span>
+    <div style="font-size:11px;color:var(--muted);margin-bottom:10px;display:flex;gap:12px;font-family:'IBM Plex Mono',monospace;flex-wrap:wrap">
+      <span><span class="dot baseline" style="display:inline-block;vertical-align:middle;margin-right:4px"></span>baseline</span>
+      <span><span class="dot current" style="display:inline-block;vertical-align:middle;margin-right:4px"></span>updated</span>
+      <span><span class="dot suspended" style="display:inline-block;vertical-align:middle;margin-right:4px"></span>suspended</span>
+      <span><span class="dot ended" style="display:inline-block;vertical-align:middle;margin-right:4px"></span>ended</span>
     </div>
     <div id="fishery-list"></div>
   </div>
@@ -161,31 +167,35 @@ function getToken(){return localStorage.getItem('msc_gh_token');}
 function getGeminiKey(){return localStorage.getItem('msc_gemini_key');}
 
 async function extractVessels(file){
-  const geminiKey=getGeminiKey();
-  if(!geminiKey) throw new Error('No Gemini API key found. Please reconnect.');
+  const apiKey=getGeminiKey();
+  if(!apiKey) throw new Error('No API key found. Please reconnect.');
   const base64=await new Promise((resolve,reject)=>{
     const reader=new FileReader();
     reader.onload=()=>resolve(reader.result.split(',')[1]);
     reader.onerror=reject;
     reader.readAsDataURL(file);
   });
-  const response=await fetch(`https://api.anthropic.com/v1/messages`,{
-method:'POST',
-    headers:{'Content-Type':'application/json','x-api-key':geminiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+  const response=await fetch('https://api.anthropic.com/v1/messages',{
+    method:'POST',
+    headers:{
+      'Content-Type':'application/json',
+      'x-api-key':apiKey,
+      'anthropic-version':'2023-06-01',
+      'anthropic-dangerous-direct-browser-access':'true'
+    },
     body:JSON.stringify({
       model:'claude-sonnet-4-6',
       max_tokens:16000,
       messages:[{role:'user',content:[
         {type:'document',source:{type:'base64',media_type:'application/pdf',data:base64}},
-        {type:'text',text:`Extract ONLY the vessel/boat names and their registration or identification codes from this fishing vessel list document. Return a JSON array of objects with exactly two fields: "name" (the vessel name) and "code" (the registration/ID code, or null). Do NOT include company names, addresses, legal text, certifier names, column headers, or fishery names. Return ONLY a valid JSON array, nothing else.`}
+        {type:'text',text:`Extract ONLY the vessel/boat names and their registration or identification codes from this fishing vessel list document. Return a JSON array of objects with exactly two fields: "name" (the vessel name only) and "code" (the registration/ID code, or null). Do NOT include company names, permit holder names, addresses, legal text, certifier names, column headers, fishery names, or any other information. Return ONLY a valid JSON array, nothing else.`}
       ]}]
     })
   });
-  if(!response.ok){const err=await response.json().catch(()=>({}));throw new Error(err.error?.message||'Gemini API error: '+response.status);}
-const data=await response.json();
+  if(!response.ok){const err=await response.json().catch(()=>({}));throw new Error(err.error?.message||'API error: '+response.status);}
+  const data=await response.json();
   if(data.error) throw new Error(data.error.message);
   const text=data.content[0].text.trim();
-  // Find the JSON array anywhere in the response, even if surrounded by text
   const arrayMatch=text.match(/\[[\s\S]*\]/);
   if(!arrayMatch) throw new Error('Could not find vessel list in response. Try again.');
   return JSON.parse(arrayMatch[0]).sort((a,b)=>a.name.localeCompare(b.name));
@@ -249,10 +259,15 @@ function renderFisheryList(){
   el.innerHTML='';
   FISHERIES.forEach(f=>{
     const data=fisheryStatus[f.slug];
+    const st=data?.status||'active';
     const btn=document.createElement('button');
     btn.className='fishery-item'+(selectedFishery?.slug===f.slug?' active':'');
-    const dotClass=data?.current?'current':data?.baseline?'baseline':'';
-    btn.innerHTML=`<span class="dot ${dotClass}"></span><span style="font-size:12px">${f.name}</span>`;
+    let dotClass='';
+    if(st==='suspended')dotClass='suspended';
+    else if(st==='no_longer_in_program')dotClass='ended';
+    else if(data?.current)dotClass='current';
+    else if(data?.baseline)dotClass='baseline';
+    btn.innerHTML='<span class="dot '+dotClass+'"></span><span style="font-size:12px">'+f.name+'</span>';
     btn.onclick=()=>selectFishery(f);
     el.appendChild(btn);
   });
@@ -260,130 +275,189 @@ function renderFisheryList(){
 function selectFishery(f){selectedFishery=f;pendingVessels=null;renderFisheryList();renderDetail();}
 
 function renderDetail(){
-  const f=selectedFishery,now=new Date().toISOString();
-  const status=document.getElementById('status-select')?.value||'active';
-  const hasBaseline=!!data?.baseline,hasCurrent=!!data?.current;
+  const f=selectedFishery;
+  const data=fisheryStatus[f.slug];
+  const hasBaseline=!!(data&&data.baseline);
+  const hasCurrent=!!(data&&data.current);
   const el=document.getElementById('detail');
-  let sub=hasCurrent?`Baseline: ${monthLabel(data.baseline.date)} · Last updated: ${monthLabel(data.current.date)} · ${data.current.vessels.length} vessels`:hasBaseline?`Baseline: ${monthLabel(data.baseline.date)} · ${data.baseline.vessels.length} vessels · No monthly update yet`:'No data uploaded yet';
- const currentStatus = data?.status || 'active';
-  el.innerHTML = `
-    <div class="fishery-title">${f.name}</div>
-    <div class="fishery-sub">${sub}</div>
-    <div style="margin-bottom:20px">
-      <label style="font-size:11px;color:var(--muted);display:block;margin-bottom:6px;font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.06em">Fishery Status</label>
-      <select id="status-select" style="padding:8px 12px;border:1px solid var(--chart-line);background:var(--paper);font-family:'Inter',sans-serif;font-size:13px;color:var(--ink);width:280px;border-radius:2px">
-        <option value="active" ${currentStatus==='active'?'selected':''}>Active</option>
-        <option value="suspended" ${currentStatus==='suspended'?'selected':''}>Suspended</option>
-        <option value="no_longer_in_program" ${currentStatus==='no_longer_in_program'?'selected':''}>No longer in program</option>
-      </select>
-    </div>
-    <div class="drop-zone"document.getElementById('pdf-file').click()">
-      <input type="file" id="pdf-file" accept=".pdf" onchange="handleFile(this.files[0])">
-      <div class="drop-icon">📄</div>
-      <div class="drop-title">${hasBaseline?"Drop this month's PDF here":"Drop May's PDF here to set baseline"}</div>
-      <div class="drop-sub">${hasBaseline?'Will compare against the saved baseline':'This becomes the control — future uploads compare against it'}</div>
-    </div>
-    <div class="progress" id="progress-wrap"><div class="progress-fill" id="progress-fill"></div></div>
-    <div id="result-area"></div>`;
+  let sub='No data uploaded yet';
+  if(hasCurrent) sub='Baseline: '+monthLabel(data.baseline.date)+' · Last updated: '+monthLabel(data.current.date)+' · '+data.current.vessels.length+' vessels';
+  else if(hasBaseline) sub='Baseline: '+monthLabel(data.baseline.date)+' · '+data.baseline.vessels.length+' vessels · No monthly update yet';
+  const currentStatus=data&&data.status?data.status:'active';
+  const dropTitle=hasBaseline?'Drop this month\'s PDF here':'Drop May\'s PDF here to set baseline';
+  const dropSub=hasBaseline?'Will compare against the saved baseline':'This becomes the control — future uploads compare against it';
+
+  el.innerHTML='<div class="fishery-title">'+f.name+'</div>'
+    +'<div class="fishery-sub">'+sub+'</div>'
+    +'<div class="status-row">'
+    +'<label class="status-label">Fishery Status</label>'
+    +'<select id="status-select" class="status-select">'
+    +'<option value="active"'+(currentStatus==='active'?' selected':'')+'>Active</option>'
+    +'<option value="suspended"'+(currentStatus==='suspended'?' selected':'')+'>Suspended</option>'
+    +'<option value="no_longer_in_program"'+(currentStatus==='no_longer_in_program'?' selected':'')+'>No longer in program</option>'
+    +'</select>'
+    +'<button class="btn-ghost" onclick="saveStatusOnly()" style="margin-left:8px;font-size:12px">Save status</button>'
+    +'</div>'
+    +'<div class="drop-zone" id="drop-zone" onclick="document.getElementById(\'pdf-file\').click()">'
+    +'<input type="file" id="pdf-file" accept=".pdf" onchange="handleFile(this.files[0])">'
+    +'<div class="drop-icon">📄</div>'
+    +'<div class="drop-title">'+dropTitle+'</div>'
+    +'<div class="drop-sub">'+dropSub+'</div>'
+    +'</div>'
+    +'<div class="progress" id="progress-wrap"><div class="progress-fill" id="progress-fill"></div></div>'
+    +'<div id="result-area"></div>';
+
   const zone=document.getElementById('drop-zone');
-  zone.addEventListener('dragover',e=>{e.preventDefault();zone.classList.add('over');});
-  zone.addEventListener('dragleave',()=>zone.classList.remove('over'));
-  zone.addEventListener('drop',e=>{e.preventDefault();zone.classList.remove('over');const f=e.dataTransfer.files[0];if(f)handleFile(f);});
+  zone.addEventListener('dragover',function(e){e.preventDefault();zone.classList.add('over');});
+  zone.addEventListener('dragleave',function(){zone.classList.remove('over');});
+  zone.addEventListener('drop',function(e){e.preventDefault();zone.classList.remove('over');const f=e.dataTransfer.files[0];if(f)handleFile(f);});
+}
+
+async function saveStatusOnly(){
+  const f=selectedFishery;
+  if(!f) return;
+  const status=document.getElementById('status-select').value;
+  const existing=fisheryStatus[f.slug]||{name:f.name,slug:f.slug,baseline:null,current:null};
+  const updated=Object.assign({},existing,{status});
+  setStatus('Saving status…','info');
+  try{
+    await ghPut(DATA+'/'+f.slug+'.json',updated,'Update status: '+f.name);
+    fisheryStatus[f.slug]=updated;
+    renderFisheryList();
+    clearStatus();
+    setStatus('✓ Status saved.','ok');
+    await rebuildSummary();
+  }catch(e){clearStatus();setStatus('Error: '+e.message,'err');}
 }
 
 async function handleFile(file){
   if(!file||!selectedFishery)return;
-  const prog=document.getElementById('progress-wrap'),fill=document.getElementById('progress-fill'),zone=document.getElementById('drop-zone');
+  const prog=document.getElementById('progress-wrap');
+  const fill=document.getElementById('progress-fill');
+  const zone=document.getElementById('drop-zone');
   zone.style.opacity='.5';prog.style.display='block';fill.style.width='20%';
   let vessels;
   try{fill.style.width='50%';vessels=await extractVessels(file);fill.style.width='90%';}
   catch(e){prog.style.display='none';zone.style.opacity='1';setStatus('Error reading PDF: '+e.message,'err');return;}
   fill.style.width='100%';
-  setTimeout(()=>{prog.style.display='none';},400);
+  setTimeout(function(){prog.style.display='none';},400);
   zone.style.opacity='1';
   pendingVessels=vessels;
   const data=fisheryStatus[selectedFishery.slug];
-  renderResults(vessels,data?.baseline?data.baseline.vessels:null,file.name,!!data?.baseline);
+  renderResults(vessels,data&&data.baseline?data.baseline.vessels:null,file.name,hasBaseline=!!(data&&data.baseline));
 }
 
 function renderResults(vessels,baselineVessels,fileName,hasBaseline){
   const area=document.getElementById('result-area');
   if(!baselineVessels){
-    area.innerHTML=`
-      <div class="section-head unch" style="margin-top:20px">Preview — ${vessels.length} vessels extracted from ${fileName}</div>
-      <div style="max-height:300px;overflow-y:auto;margin-bottom:4px">${vessels.map(v=>`<div class="vessel-row"><span class="v-name">${v.name}</span><span class="v-code">${v.code||''}</span></div>`).join('')}</div>
-      <div class="action-row">
-        <button class="btn" onclick="publish(true,'${fileName}')">Save as baseline (May 2025)</button>
-        <button class="btn-ghost" onclick="renderDetail()">Cancel</button>
-      </div>`;
+    let html='<div class="section-head unch" style="margin-top:20px">Preview — '+vessels.length+' vessels extracted from '+fileName+'</div>';
+    html+='<div style="max-height:300px;overflow-y:auto;margin-bottom:4px">';
+    vessels.forEach(function(v){html+='<div class="vessel-row"><span class="v-name">'+v.name+'</span><span class="v-code">'+(v.code||'')+'</span></div>';});
+    html+='</div><div class="action-row">';
+    html+='<button class="btn" onclick="publish(true,\''+fileName+'\')">Save as baseline (May 2025)</button>';
+    html+='<button class="btn-ghost" onclick="renderDetail()">Cancel</button></div>';
+    area.innerHTML=html;
     return;
   }
-  const prevNames=new Set(baselineVessels.map(v=>v.name||v));
-  const currNames=new Set(vessels.map(v=>v.name));
-  const prevMap=Object.fromEntries((baselineVessels||[]).map(v=>typeof v==='string'?[v,null]:[v.name,v.code]));
-  const added=vessels.filter(v=>!prevNames.has(v.name));
-  const removed=[...prevNames].filter(n=>!currNames.has(n)).map(n=>({name:n,code:prevMap[n]}));
-  const unchanged=vessels.filter(v=>prevNames.has(v.name));
+  const prevNames=new Set(baselineVessels.map(function(v){return v.name||v;}));
+  const currNames=new Set(vessels.map(function(v){return v.name;}));
+  const prevMap={};
+  (baselineVessels||[]).forEach(function(v){if(typeof v==='string')prevMap[v]=null;else prevMap[v.name]=v.code;});
+  const added=vessels.filter(function(v){return!prevNames.has(v.name);});
+  const removed=[...prevNames].filter(function(n){return!currNames.has(n);}).map(function(n){return{name:n,code:prevMap[n]};});
+  const unchanged=vessels.filter(function(v){return prevNames.has(v.name);});
   const noChanges=added.length===0&&removed.length===0;
-  let html=`<div class="result-header" style="margin-top:20px">
-    <span class="pill total">${vessels.length} vessels total</span>
-    ${added.length?`<span class="pill added">+${added.length} added</span>`:''}
-    ${removed.length?`<span class="pill removed">−${removed.length} removed</span>`:''}
-    ${noChanges?'<span style="font-size:13px;color:var(--added)">✓ No changes since baseline</span>':''}
-  </div>`;
-  if(added.length){html+=`<div class="section-head add">Added (${added.length})</div><div style="max-height:200px;overflow-y:auto">${added.map(v=>`<div class="vessel-row add-row"><span class="v-name">${v.name}</span><span class="v-code">${v.code||''}</span></div>`).join('')}</div>`;}
-  if(removed.length){html+=`<div class="section-head rem">Removed (${removed.length})</div><div style="max-height:200px;overflow-y:auto">${removed.map(v=>`<div class="vessel-row rem-row"><span class="v-name">${v.name}</span><span class="v-code">${v.code||''}</span></div>`).join('')}</div>`;}
-  html+=`<div class="section-head unch">Unchanged (${unchanged.length})</div><div style="max-height:200px;overflow-y:auto">${unchanged.map(v=>`<div class="vessel-row"><span class="v-name">${v.name}</span><span class="v-code">${v.code||''}</span></div>`).join('')}</div>`;
-  html+=`<div class="action-row"><button class="btn" onclick="publish(false,'${fileName}')">Publish to site</button><button class="btn-ghost" onclick="renderDetail()">Cancel</button></div>`;
+  let html='<div class="result-header" style="margin-top:20px">';
+  html+='<span class="pill total">'+vessels.length+' vessels total</span>';
+  if(added.length)html+='<span class="pill added">+'+added.length+' added</span>';
+  if(removed.length)html+='<span class="pill removed">−'+removed.length+' removed</span>';
+  if(noChanges)html+='<span style="font-size:13px;color:var(--added)">✓ No changes since baseline</span>';
+  html+='</div>';
+  if(added.length){
+    html+='<div class="section-head add">Added ('+added.length+')</div>';
+    html+='<div style="max-height:200px;overflow-y:auto">';
+    added.forEach(function(v){html+='<div class="vessel-row add-row"><span class="v-name">'+v.name+'</span><span class="v-code">'+(v.code||'')+'</span></div>';});
+    html+='</div>';
+  }
+  if(removed.length){
+    html+='<div class="section-head rem">Removed ('+removed.length+')</div>';
+    html+='<div style="max-height:200px;overflow-y:auto">';
+    removed.forEach(function(v){html+='<div class="vessel-row rem-row"><span class="v-name">'+v.name+'</span><span class="v-code">'+(v.code||'')+'</span></div>';});
+    html+='</div>';
+  }
+  html+='<div class="section-head unch">Unchanged ('+unchanged.length+')</div>';
+  html+='<div style="max-height:200px;overflow-y:auto">';
+  unchanged.forEach(function(v){html+='<div class="vessel-row"><span class="v-name">'+v.name+'</span><span class="v-code">'+(v.code||'')+'</span></div>';});
+  html+='</div>';
+  html+='<div class="action-row"><button class="btn" onclick="publish(false,\''+fileName+'\')">Publish to site</button>';
+  html+='<button class="btn-ghost" onclick="renderDetail()">Cancel</button></div>';
   area.innerHTML=html;
 }
 
 async function publish(isBaseline,fileName){
   if(!pendingVessels||!selectedFishery)return;
   const f=selectedFishery,now=new Date().toISOString();
+  const status=document.getElementById('status-select')?document.getElementById('status-select').value:'active';
   setStatus('Publishing to GitHub…','info');showProgress(10);
   try{
-    const existing=fisheryStatus[f.slug];let fileData;
+    const existing=fisheryStatus[f.slug];
+    let fileData;
     if(isBaseline){
-fileData={name:f.name,slug:f.slug,status,baseline:{vessels:pendingVessels,date:now,month_label:'May 2025',pdf_name:fileName},current:null};
+      fileData={name:f.name,slug:f.slug,status:status,baseline:{vessels:pendingVessels,date:now,month_label:'May 2025',pdf_name:fileName},current:null};
     }else{
-      if(!existing?.baseline)throw new Error("No baseline saved yet. Please upload May's list first.");
+      if(!existing||!existing.baseline)throw new Error("No baseline saved yet. Please upload May's list first.");
       const baseVessels=existing.baseline.vessels;
-      const prevNames=new Set(baseVessels.map(v=>v.name||v));
-      const currNames=new Set(pendingVessels.map(v=>v.name));
-      const prevMap=Object.fromEntries(baseVessels.map(v=>typeof v==='string'?[v,null]:[v.name,v.code]));
-      const added=pendingVessels.filter(v=>!prevNames.has(v.name));
-      const removed=[...prevNames].filter(n=>!currNames.has(n)).map(n=>({name:n,code:prevMap[n]}));
-fileData={...existing,status,current:{vessels:pendingVessels,date:now,month_label:monthLabel(now),pdf_name:fileName,added,removed}};
+      const prevNames=new Set(baseVessels.map(function(v){return v.name||v;}));
+      const currNames=new Set(pendingVessels.map(function(v){return v.name;}));
+      const prevMap={};
+      baseVessels.forEach(function(v){if(typeof v==='string')prevMap[v]=null;else prevMap[v.name]=v.code;});
+      const added=pendingVessels.filter(function(v){return!prevNames.has(v.name);});
+      const removed=[...prevNames].filter(function(n){return!currNames.has(n);}).map(function(n){return{name:n,code:prevMap[n]};});
+      fileData=Object.assign({},existing,{status:status,current:{vessels:pendingVessels,date:now,month_label:monthLabel(now),pdf_name:fileName,added:added,removed:removed}});
     }
     showProgress(40);
-    await ghPut(`${DATA}/${f.slug}.json`,fileData,`${isBaseline?'Set baseline':'Update'}: ${f.name} — ${monthLabel(now)}`);
+    await ghPut(DATA+'/'+f.slug+'.json',fileData,(isBaseline?'Set baseline':'Update')+': '+f.name+' — '+monthLabel(now));
     showProgress(70);
     if(!isBaseline){
       const d=fileData.current;
       if(d.added.length||d.removed.length){
         let changelog=[];
-        try{const cf=await ghGet(`${DATA}/changelog.json`);if(cf)changelog=JSON.parse(decodeB64(cf.content));}catch{}
+        try{const cf=await ghGet(DATA+'/changelog.json');if(cf)changelog=JSON.parse(decodeB64(cf.content));}catch(e){}
         changelog.unshift({date:now,fishery:f.name,slug:f.slug,month_label:monthLabel(now),added:d.added,removed:d.removed});
-        await ghPut(`${DATA}/changelog.json`,changelog,`Changelog: ${f.name} — ${monthLabel(now)}`);
+        await ghPut(DATA+'/changelog.json',changelog,'Changelog: '+f.name+' — '+monthLabel(now));
       }
     }
     showProgress(90);
-    const fisheries=await Promise.all(FISHERIES.map(async fi=>{
-      const d=fi.slug===f.slug?fileData:fisheryStatus[fi.slug];
-return{name:fi.name,slug:fi.slug,status:d?.status||'active',has_baseline:!!d?.baseline,baseline_month:d?.baseline?.month_label||null,has_current:!!d?.current,current_month:d?.current?.month_label||null,vessel_count:d?.current?.vessels?.length||d?.baseline?.vessels?.length||0,added_count:d?.current?.added?.length||0,removed_count:d?.current?.removed?.length||0};
-    }));
-    await ghPut(`${DATA}/summary.json`,{last_updated:now,fisheries},'Update summary');
-    showProgress(100);
     fisheryStatus[f.slug]=fileData;
-    renderFisheryList();pendingVessels=null;
-    setTimeout(()=>{clearStatus();setStatus(`✓ Published — team can now view the updated results at <a href="index.html" style="color:var(--added)">the main site</a>.`,'ok');renderDetail();},500);
+    await rebuildSummary();
+    showProgress(100);
+    renderFisheryList();
+    pendingVessels=null;
+    setTimeout(function(){clearStatus();setStatus('✓ Published — team can now view the updated results at <a href="index.html" style="color:var(--added)">the main site</a>.','ok');renderDetail();},500);
   }catch(e){clearStatus();setStatus('Error: '+e.message,'err');}
+}
+
+async function rebuildSummary(){
+  const fisheries=await Promise.all(FISHERIES.map(async function(fi){
+    const d=fi.slug===selectedFishery?.slug?fisheryStatus[fi.slug]:fisheryStatus[fi.slug];
+    return{
+      name:fi.name,slug:fi.slug,
+      status:d&&d.status?d.status:'active',
+      has_baseline:!!(d&&d.baseline),
+      baseline_month:d&&d.baseline?d.baseline.month_label:null,
+      has_current:!!(d&&d.current),
+      current_month:d&&d.current?d.current.month_label:null,
+      vessel_count:d&&d.current?d.current.vessels.length:d&&d.baseline?d.baseline.vessels.length:0,
+      added_count:d&&d.current?d.current.added.length:0,
+      removed_count:d&&d.current?d.current.removed.length:0
+    };
+  }));
+  await ghPut(DATA+'/summary.json',{last_updated:new Date().toISOString(),fisheries},'Update summary');
 }
 
 function setStatus(msg,type){const el=document.getElementById('status-bar');el.innerHTML=msg;el.className=type;el.style.display='block';}
 function clearStatus(){document.getElementById('status-bar').style.display='none';}
-function showProgress(pct){const wrap=document.querySelector('.progress'),fill=document.getElementById('prog');wrap.style.display='block';fill.style.width=pct+'%';if(pct>=100)setTimeout(()=>{wrap.style.display='none';fill.style.width='0%';},600);}
+function showProgress(pct){const wrap=document.querySelector('.progress'),fill=document.getElementById('prog');wrap.style.display='block';fill.style.width=pct+'%';if(pct>=100)setTimeout(function(){wrap.style.display='none';fill.style.width='0%';},600);}
 
 if(getToken()&&getGeminiKey())showMain();
 </script>
