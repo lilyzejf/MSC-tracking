@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-17T13:12:57.073Z",
+  "last_updated": "2026-07-17T13:13:47.126Z",
   "fisheries": [
     {
       "name": "American Samoa EEZ tuna longline fishery",
@@ -114,11 +114,11 @@
     {
       "name": "Fukuichi WCPO purse seine and longline yellowfin, skipjack, albacore and bigeye tuna fishery",
       "slug": "fukuichi-wcpo",
-      "has_baseline": false,
-      "baseline_month": null,
+      "has_baseline": true,
+      "baseline_month": "May 2025",
       "has_current": false,
       "current_month": null,
-      "vessel_count": 0,
+      "vessel_count": 7,
       "added_count": 0,
       "removed_count": 0
     },
