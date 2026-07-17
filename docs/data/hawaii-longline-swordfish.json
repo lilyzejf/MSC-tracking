@@ -612,5 +612,618 @@
     "month_label": "May 2025",
     "pdf_name": "05_05_26 (1).pdf"
   },
-  "current": null
+  "current": {
+    "vessels": [
+      {
+        "name": "3 Brothers",
+        "code": "992625"
+      },
+      {
+        "name": "Alana",
+        "code": "1250644"
+      },
+      {
+        "name": "Aolani",
+        "code": "1250647"
+      },
+      {
+        "name": "Apsara",
+        "code": "1026555"
+      },
+      {
+        "name": "Autumn",
+        "code": "543021"
+      },
+      {
+        "name": "Azure",
+        "code": "687578"
+      },
+      {
+        "name": "Blue Dragon",
+        "code": "969350"
+      },
+      {
+        "name": "Blue Dragon II",
+        "code": "546106"
+      },
+      {
+        "name": "Blue Sky",
+        "code": "695186"
+      },
+      {
+        "name": "Capt Andy",
+        "code": "929284"
+      },
+      {
+        "name": "Capt Davis",
+        "code": "1048002"
+      },
+      {
+        "name": "Capt Greg",
+        "code": "602871"
+      },
+      {
+        "name": "Capt Jayden",
+        "code": "910805"
+      },
+      {
+        "name": "Capt K",
+        "code": "1045090"
+      },
+      {
+        "name": "Capt Kenneth",
+        "code": "991059"
+      },
+      {
+        "name": "Capt Kevin",
+        "code": "928327"
+      },
+      {
+        "name": "Capt Millions III",
+        "code": "962709"
+      },
+      {
+        "name": "Capt Remo",
+        "code": "1101877"
+      },
+      {
+        "name": "Capt Silver",
+        "code": "696011"
+      },
+      {
+        "name": "Captain Alex",
+        "code": "638772"
+      },
+      {
+        "name": "Captain J 3",
+        "code": "1045208"
+      },
+      {
+        "name": "Captain Minh",
+        "code": "927418"
+      },
+      {
+        "name": "Captain Paxton",
+        "code": "912794"
+      },
+      {
+        "name": "Captain Tam",
+        "code": "911901"
+      },
+      {
+        "name": "Caroleigh",
+        "code": "1148460"
+      },
+      {
+        "name": "Commander 1",
+        "code": "639570"
+      },
+      {
+        "name": "Cumberland Trail",
+        "code": "512654"
+      },
+      {
+        "name": "Destiny",
+        "code": "1031845"
+      },
+      {
+        "name": "Edward G.",
+        "code": "927505"
+      },
+      {
+        "name": "Finback",
+        "code": "557678"
+      },
+      {
+        "name": "Gail Ann",
+        "code": "939087"
+      },
+      {
+        "name": "Golden Dragon",
+        "code": "1120346"
+      },
+      {
+        "name": "Golden Eagle",
+        "code": "1048418"
+      },
+      {
+        "name": "Golden Eagle II",
+        "code": "963497"
+      },
+      {
+        "name": "Golden Phoenix",
+        "code": "1041265"
+      },
+      {
+        "name": "Green Mountain",
+        "code": "916945"
+      },
+      {
+        "name": "Gutsy Lady 4",
+        "code": "1120347"
+      },
+      {
+        "name": "Hailey",
+        "code": "1087644"
+      },
+      {
+        "name": "Hawaii Ocean",
+        "code": "969226"
+      },
+      {
+        "name": "Helen",
+        "code": "626560"
+      },
+      {
+        "name": "Iron Lady",
+        "code": "690722"
+      },
+      {
+        "name": "Itasca",
+        "code": "923560"
+      },
+      {
+        "name": "Kaimana",
+        "code": "1034463"
+      },
+      {
+        "name": "Kalani",
+        "code": "576129"
+      },
+      {
+        "name": "Kami M",
+        "code": "690307"
+      },
+      {
+        "name": "Katy Mary",
+        "code": "934489"
+      },
+      {
+        "name": "Kaua'i",
+        "code": "655545"
+      },
+      {
+        "name": "Kawaiola",
+        "code": "533411"
+      },
+      {
+        "name": "Kawika",
+        "code": "1113224"
+      },
+      {
+        "name": "Kilauea",
+        "code": "518306"
+      },
+      {
+        "name": "Kim Thu",
+        "code": "917018"
+      },
+      {
+        "name": "Kimmy I",
+        "code": "929589"
+      },
+      {
+        "name": "Lady Alice",
+        "code": "594346"
+      },
+      {
+        "name": "Lady Ann Margaret",
+        "code": "910974"
+      },
+      {
+        "name": "Lady Anna",
+        "code": "943337"
+      },
+      {
+        "name": "Lady Annie",
+        "code": "913939"
+      },
+      {
+        "name": "Lady Betty",
+        "code": "682407"
+      },
+      {
+        "name": "Lady Christine I",
+        "code": "1139848"
+      },
+      {
+        "name": "Lady Cindy",
+        "code": "1135654"
+      },
+      {
+        "name": "Lady Cindy II",
+        "code": "551566"
+      },
+      {
+        "name": "Lady En",
+        "code": "615433"
+      },
+      {
+        "name": "Lady Hope",
+        "code": "545581"
+      },
+      {
+        "name": "Lady J3",
+        "code": "909004"
+      },
+      {
+        "name": "Lady Karen",
+        "code": "1089736"
+      },
+      {
+        "name": "Lady Luck",
+        "code": "905580"
+      },
+      {
+        "name": "Lady Maria",
+        "code": "512767"
+      },
+      {
+        "name": "Lady Mocha I",
+        "code": "697292"
+      },
+      {
+        "name": "Lady Mocha II",
+        "code": "577621"
+      },
+      {
+        "name": "Lady of the Sea",
+        "code": "909535"
+      },
+      {
+        "name": "Lady of the Sea II",
+        "code": "910809"
+      },
+      {
+        "name": "Lanikai",
+        "code": "1029712"
+      },
+      {
+        "name": "Laura Ann",
+        "code": "672662"
+      },
+      {
+        "name": "Libra",
+        "code": "568649"
+      },
+      {
+        "name": "Lucky Lady",
+        "code": "616365"
+      },
+      {
+        "name": "Lucky TJ",
+        "code": "570715"
+      },
+      {
+        "name": "Mariah",
+        "code": "952622"
+      },
+      {
+        "name": "Marie M",
+        "code": "509968"
+      },
+      {
+        "name": "Marine Star",
+        "code": "537893"
+      },
+      {
+        "name": "Mighty Joe",
+        "code": "985031"
+      },
+      {
+        "name": "Miss Ellen",
+        "code": "612418"
+      },
+      {
+        "name": "Miss Julie",
+        "code": "925847"
+      },
+      {
+        "name": "Miss Myaa",
+        "code": "559485"
+      },
+      {
+        "name": "Miss Quinn",
+        "code": "1094947"
+      },
+      {
+        "name": "Miss Rachel",
+        "code": "912433"
+      },
+      {
+        "name": "Miss Renee",
+        "code": "611010"
+      },
+      {
+        "name": "Miss Sadie",
+        "code": "921769"
+      },
+      {
+        "name": "Miss Sarah",
+        "code": "1329945"
+      },
+      {
+        "name": "Miss Thuy Tien",
+        "code": "984166"
+      },
+      {
+        "name": "Nahoa",
+        "code": "910157"
+      },
+      {
+        "name": "Nahoa II",
+        "code": "944388"
+      },
+      {
+        "name": "New Horizon",
+        "code": "1110939"
+      },
+      {
+        "name": "OKAY",
+        "code": "630817"
+      },
+      {
+        "name": "Pacific Diamond",
+        "code": "939008"
+      },
+      {
+        "name": "Pacific Dragon",
+        "code": "1021265"
+      },
+      {
+        "name": "Pacific Dragon II",
+        "code": "911863"
+      },
+      {
+        "name": "Pacific Horizon",
+        "code": "627203"
+      },
+      {
+        "name": "Pacific Star",
+        "code": "970935"
+      },
+      {
+        "name": "Pacific Sun",
+        "code": "615432"
+      },
+      {
+        "name": "Paradise 2001",
+        "code": "1081225"
+      },
+      {
+        "name": "Paradise 2002",
+        "code": "1081227"
+      },
+      {
+        "name": "Pauline II",
+        "code": "598973"
+      },
+      {
+        "name": "Princess Jasmine",
+        "code": "1048217"
+      },
+      {
+        "name": "Princess Jasmine II",
+        "code": "1050806"
+      },
+      {
+        "name": "Princess Kaylee",
+        "code": "1036922"
+      },
+      {
+        "name": "Princess Kelli",
+        "code": "1027010"
+      },
+      {
+        "name": "Princess Pearla",
+        "code": "945193"
+      },
+      {
+        "name": "Queen Alina",
+        "code": "1045268"
+      },
+      {
+        "name": "Queen Diamond",
+        "code": "964927"
+      },
+      {
+        "name": "Queen Diamond II",
+        "code": "949947"
+      },
+      {
+        "name": "Queen Victoria",
+        "code": "1038671"
+      },
+      {
+        "name": "Rainbows",
+        "code": "511130"
+      },
+      {
+        "name": "Rainbows I",
+        "code": "597552"
+      },
+      {
+        "name": "Rising Phoenix",
+        "code": "615617"
+      },
+      {
+        "name": "Rising Phoenix II",
+        "code": "1107128"
+      },
+      {
+        "name": "Robin II",
+        "code": "907207"
+      },
+      {
+        "name": "Sapphire",
+        "code": "905883"
+      },
+      {
+        "name": "Sapphire II",
+        "code": "926208"
+      },
+      {
+        "name": "Sapphire III",
+        "code": "964929"
+      },
+      {
+        "name": "Sea Angel",
+        "code": "1040833"
+      },
+      {
+        "name": "Sea Diamond",
+        "code": "910973"
+      },
+      {
+        "name": "Sea Dragon",
+        "code": "916874"
+      },
+      {
+        "name": "Sea Dragon II",
+        "code": "1089137"
+      },
+      {
+        "name": "Sea Dragon III",
+        "code": "1051110"
+      },
+      {
+        "name": "Sea Falcon",
+        "code": "649608"
+      },
+      {
+        "name": "Sea Goddess",
+        "code": "929439"
+      },
+      {
+        "name": "Sea Hawk",
+        "code": "513575"
+      },
+      {
+        "name": "Sea Hunt",
+        "code": "1046666"
+      },
+      {
+        "name": "Sea Moon I",
+        "code": "927176"
+      },
+      {
+        "name": "Sea Pearl",
+        "code": "982518"
+      },
+      {
+        "name": "Seaspray",
+        "code": "609841"
+      },
+      {
+        "name": "Second Andy",
+        "code": "1168403"
+      },
+      {
+        "name": "Seeker 3",
+        "code": "582101"
+      },
+      {
+        "name": "Serenity",
+        "code": "916657"
+      },
+      {
+        "name": "Seven Star",
+        "code": "593762"
+      },
+      {
+        "name": "Sky Moon",
+        "code": "559024"
+      },
+      {
+        "name": "Southern Horizon",
+        "code": "1052597"
+      },
+      {
+        "name": "St Damien",
+        "code": "509600"
+      },
+      {
+        "name": "St. Marianne",
+        "code": "583780"
+      },
+      {
+        "name": "St. Martin",
+        "code": "689668"
+      },
+      {
+        "name": "St. Peter",
+        "code": "911298"
+      },
+      {
+        "name": "Stormi",
+        "code": "622027"
+      },
+      {
+        "name": "Sylvia",
+        "code": "686609"
+      },
+      {
+        "name": "The Seeker II",
+        "code": "588768"
+      },
+      {
+        "name": "Triple Andy",
+        "code": "968001"
+      },
+      {
+        "name": "Triple Dragon",
+        "code": "913733"
+      },
+      {
+        "name": "VAK 1",
+        "code": "909782"
+      },
+      {
+        "name": "VAK 2",
+        "code": "909147"
+      },
+      {
+        "name": "VAK 3",
+        "code": "910988"
+      },
+      {
+        "name": "Vui Vui",
+        "code": "930207"
+      },
+      {
+        "name": "Vui Vui II",
+        "code": "914121"
+      },
+      {
+        "name": "Yaozaa",
+        "code": "659760"
+      }
+    ],
+    "date": "2026-07-17T14:31:18.064Z",
+    "month_label": "July 2026",
+    "pdf_name": "MSC-F-31564 v.1.4.pdf",
+    "added": [],
+    "removed": []
+  },
+  "status": "active"
 }
