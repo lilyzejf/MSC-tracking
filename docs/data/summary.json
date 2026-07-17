@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-17T12:48:50.375Z",
+  "last_updated": "2026-07-17T12:52:43.314Z",
   "fisheries": [
     {
       "name": "American Samoa EEZ tuna longline fishery",
@@ -37,11 +37,11 @@
     {
       "name": "Consolidated Atlantic Ocean albacore tuna longline fishery",
       "slug": "consolidated-atlantic-ocean-albacore",
-      "has_baseline": false,
-      "baseline_month": null,
+      "has_baseline": true,
+      "baseline_month": "May 2025",
       "has_current": false,
       "current_month": null,
-      "vessel_count": 0,
+      "vessel_count": 21,
       "added_count": 0,
       "removed_count": 0
     },
