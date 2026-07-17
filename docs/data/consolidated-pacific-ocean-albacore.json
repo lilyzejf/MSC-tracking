@@ -1,0 +1,24 @@
+{
+  "name": "Consolidated Pacific Ocean albacore, bigeye, and yellowfin tuna fishery",
+  "slug": "consolidated-pacific-ocean-albacore",
+  "baseline": {
+    "vessels": [
+      {
+        "name": "Tunago 51",
+        "code": "9230608"
+      },
+      {
+        "name": "Tunago 52",
+        "code": "9230610"
+      },
+      {
+        "name": "Tunago 62",
+        "code": "9260225"
+      }
+    ],
+    "date": "2026-07-17T12:57:17.330Z",
+    "month_label": "May 2025",
+    "pdf_name": "05_05_26 (1).pdf"
+  },
+  "current": null
+}
