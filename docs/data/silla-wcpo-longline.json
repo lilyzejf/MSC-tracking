@@ -44,5 +44,50 @@
     "month_label": "May 2025",
     "pdf_name": "05_05_26 (1).pdf"
   },
-  "current": null
+  "current": {
+    "vessels": [
+      {
+        "name": "No. 51 Shin Yung",
+        "code": "6LGQ"
+      },
+      {
+        "name": "No. 52 Shin Yung",
+        "code": "6NJJ"
+      },
+      {
+        "name": "No. 55 Shin Yung",
+        "code": "6MWP"
+      },
+      {
+        "name": "No. 56 Shin Yung",
+        "code": "HLWA"
+      },
+      {
+        "name": "Panalox 501",
+        "code": "DTAU9"
+      },
+      {
+        "name": "Panalox 502",
+        "code": "DTAV2"
+      },
+      {
+        "name": "Panalox 503",
+        "code": "DTAU4"
+      },
+      {
+        "name": "Panalox 505",
+        "code": "DTAV3"
+      },
+      {
+        "name": "Panalox 506",
+        "code": "DTAU5"
+      }
+    ],
+    "date": "2026-07-17T14:37:51.995Z",
+    "month_label": "July 2026",
+    "pdf_name": "MSC-F-31629 v1.1.pdf",
+    "added": [],
+    "removed": []
+  },
+  "status": "active"
 }
