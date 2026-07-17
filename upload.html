@@ -260,14 +260,24 @@ function renderFisheryList(){
 function selectFishery(f){selectedFishery=f;pendingVessels=null;renderFisheryList();renderDetail();}
 
 function renderDetail(){
-  const f=selectedFishery,data=fisheryStatus[f.slug];
+  const f=selectedFishery,now=new Date().toISOString();
+  const status=document.getElementById('status-select')?.value||'active';
   const hasBaseline=!!data?.baseline,hasCurrent=!!data?.current;
   const el=document.getElementById('detail');
   let sub=hasCurrent?`Baseline: ${monthLabel(data.baseline.date)} · Last updated: ${monthLabel(data.current.date)} · ${data.current.vessels.length} vessels`:hasBaseline?`Baseline: ${monthLabel(data.baseline.date)} · ${data.baseline.vessels.length} vessels · No monthly update yet`:'No data uploaded yet';
-  el.innerHTML=`
+ const currentStatus = data?.status || 'active';
+  el.innerHTML = `
     <div class="fishery-title">${f.name}</div>
     <div class="fishery-sub">${sub}</div>
-    <div class="drop-zone" id="drop-zone" onclick="document.getElementById('pdf-file').click()">
+    <div style="margin-bottom:20px">
+      <label style="font-size:11px;color:var(--muted);display:block;margin-bottom:6px;font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.06em">Fishery Status</label>
+      <select id="status-select" style="padding:8px 12px;border:1px solid var(--chart-line);background:var(--paper);font-family:'Inter',sans-serif;font-size:13px;color:var(--ink);width:280px;border-radius:2px">
+        <option value="active" ${currentStatus==='active'?'selected':''}>Active</option>
+        <option value="suspended" ${currentStatus==='suspended'?'selected':''}>Suspended</option>
+        <option value="no_longer_in_program" ${currentStatus==='no_longer_in_program'?'selected':''}>No longer in program</option>
+      </select>
+    </div>
+    <div class="drop-zone"document.getElementById('pdf-file').click()">
       <input type="file" id="pdf-file" accept=".pdf" onchange="handleFile(this.files[0])">
       <div class="drop-icon">📄</div>
       <div class="drop-title">${hasBaseline?"Drop this month's PDF here":"Drop May's PDF here to set baseline"}</div>
@@ -335,7 +345,7 @@ async function publish(isBaseline,fileName){
   try{
     const existing=fisheryStatus[f.slug];let fileData;
     if(isBaseline){
-      fileData={name:f.name,slug:f.slug,baseline:{vessels:pendingVessels,date:now,month_label:'May 2025',pdf_name:fileName},current:null};
+fileData={name:f.name,slug:f.slug,status,baseline:{vessels:pendingVessels,date:now,month_label:'May 2025',pdf_name:fileName},current:null};
     }else{
       if(!existing?.baseline)throw new Error("No baseline saved yet. Please upload May's list first.");
       const baseVessels=existing.baseline.vessels;
@@ -344,7 +354,7 @@ async function publish(isBaseline,fileName){
       const prevMap=Object.fromEntries(baseVessels.map(v=>typeof v==='string'?[v,null]:[v.name,v.code]));
       const added=pendingVessels.filter(v=>!prevNames.has(v.name));
       const removed=[...prevNames].filter(n=>!currNames.has(n)).map(n=>({name:n,code:prevMap[n]}));
-      fileData={...existing,current:{vessels:pendingVessels,date:now,month_label:monthLabel(now),pdf_name:fileName,added,removed}};
+fileData={...existing,status,current:{vessels:pendingVessels,date:now,month_label:monthLabel(now),pdf_name:fileName,added,removed}};
     }
     showProgress(40);
     await ghPut(`${DATA}/${f.slug}.json`,fileData,`${isBaseline?'Set baseline':'Update'}: ${f.name} — ${monthLabel(now)}`);
@@ -361,7 +371,7 @@ async function publish(isBaseline,fileName){
     showProgress(90);
     const fisheries=await Promise.all(FISHERIES.map(async fi=>{
       const d=fi.slug===f.slug?fileData:fisheryStatus[fi.slug];
-      return{name:fi.name,slug:fi.slug,has_baseline:!!d?.baseline,baseline_month:d?.baseline?.month_label||null,has_current:!!d?.current,current_month:d?.current?.month_label||null,vessel_count:d?.current?.vessels?.length||d?.baseline?.vessels?.length||0,added_count:d?.current?.added?.length||0,removed_count:d?.current?.removed?.length||0};
+return{name:fi.name,slug:fi.slug,status:d?.status||'active',has_baseline:!!d?.baseline,baseline_month:d?.baseline?.month_label||null,has_current:!!d?.current,current_month:d?.current?.month_label||null,vessel_count:d?.current?.vessels?.length||d?.baseline?.vessels?.length||0,added_count:d?.current?.added?.length||0,removed_count:d?.current?.removed?.length||0};
     }));
     await ghPut(`${DATA}/summary.json`,{last_updated:now,fisheries},'Update summary');
     showProgress(100);
