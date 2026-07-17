@@ -1,0 +1,180 @@
+{
+  "name": "Fiji Albacore, Yellowfin and Bigeye Tuna longline",
+  "slug": "fiji-albacore-yellowfin-and-bigeye-tuna-longline",
+  "baseline": {
+    "vessels": [
+      {
+        "name": "Ben 10",
+        "code": "000802"
+      },
+      {
+        "name": "Green Tuna 1",
+        "code": "001185"
+      },
+      {
+        "name": "Hangton 111",
+        "code": "003798"
+      },
+      {
+        "name": "Hangton 115",
+        "code": "003800"
+      },
+      {
+        "name": "Hangton 116",
+        "code": "003801"
+      },
+      {
+        "name": "Ocean Fortune 1",
+        "code": "001723"
+      },
+      {
+        "name": "Sam Weon 11",
+        "code": "000694"
+      },
+      {
+        "name": "Scorpion 58",
+        "code": "007321"
+      },
+      {
+        "name": "Scorpion 68",
+        "code": "000737"
+      },
+      {
+        "name": "Scorpion 69",
+        "code": "001721"
+      },
+      {
+        "name": "Scorpion 70",
+        "code": "003507"
+      },
+      {
+        "name": "Sein 1",
+        "code": "001175"
+      },
+      {
+        "name": "Sein 11",
+        "code": "007704"
+      },
+      {
+        "name": "Sein 3",
+        "code": "001176"
+      },
+      {
+        "name": "Sein 5",
+        "code": "000020"
+      },
+      {
+        "name": "Solander II",
+        "code": "000424"
+      },
+      {
+        "name": "Solander IX",
+        "code": "000339"
+      },
+      {
+        "name": "Solander Kariqa",
+        "code": "000428"
+      },
+      {
+        "name": "Solander XI",
+        "code": "000271"
+      },
+      {
+        "name": "Sunshine 16",
+        "code": "000576"
+      },
+      {
+        "name": "Sunshine 18",
+        "code": "000824"
+      },
+      {
+        "name": "Sunshine 8",
+        "code": "000660"
+      },
+      {
+        "name": "Sunshine 86",
+        "code": "000816"
+      },
+      {
+        "name": "Sunshine 88",
+        "code": "000817"
+      },
+      {
+        "name": "Sunshine 89",
+        "code": "000818"
+      },
+      {
+        "name": "Win Star 1",
+        "code": "000421"
+      },
+      {
+        "name": "Winfull 1",
+        "code": "000206"
+      },
+      {
+        "name": "Winfull 181",
+        "code": "007207"
+      },
+      {
+        "name": "Winfull 182",
+        "code": "007208"
+      },
+      {
+        "name": "Winfull 186",
+        "code": "007209"
+      },
+      {
+        "name": "Winfull 188",
+        "code": "007210"
+      },
+      {
+        "name": "Winfull 2",
+        "code": "000207"
+      },
+      {
+        "name": "Winfull 31",
+        "code": "004399"
+      },
+      {
+        "name": "Winfull 32",
+        "code": "004400"
+      },
+      {
+        "name": "Winfull 36",
+        "code": "005915"
+      },
+      {
+        "name": "Winfull 38",
+        "code": "005916"
+      },
+      {
+        "name": "Winfull 8",
+        "code": "001258"
+      },
+      {
+        "name": "Yong Xing 1",
+        "code": "000391"
+      },
+      {
+        "name": "Yong Xing 2",
+        "code": "000392"
+      },
+      {
+        "name": "Yong Xing 3",
+        "code": "000393"
+      },
+      {
+        "name": "Yue Yuan Yu 139",
+        "code": "000459"
+      },
+      {
+        "name": "Zhong Da 3",
+        "code": "000544"
+      }
+    ],
+    "date": "2026-07-17T13:00:04.461Z",
+    "month_label": "May 2025",
+    "pdf_name": "05_05_26 (1).pdf"
+  },
+  "current": null
+}
