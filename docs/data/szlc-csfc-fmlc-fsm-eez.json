@@ -1,0 +1,128 @@
+{
+  "name": "SZLC CSFC & FMLC FSM EEZ Longline Yellowfin, Bigeye and Albacore Tuna",
+  "slug": "szlc-csfc-fmlc-fsm-eez",
+  "baseline": {
+    "vessels": [
+      {
+        "name": "HUA NAN YU 711",
+        "code": "BZXD22"
+      },
+      {
+        "name": "HUA NAN YU 712",
+        "code": "BZXD23"
+      },
+      {
+        "name": "HUA NAN YU 716",
+        "code": "BZXD24"
+      },
+      {
+        "name": "HUA NAN YU 718",
+        "code": "BZXD26"
+      },
+      {
+        "name": "HUA NAN YU 719",
+        "code": "BZXD27"
+      },
+      {
+        "name": "HUA NAN YU 721",
+        "code": "BZXD28"
+      },
+      {
+        "name": "HUA NAN YU 722",
+        "code": "BZXD29"
+      },
+      {
+        "name": "HUA NAN YU 723",
+        "code": "BZXD32"
+      },
+      {
+        "name": "HUA NAN YU 731",
+        "code": "BZXD33"
+      },
+      {
+        "name": "HUA NAN YU 732",
+        "code": "BZXD34"
+      },
+      {
+        "name": "HUA NAN YU 736",
+        "code": "BZXD35"
+      },
+      {
+        "name": "HUA NAN YU 737",
+        "code": "BZXD36"
+      },
+      {
+        "name": "HUA NAN YU 738",
+        "code": "BZXD37"
+      },
+      {
+        "name": "HUA NAN YU 739",
+        "code": "BZXD38"
+      },
+      {
+        "name": "SHEN GANG FA 15",
+        "code": "BZXD52"
+      },
+      {
+        "name": "SHEN GANG FA 16",
+        "code": "BZXD53"
+      },
+      {
+        "name": "SHEN GANG FA 17",
+        "code": "BZXD54"
+      },
+      {
+        "name": "SHEN GANG FA 18",
+        "code": "BZXD55"
+      },
+      {
+        "name": "SHEN GANG FA 19",
+        "code": "BZXD56"
+      },
+      {
+        "name": "SHEN GANG FA 715",
+        "code": "BZXD62"
+      },
+      {
+        "name": "SHEN GANG FA 716",
+        "code": "BZXD63"
+      },
+      {
+        "name": "SHEN GANG FA 718",
+        "code": "BZXD65"
+      },
+      {
+        "name": "SHEN GANG FA 719",
+        "code": "BZXD66"
+      },
+      {
+        "name": "SHEN GANG FA 720",
+        "code": "BZXD69"
+      },
+      {
+        "name": "SHEN LIAN CHENG 881",
+        "code": "BZXD92"
+      },
+      {
+        "name": "SHEN LIAN CHENG 882",
+        "code": "BZXD93"
+      },
+      {
+        "name": "SHEN LIAN CHENG 883",
+        "code": "BZXD94"
+      },
+      {
+        "name": "SHEN LIAN CHENG 884",
+        "code": "BZXD95"
+      },
+      {
+        "name": "SHEN LIAN CHENG 885",
+        "code": "BZXD96"
+      }
+    ],
+    "date": "2026-07-17T13:19:55.950Z",
+    "month_label": "May 2025",
+    "pdf_name": "05_05_26 (1).pdf"
+  },
+  "current": null
+}
