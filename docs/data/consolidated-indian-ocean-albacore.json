@@ -1,0 +1,308 @@
+{
+  "name": "Consolidated Indian Ocean longline albacore tuna fishery",
+  "slug": "consolidated-indian-ocean-albacore",
+  "baseline": {
+    "vessels": [
+      {
+        "name": "CHING KUO YU FA HAO",
+        "code": "8780735"
+      },
+      {
+        "name": "DE HAI 12",
+        "code": "8780668"
+      },
+      {
+        "name": "DE HAI 16",
+        "code": "8780656"
+      },
+      {
+        "name": "DE HAI 6",
+        "code": "8780670"
+      },
+      {
+        "name": "DE YANG 36",
+        "code": "8535489"
+      },
+      {
+        "name": "DE YANG 8",
+        "code": "8782472"
+      },
+      {
+        "name": "DE YI 16",
+        "code": "8780606"
+      },
+      {
+        "name": "DE YI NO.66",
+        "code": "9865661"
+      },
+      {
+        "name": "DER HAE 2",
+        "code": "8780620"
+      },
+      {
+        "name": "DER HAE NO.3",
+        "code": "8780632"
+      },
+      {
+        "name": "DER YUEN",
+        "code": "8783830"
+      },
+      {
+        "name": "DER YUEN 33",
+        "code": "8780888"
+      },
+      {
+        "name": "EAGLE",
+        "code": "8780814"
+      },
+      {
+        "name": "FENG HAI NO.6",
+        "code": "8798067"
+      },
+      {
+        "name": "FONG YU 26",
+        "code": "1045942"
+      },
+      {
+        "name": "FU KUO 8",
+        "code": "9726657"
+      },
+      {
+        "name": "FULL LI HSIANG",
+        "code": "9102693"
+      },
+      {
+        "name": "FWU FA YI 8",
+        "code": "8780759"
+      },
+      {
+        "name": "FWU TSAIR YIH 2",
+        "code": "8781600"
+      },
+      {
+        "name": "GUAN WANG 21",
+        "code": "8780773"
+      },
+      {
+        "name": "HUNG JIE WEI 21",
+        "code": "8780797"
+      },
+      {
+        "name": "HUNG JIE WEI 36",
+        "code": "8780802"
+      },
+      {
+        "name": "HUNG JIE WEI 8",
+        "code": "8780785"
+      },
+      {
+        "name": "HUNG YING 2",
+        "code": "8780955"
+      },
+      {
+        "name": "HWA HUNG 202",
+        "code": "8648729"
+      },
+      {
+        "name": "JAIN HSUAN NO.202",
+        "code": "8649694"
+      },
+      {
+        "name": "JAIN LIH 212",
+        "code": "9822243"
+      },
+      {
+        "name": "JENN MING YANG 33",
+        "code": "8778811"
+      },
+      {
+        "name": "JIN JAAN SHYANG 268",
+        "code": "8780838"
+      },
+      {
+        "name": "JIN JIN WANG",
+        "code": "8780761"
+      },
+      {
+        "name": "LI HSIANG",
+        "code": "9802944"
+      },
+      {
+        "name": "LI SHENG 33",
+        "code": "9803314"
+      },
+      {
+        "name": "LONG WANG CHANG",
+        "code": "8791356"
+      },
+      {
+        "name": "LONG WANG CHIN",
+        "code": "8791394"
+      },
+      {
+        "name": "LONG WANG HSIN",
+        "code": "8791368"
+      },
+      {
+        "name": "LONG WANG SHENG",
+        "code": "8791370"
+      },
+      {
+        "name": "LONG WANG SHENG NO.7",
+        "code": "8791473"
+      },
+      {
+        "name": "LONG WANG SHING",
+        "code": "8791368"
+      },
+      {
+        "name": "LONG WANG SIN",
+        "code": "8791459"
+      },
+      {
+        "name": "LONG WANG TZAY",
+        "code": "8791411"
+      },
+      {
+        "name": "MAN AN",
+        "code": "8672926"
+      },
+      {
+        "name": "RUEY I SHYANG 10",
+        "code": "8778940"
+      },
+      {
+        "name": "RUEY I SHYANG 3",
+        "code": "8778902"
+      },
+      {
+        "name": "RUEY I SHYANG 6",
+        "code": "8778914"
+      },
+      {
+        "name": "RUEY I SHYANG 7",
+        "code": "8778926"
+      },
+      {
+        "name": "RUEY I SHYANG 8",
+        "code": "8778938"
+      },
+      {
+        "name": "RUEY I SHYANG NO.12",
+        "code": "8778952"
+      },
+      {
+        "name": "SHANG FENG 3",
+        "code": "8673140"
+      },
+      {
+        "name": "SHIN SHUEN FAR",
+        "code": "8782458"
+      },
+      {
+        "name": "SHIN SHUEN FAR 16",
+        "code": "8749547"
+      },
+      {
+        "name": "SHIN SHUEN FAR 388",
+        "code": "9823182"
+      },
+      {
+        "name": "SHIN SHUEN FAR 668",
+        "code": "9627318"
+      },
+      {
+        "name": "SHIN SHUEN FAR 688",
+        "code": "9691993"
+      },
+      {
+        "name": "SHIN SHUEN FAR 699",
+        "code": "9823170"
+      },
+      {
+        "name": "SHIN SHUEN FAR 889",
+        "code": "9787431"
+      },
+      {
+        "name": "SHUN FENG NO.12",
+        "code": "9761114"
+      },
+      {
+        "name": "SHUN FENG NO.18",
+        "code": "9815288"
+      },
+      {
+        "name": "SHUN YING",
+        "code": "8790601"
+      },
+      {
+        "name": "SIN HUA FONG 16",
+        "code": "9727754"
+      },
+      {
+        "name": "TENN MING YANG 101",
+        "code": "8778823"
+      },
+      {
+        "name": "TENN MING YANG 668",
+        "code": "8778885"
+      },
+      {
+        "name": "TENN MING YANG 688",
+        "code": "8778897"
+      },
+      {
+        "name": "TENN MING YANG 888",
+        "code": "8778861"
+      },
+      {
+        "name": "TENN MING YANG 889",
+        "code": "8778873"
+      },
+      {
+        "name": "TENN MING YANG NO.168",
+        "code": "8778835"
+      },
+      {
+        "name": "TENN MING YANG NO.301",
+        "code": "8780890"
+      },
+      {
+        "name": "TENN MING YANG NO.303",
+        "code": "8780905"
+      },
+      {
+        "name": "TENN MING YANG NO.368",
+        "code": "8778859"
+      },
+      {
+        "name": "WEI DE 6",
+        "code": "9843120"
+      },
+      {
+        "name": "WEN DAR 666",
+        "code": "8777867"
+      },
+      {
+        "name": "WEN DER NO.106",
+        "code": "8781014"
+      },
+      {
+        "name": "WOEN DAR NO.168",
+        "code": "8781026"
+      },
+      {
+        "name": "XIN DA FA",
+        "code": "9731339"
+      },
+      {
+        "name": "YUAN MAN",
+        "code": "9875496"
+      }
+    ],
+    "date": "2026-07-17T12:55:22.957Z",
+    "month_label": "May 2025",
+    "pdf_name": "05_05_26 (1).pdf"
+  },
+  "current": null
+}
