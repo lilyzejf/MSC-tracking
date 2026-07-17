@@ -1,0 +1,20 @@
+{
+  "name": "Owase Bussan Co. Ltd. Longline Fishery for North Pacific Albacore",
+  "slug": "owase-bussan",
+  "baseline": {
+    "vessels": [
+      {
+        "name": "Ryoeimaru",
+        "code": null
+      },
+      {
+        "name": "Ryoeimaru No. 11",
+        "code": null
+      }
+    ],
+    "date": "2026-07-17T13:15:48.179Z",
+    "month_label": "May 2025",
+    "pdf_name": "05_05_26 (1).pdf"
+  },
+  "current": null
+}
