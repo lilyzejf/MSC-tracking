@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-17T13:20:57.270Z",
+  "last_updated": "2026-07-17T13:22:19.857Z",
   "fisheries": [
     {
       "name": "American Samoa EEZ tuna longline fishery",
@@ -202,11 +202,11 @@
     {
       "name": "SZLC, CSFC, FMLC & MIFV RMI EEZ longline yellowfin, bigeye and albacore tuna",
       "slug": "szlc-csfc-fmlc-mifv-rmi",
-      "has_baseline": false,
-      "baseline_month": null,
+      "has_baseline": true,
+      "baseline_month": "May 2025",
       "has_current": false,
       "current_month": null,
-      "vessel_count": 0,
+      "vessel_count": 39,
       "added_count": 0,
       "removed_count": 0
     },
