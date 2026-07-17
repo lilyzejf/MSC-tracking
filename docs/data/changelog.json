@@ -1,0 +1,28 @@
+[
+  {
+    "date": "2026-07-17T13:53:23.417Z",
+    "fishery": "Consolidated Pacific Ocean albacore, bigeye, and yellowfin tuna fishery",
+    "slug": "consolidated-pacific-ocean-albacore",
+    "month_label": "July 2026",
+    "added": [
+      {
+        "name": "TUNA PEAK NO.6",
+        "code": "9211092"
+      },
+      {
+        "name": "TUNA PEAK NO.66",
+        "code": "8977625"
+      },
+      {
+        "name": "YI SHUN NO.102",
+        "code": "8947462"
+      }
+    ],
+    "removed": [
+      {
+        "name": "Tunago 62",
+        "code": "9260225"
+      }
+    ]
+  }
+]
