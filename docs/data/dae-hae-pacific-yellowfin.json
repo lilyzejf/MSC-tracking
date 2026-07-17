@@ -40,5 +40,45 @@
     "month_label": "May 2025",
     "pdf_name": "05_05_26 (1).pdf"
   },
-  "current": null
+  "current": {
+    "vessels": [
+      {
+        "name": "NO.201 DAE HWA",
+        "code": "8911293"
+      },
+      {
+        "name": "NO.202 DAE HWA",
+        "code": "8911308"
+      },
+      {
+        "name": "NO.302 DAE HWA",
+        "code": "8811120"
+      },
+      {
+        "name": "NO.303 DAE HWA",
+        "code": "8714047"
+      },
+      {
+        "name": "NO.306 DAE HWA",
+        "code": "8709054"
+      },
+      {
+        "name": "NO.308 DAE HWA",
+        "code": "8805327"
+      },
+      {
+        "name": "NO.309 DAE HWA",
+        "code": "8605052"
+      },
+      {
+        "name": "NO.313 DAE HWA",
+        "code": "9031868"
+      }
+    ],
+    "date": "2026-07-17T13:54:30.921Z",
+    "month_label": "July 2026",
+    "pdf_name": "Dae Hae Vessel List 90166 090924.pdf",
+    "added": [],
+    "removed": []
+  }
 }
