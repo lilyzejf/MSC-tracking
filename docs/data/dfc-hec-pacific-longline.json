@@ -1,0 +1,72 @@
+{
+  "name": "DFC/HEC Pacific longline bigeye, yellowfin and albacore tuna fishery",
+  "slug": "dfc-hec-pacific-longline",
+  "baseline": {
+    "vessels": [
+      {
+        "name": "Chilsung No. 1",
+        "code": "HLJC"
+      },
+      {
+        "name": "No. 36 Hansung",
+        "code": "HLWD"
+      },
+      {
+        "name": "No. 38 Hansung",
+        "code": "HLJB"
+      },
+      {
+        "name": "No. 39 Hansung",
+        "code": "6NET"
+      },
+      {
+        "name": "No. 618 Dong Won",
+        "code": "6KWS"
+      },
+      {
+        "name": "No. 619 Dong Won",
+        "code": "6KWT"
+      },
+      {
+        "name": "No. 620 Dong Won",
+        "code": "6LCI"
+      },
+      {
+        "name": "No. 621 Dong Won",
+        "code": "6NLA"
+      },
+      {
+        "name": "No. 622 Dong Won",
+        "code": "DTAA5"
+      },
+      {
+        "name": "No. 623 Dong Won",
+        "code": "DSDR7"
+      },
+      {
+        "name": "No. 631 Dong Won",
+        "code": "DTAM4"
+      },
+      {
+        "name": "No. 632 Dong Won",
+        "code": "DSAQ4"
+      },
+      {
+        "name": "No. 633 Dong Won",
+        "code": "DTAN8"
+      },
+      {
+        "name": "No. 650 Dong Won",
+        "code": "6KSD"
+      },
+      {
+        "name": "No. 651 Dong Won",
+        "code": "6KAE"
+      }
+    ],
+    "date": "2026-07-17T12:59:14.170Z",
+    "month_label": "May 2025",
+    "pdf_name": "05_05_26 (1).pdf"
+  },
+  "current": null
+}
