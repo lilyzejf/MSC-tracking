@@ -1,0 +1,388 @@
+{
+  "name": "French Polynesia albacore, yellowfin and swordfish longline fishery",
+  "slug": "french-polynesia-albacore",
+  "baseline": {
+    "vessels": [
+      {
+        "name": "ARIIMOANA",
+        "code": "PY 1976"
+      },
+      {
+        "name": "ARIITAI NUI",
+        "code": "PY 2083"
+      },
+      {
+        "name": "AVA ITI II",
+        "code": "PY 2032"
+      },
+      {
+        "name": "EDDY V",
+        "code": "PY 1977"
+      },
+      {
+        "name": "FAI MANU 1",
+        "code": "PY 1988"
+      },
+      {
+        "name": "FAI MANU III",
+        "code": "PY 2042"
+      },
+      {
+        "name": "FETU",
+        "code": "PY 1722"
+      },
+      {
+        "name": "FETU MANA",
+        "code": "PY 2133"
+      },
+      {
+        "name": "FETU TEA II",
+        "code": "PY 1800"
+      },
+      {
+        "name": "FETU URA",
+        "code": "PY 1801"
+      },
+      {
+        "name": "HEIMANA 3",
+        "code": "PY 1612"
+      },
+      {
+        "name": "IRAULTZA",
+        "code": "PY 2085"
+      },
+      {
+        "name": "IRIHONU",
+        "code": "PY 1809"
+      },
+      {
+        "name": "KATHE",
+        "code": "PY 1805"
+      },
+      {
+        "name": "KATHE II",
+        "code": "PY 1981"
+      },
+      {
+        "name": "KEHEI",
+        "code": "PY 1533"
+      },
+      {
+        "name": "KEYLANI",
+        "code": "PY 2129"
+      },
+      {
+        "name": "KHAYA STAR",
+        "code": "PY 1516"
+      },
+      {
+        "name": "KUKI",
+        "code": "PY 1271"
+      },
+      {
+        "name": "LADY CHRIS 10",
+        "code": "PY 2941"
+      },
+      {
+        "name": "LADY CHRIS 3",
+        "code": "PY 2084"
+      },
+      {
+        "name": "LADY CHRIS 4",
+        "code": "PY 2187"
+      },
+      {
+        "name": "LADY CHRIS 5",
+        "code": "PY 1626"
+      },
+      {
+        "name": "LADY CHRIS 6",
+        "code": "PY 2648"
+      },
+      {
+        "name": "LADY CHRIS 7",
+        "code": "PY 2670"
+      },
+      {
+        "name": "LADY CHRIS 8",
+        "code": "PY 2685"
+      },
+      {
+        "name": "LADY CHRIS 9",
+        "code": "PY 2770"
+      },
+      {
+        "name": "MAIRIPEHE 2",
+        "code": "PY 1811"
+      },
+      {
+        "name": "MARYBEL",
+        "code": "PY 1806"
+      },
+      {
+        "name": "MATA'U II",
+        "code": "PY 2068"
+      },
+      {
+        "name": "MEHERIO I",
+        "code": "PY 2043"
+      },
+      {
+        "name": "MEHERIO XII",
+        "code": "PY 2061"
+      },
+      {
+        "name": "MEREANA",
+        "code": "PY 1807"
+      },
+      {
+        "name": "MEREANA 5",
+        "code": "PY 2715"
+      },
+      {
+        "name": "MEREANA 6",
+        "code": "PY 2725"
+      },
+      {
+        "name": "MEREANA 7",
+        "code": "PY 40719 PE"
+      },
+      {
+        "name": "MEREANA 8",
+        "code": "PY 1974"
+      },
+      {
+        "name": "MOKAI",
+        "code": "PY 1980"
+      },
+      {
+        "name": "MOKAI 2",
+        "code": "PY 2189"
+      },
+      {
+        "name": "MOKAI 5",
+        "code": "PY 1970"
+      },
+      {
+        "name": "MOOREA RAVA'AI",
+        "code": "PY 1657"
+      },
+      {
+        "name": "MOOREA RAVA'AI III",
+        "code": "PY 1987"
+      },
+      {
+        "name": "MOOREA RAVA'AI IV",
+        "code": "PY 1592"
+      },
+      {
+        "name": "MOOREA RAVA'AI VI",
+        "code": "PY 2192"
+      },
+      {
+        "name": "MOOREA TAUTAI",
+        "code": "PY 1728"
+      },
+      {
+        "name": "NARIITEA V",
+        "code": "PY 2188"
+      },
+      {
+        "name": "PHOENIX",
+        "code": "PY 2614"
+      },
+      {
+        "name": "PUA O TUA",
+        "code": "PY 1515"
+      },
+      {
+        "name": "PUONO",
+        "code": "PY 1812"
+      },
+      {
+        "name": "RAVA'AI NUI I",
+        "code": "PY 2191"
+      },
+      {
+        "name": "RAVA'AI NUI II",
+        "code": "PY 2223"
+      },
+      {
+        "name": "RAVA'AI NUI III",
+        "code": "PY 2224"
+      },
+      {
+        "name": "RAVA'AI NUI V",
+        "code": "PY 2222"
+      },
+      {
+        "name": "RAVA'AI NUI VII",
+        "code": "PY 40334"
+      },
+      {
+        "name": "RAVA'AI NUI VIII",
+        "code": "PY 40335"
+      },
+      {
+        "name": "RIYANI",
+        "code": "PY 1620"
+      },
+      {
+        "name": "SANTA RAISSA",
+        "code": "PY 2167"
+      },
+      {
+        "name": "TAGNI",
+        "code": "PY 2734"
+      },
+      {
+        "name": "TAGNI 3",
+        "code": "PY 2721"
+      },
+      {
+        "name": "TAHITI NUI",
+        "code": "PY 1405"
+      },
+      {
+        "name": "TAHITIAN TUNA",
+        "code": "PY 2752"
+      },
+      {
+        "name": "TAHITIAN TUNA 2",
+        "code": "PY 41028 PE"
+      },
+      {
+        "name": "TAMATIA",
+        "code": "PY 1726"
+      },
+      {
+        "name": "TE AITO",
+        "code": "PY 1978"
+      },
+      {
+        "name": "TE AITO 2",
+        "code": "PY 2214"
+      },
+      {
+        "name": "TE AITO 6",
+        "code": "PY 1598"
+      },
+      {
+        "name": "TEIRI IRI",
+        "code": "PY 1810"
+      },
+      {
+        "name": "TEUKI",
+        "code": "PY 1975"
+      },
+      {
+        "name": "TUAANAPA",
+        "code": "PY 1808"
+      },
+      {
+        "name": "TUAHEI",
+        "code": "PY 2044"
+      },
+      {
+        "name": "TUAHITI",
+        "code": "PY 2045"
+      },
+      {
+        "name": "TUAHOA",
+        "code": "PY 2063"
+      },
+      {
+        "name": "TUAHOTU",
+        "code": "PY 2221"
+      },
+      {
+        "name": "TUAMANA",
+        "code": "PY 2220"
+      },
+      {
+        "name": "TUAMARU",
+        "code": "PY 2059"
+      },
+      {
+        "name": "TUAMITI",
+        "code": "PY 2062"
+      },
+      {
+        "name": "TUARAI",
+        "code": "PY 2219"
+      },
+      {
+        "name": "TUARANI",
+        "code": "PY 2218"
+      },
+      {
+        "name": "TUARERE",
+        "code": "PY 2217"
+      },
+      {
+        "name": "TUATANE",
+        "code": "PY 2748"
+      },
+      {
+        "name": "TUBUAI RAVA'AI III",
+        "code": "PY 2190"
+      },
+      {
+        "name": "ULYSSE 2",
+        "code": "PY 2737"
+      },
+      {
+        "name": "ULYSSE ONE",
+        "code": "PY 2706"
+      },
+      {
+        "name": "VAEANAPA",
+        "code": "PY 2252"
+      },
+      {
+        "name": "VAIANAHOA",
+        "code": "PY 1979"
+      },
+      {
+        "name": "VAIPAHU",
+        "code": "PY 1804"
+      },
+      {
+        "name": "VAIVAI NUI",
+        "code": "PY 1609"
+      },
+      {
+        "name": "VINI VINI II",
+        "code": "PY 1724"
+      },
+      {
+        "name": "VINI VINI IX",
+        "code": "PY 2166"
+      },
+      {
+        "name": "VINI VINI VII",
+        "code": "PY 2031"
+      },
+      {
+        "name": "VINI VINI X",
+        "code": "PY 2716"
+      },
+      {
+        "name": "VINI VINI XI",
+        "code": "PY 2733"
+      },
+      {
+        "name": "VINI VINI XII",
+        "code": "PY 2871"
+      },
+      {
+        "name": "YAHEI",
+        "code": "PY1534"
+      }
+    ],
+    "date": "2026-07-17T13:12:57.073Z",
+    "month_label": "May 2025",
+    "pdf_name": "05_05_26 (1).pdf"
+  },
+  "current": null
+}
