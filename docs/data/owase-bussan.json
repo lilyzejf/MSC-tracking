@@ -16,5 +16,22 @@
     "month_label": "May 2025",
     "pdf_name": "05_05_26 (1).pdf"
   },
-  "current": null
+  "current": {
+    "vessels": [
+      {
+        "name": "Ryoeimaru",
+        "code": "ME2-5977"
+      },
+      {
+        "name": "Ryoeimaru No. 11",
+        "code": "ME2-6074"
+      }
+    ],
+    "date": "2026-07-17T14:33:04.653Z",
+    "month_label": "July 2026",
+    "pdf_name": "Owase Bussan Co., Ltd._MSC Fisheries_MSC-F-31499.pdf",
+    "added": [],
+    "removed": []
+  },
+  "status": "active"
 }
