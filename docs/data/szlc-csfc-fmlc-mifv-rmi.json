@@ -164,5 +164,170 @@
     "month_label": "May 2025",
     "pdf_name": "05_05_26 (1).pdf"
   },
-  "current": null
+  "current": {
+    "vessels": [
+      {
+        "name": "CFA 22",
+        "code": "VR0120"
+      },
+      {
+        "name": "CFA 23",
+        "code": "VR0122"
+      },
+      {
+        "name": "CFA 25",
+        "code": "VR0121"
+      },
+      {
+        "name": "CFA 26",
+        "code": "VR0153"
+      },
+      {
+        "name": "CFA 27",
+        "code": "VR0154"
+      },
+      {
+        "name": "HUA NAN YU 702",
+        "code": "(YUE)CHUANDENG(JI)(2022)FT-200051"
+      },
+      {
+        "name": "HUA NAN YU 703",
+        "code": "(YUE)CHUANDENG(JI)(2022)FT-200050"
+      },
+      {
+        "name": "HUA NAN YU 705",
+        "code": "(YUE)CHUANDENG(JI)(2024)FT-200060"
+      },
+      {
+        "name": "HUA NAN YU 761",
+        "code": "(YUESHEN) CHUAN DENG (JI) (2021)FT-200039"
+      },
+      {
+        "name": "HUA NAN YU 762",
+        "code": "(YUESHEN) CHUAN DENG (JI)(2021)FT-200038"
+      },
+      {
+        "name": "HUA NAN YU 766",
+        "code": "(YUESHEN) CHUAN DENG (JI) (2021)FT-200029"
+      },
+      {
+        "name": "HUA NAN YU 767",
+        "code": "(YUESHEN) CHUAN DENG (JI) (2021)FT-200041"
+      },
+      {
+        "name": "HUA NAN YU 768",
+        "code": "(YUESHEN) CHUAN DENG (JI) (2021)FT-200024"
+      },
+      {
+        "name": "HUA NAN YU 769",
+        "code": "(YUESHEN)CHUANDENG(JI)(2022)FT-200009"
+      },
+      {
+        "name": "Missluen",
+        "code": "VR0091"
+      },
+      {
+        "name": "SHEN LIAN CHENG 601",
+        "code": "(YUE) CHUANDENG (JI) (2023) FT-200017"
+      },
+      {
+        "name": "SHEN LIAN CHENG 602",
+        "code": "(YUE)CHUANDENG(JI)(2024)FT-200066"
+      },
+      {
+        "name": "SHEN LIAN CHENG 603",
+        "code": "(YUE)CHUANDENG(JI)(2024)FT-200067"
+      },
+      {
+        "name": "SHEN LIAN CHENG 605",
+        "code": "(YUE)CHUANDENG(JI)(2025)FT-200051"
+      },
+      {
+        "name": "SHEN LIAN CHENG 606",
+        "code": "(YUE)CHUANDENG(JI)(2025)FT-200066"
+      },
+      {
+        "name": "SHEN LIAN CHENG 607",
+        "code": "(YUESHEN)CHUANDENG(JI)(2025)FT-200001"
+      },
+      {
+        "name": "SHEN LIAN CHENG 760",
+        "code": "(YUE)CHUANDENG(JI)(2023)FT-200122"
+      },
+      {
+        "name": "SHEN LIAN CHENG 761",
+        "code": "(YUE)CHUANDENG(JI)(2023)FT-200123"
+      },
+      {
+        "name": "Shen Lian Cheng 781",
+        "code": "(YUESHEN)CHUANDENG(JI)(2021)FT-200014"
+      },
+      {
+        "name": "Shen Lian Cheng 782",
+        "code": "(YUESHEN)CHUANDENG(JI)(2021)FT-200031"
+      },
+      {
+        "name": "Shen Lian Cheng 783",
+        "code": "(YUE)CHUANDENG(JI)(2023)FT-200059"
+      },
+      {
+        "name": "Shen Lian Cheng 784",
+        "code": "(YUE)CHUANDENG(JI)(2023)FT-200090"
+      },
+      {
+        "name": "Shen Lian Cheng 785",
+        "code": "(YUE)CHUANDENG(JI)(2023)FT-200091"
+      },
+      {
+        "name": "Shen Lian Cheng 786",
+        "code": "(YUE)CHUANDENG(JI)(2023)FT-200092"
+      },
+      {
+        "name": "SHEN LIAN CHENG 787",
+        "code": "(YUE)CHUANDENG(JI)(2024)FT-2000058"
+      },
+      {
+        "name": "SHEN LIAN CHENG 788",
+        "code": "(YUE)CHUANDENG(JI)(2024)FT-2000059"
+      },
+      {
+        "name": "SHEN LIAN CHENG 790",
+        "code": "(YUE)CHUANDENG(JI)(2023)FT-200018"
+      },
+      {
+        "name": "SHEN LIAN CHENG 791",
+        "code": "(YUE)CHUANGDENG(JI)(2023)FT-100010"
+      },
+      {
+        "name": "SHEN LIAN CHENG 792",
+        "code": "(YUE)CHUANDENG(JI)(2023)FT-100011"
+      },
+      {
+        "name": "SHEN LIAN CHENG 793",
+        "code": "(YUE)CHUANDENG(JI)(2023)FT-100012"
+      },
+      {
+        "name": "SHEN LIAN CHENG 796",
+        "code": "(YUE)CHUANDENG(JI)(2023)FT-100009"
+      },
+      {
+        "name": "SHEN LIAN CHENG 797",
+        "code": "(YUE)CHUANDENG(JI)(2023)FT-100014"
+      },
+      {
+        "name": "SLC722",
+        "code": "VR0130"
+      },
+      {
+        "name": "SLC723",
+        "code": "VR0131"
+      }
+    ],
+    "date": "2026-07-17T14:42:10.629Z",
+    "month_label": "July 2026",
+    "pdf_name": "MSC-F-31440_V1.11.pdf",
+    "added": [],
+    "removed": []
+  },
+  "status": "active"
 }
