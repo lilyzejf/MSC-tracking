@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-17T13:22:19.857Z",
+  "last_updated": "2026-07-17T13:23:06.248Z",
   "fisheries": [
     {
       "name": "American Samoa EEZ tuna longline fishery",
@@ -213,11 +213,11 @@
     {
       "name": "Tri Marine Atlantic Albacore longline fishery",
       "slug": "tri-marine-atlantic-albacore",
-      "has_baseline": false,
-      "baseline_month": null,
+      "has_baseline": true,
+      "baseline_month": "May 2025",
       "has_current": false,
       "current_month": null,
-      "vessel_count": 0,
+      "vessel_count": 25,
       "added_count": 0,
       "removed_count": 0
     },
