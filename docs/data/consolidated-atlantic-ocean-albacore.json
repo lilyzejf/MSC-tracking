@@ -1,0 +1,96 @@
+{
+  "name": "Consolidated Atlantic Ocean albacore tuna longline fishery",
+  "slug": "consolidated-atlantic-ocean-albacore",
+  "baseline": {
+    "vessels": [
+      {
+        "name": "FENG YA NO.11",
+        "code": "AT000TAI00038"
+      },
+      {
+        "name": "FENG YA NO.18",
+        "code": "AT000TAI00262"
+      },
+      {
+        "name": "FU MAO NO. 268",
+        "code": "AT000TAI00165"
+      },
+      {
+        "name": "HUNG SHENG",
+        "code": "AT000TAI00269"
+      },
+      {
+        "name": "HUNG YANG LUN",
+        "code": "AT000TAI00311"
+      },
+      {
+        "name": "HUNG YANG LUN NO.1",
+        "code": "AT000TAI00316"
+      },
+      {
+        "name": "KAO FENG NO. 101",
+        "code": "AT000TAI00089"
+      },
+      {
+        "name": "KAO FONG NO.1",
+        "code": "AT000TAI00095"
+      },
+      {
+        "name": "KAO FONG NO.372",
+        "code": "AT000TAI00092"
+      },
+      {
+        "name": "KAO FONG NO.8",
+        "code": "AT000TAI00161"
+      },
+      {
+        "name": "KAO FONG NO.817",
+        "code": "AT000TAI00096"
+      },
+      {
+        "name": "KUANG YING NO. 3",
+        "code": "AT000TAI00283"
+      },
+      {
+        "name": "RUEY I SHYANG NO.101",
+        "code": "AT000TAI00250"
+      },
+      {
+        "name": "RUEY I SHYANG NO.102",
+        "code": "AT000TAI00251"
+      },
+      {
+        "name": "RUEY I SHYANG NO.103",
+        "code": "AT000TAI00267"
+      },
+      {
+        "name": "RUEY I SHYANG NO.106",
+        "code": "AT000TAI00268"
+      },
+      {
+        "name": "YEUN HORNG NO.2",
+        "code": "AT000TAI00255"
+      },
+      {
+        "name": "YUH MAO NO.106",
+        "code": "AT000TAI00072"
+      },
+      {
+        "name": "YUN MAO NO.102",
+        "code": "AT000TAI00304"
+      },
+      {
+        "name": "YUN MAO NO.8",
+        "code": "AT000TAI00305"
+      },
+      {
+        "name": "YUNG CHI NO.166",
+        "code": "AT000TAI00272"
+      }
+    ],
+    "date": "2026-07-17T12:52:43.314Z",
+    "month_label": "May 2025",
+    "pdf_name": "05_05_26 (1).pdf"
+  },
+  "current": null
+}
