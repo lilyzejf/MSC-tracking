@@ -132,5 +132,137 @@
     "month_label": "May 2025",
     "pdf_name": "05_05_26 (1).pdf"
   },
-  "current": null
+  "current": {
+    "vessels": [
+      {
+        "name": "40 South",
+        "code": "862931"
+      },
+      {
+        "name": "Ashburton Road",
+        "code": "447872"
+      },
+      {
+        "name": "Assassin",
+        "code": "LFB12904"
+      },
+      {
+        "name": "Calibre",
+        "code": "RFB12913"
+      },
+      {
+        "name": "Claudarah",
+        "code": "LFB11733"
+      },
+      {
+        "name": "Derwent Venture",
+        "code": "8019966"
+      },
+      {
+        "name": "Diamax",
+        "code": "LFB0636"
+      },
+      {
+        "name": "Emnicus",
+        "code": "BX9"
+      },
+      {
+        "name": "Fisco 1",
+        "code": "LFB11375"
+      },
+      {
+        "name": "Gracie P",
+        "code": "LFB11897"
+      },
+      {
+        "name": "Hapuku II",
+        "code": "LFB11985"
+      },
+      {
+        "name": "Jordan Kate",
+        "code": "LFB12747"
+      },
+      {
+        "name": "Kaybeanna",
+        "code": "LFB12939"
+      },
+      {
+        "name": "Micava",
+        "code": "NYR"
+      },
+      {
+        "name": "Mira S",
+        "code": "VMJI"
+      },
+      {
+        "name": "Ocean Explorer",
+        "code": "O506"
+      },
+      {
+        "name": "Ocean Myst",
+        "code": "901488"
+      },
+      {
+        "name": "Ocean Wild II",
+        "code": "664"
+      },
+      {
+        "name": "Papanui",
+        "code": "O735"
+      },
+      {
+        "name": "Predator",
+        "code": "O509"
+      },
+      {
+        "name": "Reminisce",
+        "code": "856660"
+      },
+      {
+        "name": "Salvatore",
+        "code": "457592"
+      },
+      {
+        "name": "Samurai",
+        "code": "443196"
+      },
+      {
+        "name": "Santa Lucia",
+        "code": "RFB13129"
+      },
+      {
+        "name": "Savannah Gale",
+        "code": null
+      },
+      {
+        "name": "Scorpion II",
+        "code": "O527"
+      },
+      {
+        "name": "Sharp Shooter II",
+        "code": "900769"
+      },
+      {
+        "name": "Sniper",
+        "code": "LFB12035"
+      },
+      {
+        "name": "Straight Shooter",
+        "code": "LFB13064"
+      },
+      {
+        "name": "Strikeforce",
+        "code": "LFB12297"
+      },
+      {
+        "name": "Total",
+        "code": "LFB11735"
+      }
+    ],
+    "date": "2026-07-17T13:44:54.918Z",
+    "month_label": "July 2026",
+    "pdf_name": "21_400EN_MSC_Vessel List_ETBF_2026-05-01.pdf",
+    "added": [],
+    "removed": []
+  }
 }
