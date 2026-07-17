@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-17T13:50:15.359Z",
+  "last_updated": "2026-07-17T13:53:23.417Z",
   "fisheries": [
     {
       "name": "American Samoa EEZ tuna longline fishery",
@@ -61,11 +61,11 @@
       "slug": "consolidated-pacific-ocean-albacore",
       "has_baseline": true,
       "baseline_month": "May 2025",
-      "has_current": false,
-      "current_month": null,
-      "vessel_count": 3,
-      "added_count": 0,
-      "removed_count": 0
+      "has_current": true,
+      "current_month": "July 2026",
+      "vessel_count": 5,
+      "added_count": 3,
+      "removed_count": 1
     },
     {
       "name": "Dae Hae Pacific Yellowfin, Bigeye, and Albacore Longline",
