@@ -124,5 +124,130 @@
     "month_label": "May 2025",
     "pdf_name": "05_05_26 (1).pdf"
   },
-  "current": null
+  "current": {
+    "vessels": [
+      {
+        "name": "HUA NAN YU 711",
+        "code": "(YUE) CHUAN DENG (JI) (2023)FT-200051"
+      },
+      {
+        "name": "HUA NAN YU 712",
+        "code": "(YUE) CHUAN DENG (JI) (2023)FT-200052"
+      },
+      {
+        "name": "HUA NAN YU 716",
+        "code": "(YUESHEN) CHUANDENG(JI)(2021)FT-200010"
+      },
+      {
+        "name": "HUA NAN YU 718",
+        "code": "(YUESHEN) CHUANDENG(JI)(2021)FT-200011"
+      },
+      {
+        "name": "HUA NAN YU 719",
+        "code": "(YUESHEN) CHUANDENG(JI)(2021)FT-200012"
+      },
+      {
+        "name": "HUA NAN YU 721",
+        "code": "(YUESHEN) CHUANDENG(JI)(2021)FT-200013"
+      },
+      {
+        "name": "HUA NAN YU 722",
+        "code": "(YUESHEN) CHUANDENG(JI)(2021)FT-200005"
+      },
+      {
+        "name": "HUA NAN YU 723",
+        "code": "(YUESHEN) CHUANDENG(JI)(2021)FT-200009"
+      },
+      {
+        "name": "HUA NAN YU 731",
+        "code": "(YUE) CHUAN DENG (JI) (2022) FT-200070"
+      },
+      {
+        "name": "HUA NAN YU 732",
+        "code": "(YUE) CHUAN DENG (JI) (2022) FT-200049"
+      },
+      {
+        "name": "HUA NAN YU 736",
+        "code": "(YUE) CHUAN DENG (JI) (2022) FT-200071"
+      },
+      {
+        "name": "HUA NAN YU 737",
+        "code": "(YUE) CHUAN DENG (JI) (2022) FT-200072"
+      },
+      {
+        "name": "HUA NAN YU 738",
+        "code": "(YUE) CHUAN DENG (JI) (2022) FT-200048"
+      },
+      {
+        "name": "HUA NAN YU 739",
+        "code": "(YUE) CHUAN DENG (JI) (2022) FT-200073"
+      },
+      {
+        "name": "SHEN GANG FA 15",
+        "code": "(YUE)CHUANDENG(JI)(2023)FT-200070"
+      },
+      {
+        "name": "SHEN GANG FA 16",
+        "code": "(YUE)CHUANDENG(JI)(2023)FT-200071"
+      },
+      {
+        "name": "SHEN GANG FA 17",
+        "code": "(YUE)CHUANDENG(JI)(2023)FT-200072"
+      },
+      {
+        "name": "SHEN GANG FA 18",
+        "code": "(YUE)CHUANDENG(JI)(2023)FT-200073"
+      },
+      {
+        "name": "SHEN GANG FA 19",
+        "code": "(YUE)CHUANDENG(JI)(2023)FT-200074"
+      },
+      {
+        "name": "SHEN GANG FA 715",
+        "code": "(YUE)CHUANDENG(JI)(2023)FT-200086"
+      },
+      {
+        "name": "SHEN GANG FA 716",
+        "code": "(YUE)CHUANDENG(JI)(2023)FT-200087"
+      },
+      {
+        "name": "SHEN GANG FA 718",
+        "code": "(YUE)CHUANDENG(JI)(2023)FT-200088"
+      },
+      {
+        "name": "SHEN GANG FA 719",
+        "code": "(YUE)CHUANDENG(JI)(2023)FT-200089"
+      },
+      {
+        "name": "SHEN GANG FA 720",
+        "code": "(YUE SHEN)CHUANDENG(JI)(2019)FT-200015"
+      },
+      {
+        "name": "SHEN LIAN CHENG 881",
+        "code": "(YUESHEN)CHUAN DENG(JI)(2022)FT-200011"
+      },
+      {
+        "name": "SHEN LIAN CHENG 882",
+        "code": "(YUE) CHUAN DENG(JI)(2022)FT-200008"
+      },
+      {
+        "name": "SHEN LIAN CHENG 883",
+        "code": "(YUESHEN)CHUAN DENG(JI)(2022)FT-200012"
+      },
+      {
+        "name": "SHEN LIAN CHENG 884",
+        "code": "(YUESHEN)CHUAN DENG(JI)(2022)FT-200013"
+      },
+      {
+        "name": "SHEN LIAN CHENG 885",
+        "code": "(YUE) CHUAN DENG(JI)(2022)FT-200007"
+      }
+    ],
+    "date": "2026-07-17T14:38:59.007Z",
+    "month_label": "July 2026",
+    "pdf_name": "MSC-F-31399 v2.4.pdf",
+    "added": [],
+    "removed": []
+  },
+  "status": "active"
 }
