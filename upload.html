@@ -173,8 +173,8 @@ async function extractVessels(file){
 method:'POST',
     headers:{'Content-Type':'application/json','x-api-key':geminiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
     body:JSON.stringify({
-      model:'claude-haiku-4-5-20251001',
-      max_tokens:8096,
+      model:'claude-sonnet-4-6',
+      max_tokens:16000,
       messages:[{role:'user',content:[
         {type:'document',source:{type:'base64',media_type:'application/pdf',data:base64}},
         {type:'text',text:`Extract ONLY the vessel/boat names and their registration or identification codes from this fishing vessel list document. Return a JSON array of objects with exactly two fields: "name" (the vessel name) and "code" (the registration/ID code, or null). Do NOT include company names, addresses, legal text, certifier names, column headers, or fishery names. Return ONLY a valid JSON array, nothing else.`}
@@ -182,10 +182,13 @@ method:'POST',
     })
   });
   if(!response.ok){const err=await response.json().catch(()=>({}));throw new Error(err.error?.message||'Gemini API error: '+response.status);}
- const data=await response.json();
+const data=await response.json();
+  if(data.error) throw new Error(data.error.message);
   const text=data.content[0].text.trim();
-  const clean=text.replace(/^```json\s*/,'').replace(/\s*```$/,'').trim();
-  return JSON.parse(clean).sort((a,b)=>a.name.localeCompare(b.name));
+  // Find the JSON array anywhere in the response, even if surrounded by text
+  const arrayMatch=text.match(/\[[\s\S]*\]/);
+  if(!arrayMatch) throw new Error('Could not find vessel list in response. Try again.');
+  return JSON.parse(arrayMatch[0]).sort((a,b)=>a.name.localeCompare(b.name));
 }
 
 function encodeJSON(obj){const str=JSON.stringify(obj,null,2);const bytes=new TextEncoder().encode(str);let bin='';bytes.forEach(b=>bin+=String.fromCharCode(b));return btoa(bin);}
