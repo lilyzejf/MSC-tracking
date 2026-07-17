@@ -196,5 +196,202 @@
     "month_label": "May 2025",
     "pdf_name": "05_05_26 (1).pdf"
   },
-  "current": null
+  "current": {
+    "vessels": [
+      {
+        "name": "PINGTAIRONG13",
+        "code": "9619244"
+      },
+      {
+        "name": "PINGTAIRONG131",
+        "code": "9951692"
+      },
+      {
+        "name": "PINGTAIRONG19",
+        "code": "9655054"
+      },
+      {
+        "name": "PINGTAIRONG25",
+        "code": "9655066"
+      },
+      {
+        "name": "PINGTAIRONG29",
+        "code": "9655078"
+      },
+      {
+        "name": "PINGTAIRONG301",
+        "code": "8791502"
+      },
+      {
+        "name": "PINGTAIRONG31",
+        "code": "9619256"
+      },
+      {
+        "name": "PINGTAIRONG313",
+        "code": "9877420"
+      },
+      {
+        "name": "PINGTAIRONG316",
+        "code": "9702924"
+      },
+      {
+        "name": "PINGTAIRONG318",
+        "code": "9702948"
+      },
+      {
+        "name": "PINGTAIRONG319",
+        "code": "9923633"
+      },
+      {
+        "name": "PINGTAIRONG327",
+        "code": "8589014"
+      },
+      {
+        "name": "PINGTAIRONG331",
+        "code": "9877432"
+      },
+      {
+        "name": "PINGTAIRONG39",
+        "code": "8628781"
+      },
+      {
+        "name": "PINGTAIRONG50",
+        "code": "9676747"
+      },
+      {
+        "name": "PINGTAIRONG55",
+        "code": "9676759"
+      },
+      {
+        "name": "PINGTAIRONG58",
+        "code": "9676761"
+      },
+      {
+        "name": "PINGTAIRONG60",
+        "code": "9676773"
+      },
+      {
+        "name": "PINGTAIRONG65",
+        "code": "9689366"
+      },
+      {
+        "name": "PINGTAIRONG678",
+        "code": "1050923"
+      },
+      {
+        "name": "PINGTAIRONG68",
+        "code": "9689378"
+      },
+      {
+        "name": "PINGTAIRONG687",
+        "code": "1047691"
+      },
+      {
+        "name": "PINGTAIRONG688",
+        "code": "9951707"
+      },
+      {
+        "name": "PINGTAIRONG70",
+        "code": "9689380"
+      },
+      {
+        "name": "PINGTAIRONG71",
+        "code": "9689392"
+      },
+      {
+        "name": "PINGTAIRONG78",
+        "code": "9770062"
+      },
+      {
+        "name": "PINGTAIRONG79",
+        "code": "9770074"
+      },
+      {
+        "name": "PINGTAIRONG82",
+        "code": "9770086"
+      },
+      {
+        "name": "PINGTAIRONG86",
+        "code": "9770098"
+      },
+      {
+        "name": "PINGTAIRONG88",
+        "code": "9770103"
+      },
+      {
+        "name": "PINGTAIRONG89",
+        "code": "9770115"
+      },
+      {
+        "name": "PINGTAIRONG9",
+        "code": "8628810"
+      },
+      {
+        "name": "RONGHENG13",
+        "code": "8689230"
+      },
+      {
+        "name": "RONGHENG19",
+        "code": "9671759"
+      },
+      {
+        "name": "RONGHENG31",
+        "code": "8689371"
+      },
+      {
+        "name": "RONGHENG41",
+        "code": "9671761"
+      },
+      {
+        "name": "RONGHENG49",
+        "code": "9671785"
+      },
+      {
+        "name": "RONGHENG68",
+        "code": "8689436"
+      },
+      {
+        "name": "RONGHENG78",
+        "code": "8690100"
+      },
+      {
+        "name": "RONGHENG86",
+        "code": "8690112"
+      },
+      {
+        "name": "RONGHENG87",
+        "code": "8690356"
+      },
+      {
+        "name": "RONGYE111",
+        "code": "9870604"
+      },
+      {
+        "name": "RONGYE113",
+        "code": "9870616"
+      },
+      {
+        "name": "RONGYE119",
+        "code": "9741621"
+      },
+      {
+        "name": "RONGYE135",
+        "code": "9741633"
+      },
+      {
+        "name": "RONGYE153",
+        "code": "9741645"
+      },
+      {
+        "name": "RONGYE159",
+        "code": "9741657"
+      }
+    ],
+    "date": "2026-07-17T14:34:22.374Z",
+    "month_label": "July 2026",
+    "pdf_name": "Pingtairong Ocean Fishery Group Co., Ltd. (PTR)_MSC Fisheries_MSC-F-31624.pdf",
+    "added": [],
+    "removed": []
+  },
+  "status": "active"
 }
