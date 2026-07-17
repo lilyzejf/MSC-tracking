@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-17T14:23:30.331Z",
+  "last_updated": "2026-07-17T14:23:33.564Z",
   "fisheries": [
     {
       "name": "American Samoa EEZ tuna longline fishery",
@@ -112,7 +112,7 @@
     {
       "name": "French Polynesia albacore, yellowfin and swordfish longline fishery",
       "slug": "french-polynesia-albacore",
-      "status": "active",
+      "status": "suspended",
       "has_baseline": true,
       "baseline_month": "May 2025",
       "has_current": false,
