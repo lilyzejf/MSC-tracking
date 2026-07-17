@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-17T13:24:36.663Z",
+  "last_updated": "2026-07-17T13:25:44.167Z",
   "fisheries": [
     {
       "name": "American Samoa EEZ tuna longline fishery",
@@ -246,11 +246,11 @@
     {
       "name": "Usufuku Honten Northeast Atlantic longline bluefin tuna fishery",
       "slug": "usufuku-honten",
-      "has_baseline": false,
-      "baseline_month": null,
+      "has_baseline": true,
+      "baseline_month": "May 2025",
       "has_current": false,
       "current_month": null,
-      "vessel_count": 0,
+      "vessel_count": 1,
       "added_count": 0,
       "removed_count": 0
     }
