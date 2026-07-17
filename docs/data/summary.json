@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-17T12:58:13.500Z",
+  "last_updated": "2026-07-17T12:59:14.170Z",
   "fisheries": [
     {
       "name": "American Samoa EEZ tuna longline fishery",
@@ -81,11 +81,11 @@
     {
       "name": "DFC/HEC Pacific longline bigeye, yellowfin and albacore tuna fishery",
       "slug": "dfc-hec-pacific-longline",
-      "has_baseline": false,
-      "baseline_month": null,
+      "has_baseline": true,
+      "baseline_month": "May 2025",
       "has_current": false,
       "current_month": null,
-      "vessel_count": 0,
+      "vessel_count": 15,
       "added_count": 0,
       "removed_count": 0
     },
