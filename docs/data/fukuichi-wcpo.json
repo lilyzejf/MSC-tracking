@@ -1,0 +1,40 @@
+{
+  "name": "Fukuichi WCPO purse seine and longline yellowfin, skipjack, albacore and bigeye tuna fishery",
+  "slug": "fukuichi-wcpo",
+  "baseline": {
+    "vessels": [
+      {
+        "name": "Fukuichi Maru 128",
+        "code": "JENO"
+      },
+      {
+        "name": "Fukuichi Maru 81",
+        "code": "7KNO"
+      },
+      {
+        "name": "Fukuichi Maru 83",
+        "code": "7JEG"
+      },
+      {
+        "name": "Fukuichi Maru 88",
+        "code": "7KGC"
+      },
+      {
+        "name": "Fukuyo -maru No.7",
+        "code": "7JPQ"
+      },
+      {
+        "name": "Fukuyo – maru No.5",
+        "code": "7KIK"
+      },
+      {
+        "name": "Kin'ei – maru No.135",
+        "code": "JGCF"
+      }
+    ],
+    "date": "2026-07-17T13:13:47.126Z",
+    "month_label": "May 2025",
+    "pdf_name": "05_05_26 (1).pdf"
+  },
+  "current": null
+}
