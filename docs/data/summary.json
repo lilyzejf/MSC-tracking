@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-17T12:46:47.802Z",
+  "last_updated": "2026-07-17T12:48:50.375Z",
   "fisheries": [
     {
       "name": "American Samoa EEZ tuna longline fishery",
@@ -26,11 +26,11 @@
     {
       "name": "Australia southern bluefin tuna longline and minor line fishery",
       "slug": "australia-southern-bluefin-tuna-longline",
-      "has_baseline": false,
-      "baseline_month": null,
+      "has_baseline": true,
+      "baseline_month": "May 2025",
       "has_current": false,
       "current_month": null,
-      "vessel_count": 0,
+      "vessel_count": 32,
       "added_count": 0,
       "removed_count": 0
     },
