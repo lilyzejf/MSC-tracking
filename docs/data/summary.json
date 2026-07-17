@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-17T13:53:23.417Z",
+  "last_updated": "2026-07-17T13:54:30.921Z",
   "fisheries": [
     {
       "name": "American Samoa EEZ tuna longline fishery",
@@ -72,8 +72,8 @@
       "slug": "dae-hae-pacific-yellowfin",
       "has_baseline": true,
       "baseline_month": "May 2025",
-      "has_current": false,
-      "current_month": null,
+      "has_current": true,
+      "current_month": "July 2026",
       "vessel_count": 8,
       "added_count": 0,
       "removed_count": 0
