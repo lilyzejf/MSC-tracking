@@ -1,0 +1,16 @@
+{
+  "name": "Usufuku Honten Northeast Atlantic longline bluefin tuna fishery",
+  "slug": "usufuku-honten",
+  "baseline": {
+    "vessels": [
+      {
+        "name": "Shofuku Maru N°1",
+        "code": "7KFY"
+      }
+    ],
+    "date": "2026-07-17T13:25:44.167Z",
+    "month_label": "May 2025",
+    "pdf_name": "05_05_26 (1).pdf"
+  },
+  "current": null
+}
