@@ -12,5 +12,18 @@
     "month_label": "May 2025",
     "pdf_name": "05_05_26 (1).pdf"
   },
-  "current": null
+  "current": {
+    "vessels": [
+      {
+        "name": "Shofuku Maru N°1",
+        "code": "7KFY"
+      }
+    ],
+    "date": "2026-07-17T14:52:03.655Z",
+    "month_label": "July 2026",
+    "pdf_name": "MSC-F-31459 v2.0.pdf",
+    "added": [],
+    "removed": []
+  },
+  "status": "active"
 }
