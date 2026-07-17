@@ -108,5 +108,114 @@
     "month_label": "May 2025",
     "pdf_name": "05_05_26 (1).pdf"
   },
-  "current": null
+  "current": {
+    "vessels": [
+      {
+        "name": "Chen Hsing 1",
+        "code": "CT6-1278"
+      },
+      {
+        "name": "Chien Jui 102",
+        "code": "CT6-1004"
+      },
+      {
+        "name": "Chien Tsao 322",
+        "code": "CT6-1003"
+      },
+      {
+        "name": "Chin Chang Long",
+        "code": "CT6-1013"
+      },
+      {
+        "name": "Chin Liang Mei",
+        "code": "CT6-1021"
+      },
+      {
+        "name": "Fu Mao 268",
+        "code": "CT7-0594"
+      },
+      {
+        "name": "Full Always",
+        "code": "CT6-1103"
+      },
+      {
+        "name": "Hung Yang Lun",
+        "code": "CT6-1549"
+      },
+      {
+        "name": "Hung Yang Lun 1",
+        "code": "CT6-1560"
+      },
+      {
+        "name": "Maan Farn 1",
+        "code": "CT6-1438"
+      },
+      {
+        "name": "Maan Farn 168",
+        "code": "CT6-1466"
+      },
+      {
+        "name": "Maan Farn 668",
+        "code": "CT6-1353"
+      },
+      {
+        "name": "Maan Fwu 666",
+        "code": "CT6-1440"
+      },
+      {
+        "name": "Ruey I Shyang 101",
+        "code": "CT5-1690"
+      },
+      {
+        "name": "Ruey I Shyang 102",
+        "code": "CT5-1691"
+      },
+      {
+        "name": "Ruey I Shyang 103",
+        "code": "CT6-1423"
+      },
+      {
+        "name": "Ruey I Shyang 106",
+        "code": "CT6-1430"
+      },
+      {
+        "name": "Sheng Mao 222",
+        "code": "CT6-1042"
+      },
+      {
+        "name": "Yuh Mao 106",
+        "code": "CT6-1036"
+      },
+      {
+        "name": "Yun Mao 1",
+        "code": "CT6-1507"
+      },
+      {
+        "name": "Yun Mao 101",
+        "code": "CT6-1524"
+      },
+      {
+        "name": "Yun Mao 102",
+        "code": "CT6-1519"
+      },
+      {
+        "name": "Yun Mao 128",
+        "code": "CT6-1534"
+      },
+      {
+        "name": "Yun Mao 168",
+        "code": "CT6-1449"
+      },
+      {
+        "name": "Yun Mao 8",
+        "code": "CT6-1522"
+      }
+    ],
+    "date": "2026-07-17T14:43:45.500Z",
+    "month_label": "July 2026",
+    "pdf_name": "LRQA MSC Vessel List - Tri Marine AO LL Feb 26.pdf",
+    "added": [],
+    "removed": []
+  },
+  "status": "active"
 }
