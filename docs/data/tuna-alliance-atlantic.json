@@ -1,0 +1,100 @@
+{
+  "name": "Tuna Alliance Atlantic albacore longline fishery",
+  "slug": "tuna-alliance-atlantic",
+  "baseline": {
+    "vessels": [
+      {
+        "name": "Chien Jui No. 102",
+        "code": "8417065"
+      },
+      {
+        "name": "Chien Tsao No. 322",
+        "code": "8417077"
+      },
+      {
+        "name": "Dai Ho",
+        "code": "8947527"
+      },
+      {
+        "name": "Fu Mao No. 268",
+        "code": "9395812"
+      },
+      {
+        "name": "Hung Chuan No. 232",
+        "code": "8673475"
+      },
+      {
+        "name": "Hung Chuan No. 336",
+        "code": "8676271"
+      },
+      {
+        "name": "Hung Yang Lun",
+        "code": "9989132"
+      },
+      {
+        "name": "Hung Yang Lun No.1",
+        "code": "1059383"
+      },
+      {
+        "name": "Hung Yu No. 212",
+        "code": "9178252"
+      },
+      {
+        "name": "Kuang Sheng No.3",
+        "code": "1038834"
+      },
+      {
+        "name": "Kuang Ying No. 12",
+        "code": "9880087"
+      },
+      {
+        "name": "Kuang Ying No. 3",
+        "code": "9806548"
+      },
+      {
+        "name": "Maan Farn No. 1",
+        "code": "9778284"
+      },
+      {
+        "name": "Maan Farn No. 168",
+        "code": "9795531"
+      },
+      {
+        "name": "Maan Fwu No. 666",
+        "code": "9763825"
+      },
+      {
+        "name": "Ying Chin Hsiang No. 101",
+        "code": "9230828"
+      },
+      {
+        "name": "Yun Mao No. 1",
+        "code": "9876581"
+      },
+      {
+        "name": "Yun Mao No. 101",
+        "code": "9911953"
+      },
+      {
+        "name": "Yun Mao No. 102",
+        "code": "9889203"
+      },
+      {
+        "name": "Yun Mao No. 128",
+        "code": "9997074"
+      },
+      {
+        "name": "Yun Mao No. 168",
+        "code": "9776315"
+      },
+      {
+        "name": "Yun Mao No. 8",
+        "code": "9899868"
+      }
+    ],
+    "date": "2026-07-17T13:24:36.663Z",
+    "month_label": "May 2025",
+    "pdf_name": "05_05_26 (1).pdf"
+  },
+  "current": null
+}
