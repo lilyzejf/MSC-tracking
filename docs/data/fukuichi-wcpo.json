@@ -36,5 +36,43 @@
     "month_label": "May 2025",
     "pdf_name": "05_05_26 (1).pdf"
   },
-  "current": null
+  "current": {
+    "vessels": [
+      {
+        "name": "Fukuichi Maru 128",
+        "code": "JENO"
+      },
+      {
+        "name": "Fukuichi Maru 81",
+        "code": "7KNO"
+      },
+      {
+        "name": "Fukuichi Maru 83",
+        "code": "7JEG"
+      },
+      {
+        "name": "Fukuichi Maru 88",
+        "code": "7KGC"
+      },
+      {
+        "name": "Fukuyo – maru No.5",
+        "code": "7KIK"
+      }
+    ],
+    "date": "2026-07-17T14:26:29.339Z",
+    "month_label": "July 2026",
+    "pdf_name": "MSC-F-31621 v1.5.pdf",
+    "added": [],
+    "removed": [
+      {
+        "name": "Fukuyo -maru No.7",
+        "code": "7JPQ"
+      },
+      {
+        "name": "Kin'ei – maru No.135",
+        "code": "JGCF"
+      }
+    ]
+  },
+  "status": "active"
 }
