@@ -252,5 +252,258 @@
     "month_label": "May 2025",
     "pdf_name": "05_05_26 (1).pdf"
   },
-  "current": null
+  "current": {
+    "vessels": [
+      {
+        "name": "ADELINE KEVIN",
+        "code": "FRA000866254"
+      },
+      {
+        "name": "AGATHE TYCHE",
+        "code": "FRA000923774"
+      },
+      {
+        "name": "ALICE II",
+        "code": "FRA000699173"
+      },
+      {
+        "name": "ANDREA RITA",
+        "code": "FRA000936144"
+      },
+      {
+        "name": "ANGGILOR II",
+        "code": "FRA000436626"
+      },
+      {
+        "name": "ANTHONY CHRISMELAN",
+        "code": "FRA000624149"
+      },
+      {
+        "name": "ANTLIA",
+        "code": "FRA000916536"
+      },
+      {
+        "name": "ANTOINE MARIUS",
+        "code": "FRA000480715"
+      },
+      {
+        "name": "ARCADIA",
+        "code": "FRA000938363"
+      },
+      {
+        "name": "BARBE D'OR",
+        "code": "FRA000739476"
+      },
+      {
+        "name": "BELLE HISTOIRE 4",
+        "code": "FRA000930217"
+      },
+      {
+        "name": "BONANZA",
+        "code": "FRA000781422"
+      },
+      {
+        "name": "CASI II",
+        "code": "FRA000939268"
+      },
+      {
+        "name": "CHANT DES VAGUES II",
+        "code": "FRA000926635"
+      },
+      {
+        "name": "CHRISTINE BERNARD",
+        "code": "FRA000927088"
+      },
+      {
+        "name": "CORSICA V",
+        "code": "FRA000806108"
+      },
+      {
+        "name": "COSTANZO SANTIAGO",
+        "code": "FRA000733746"
+      },
+      {
+        "name": "DEUX FRERES 8",
+        "code": "FRA000935043"
+      },
+      {
+        "name": "DEUX FRERES V",
+        "code": "FRA000926668"
+      },
+      {
+        "name": "DEUX FRERES VI",
+        "code": "FRA000935041"
+      },
+      {
+        "name": "DEUX FRERES VII",
+        "code": "FRA000935042"
+      },
+      {
+        "name": "DIEU MER SI II",
+        "code": "FRA000937609"
+      },
+      {
+        "name": "DOCHRIS",
+        "code": "FRA000900299"
+      },
+      {
+        "name": "DRAGON II",
+        "code": "FRA000901300"
+      },
+      {
+        "name": "EL LOCO",
+        "code": "FRA000420024"
+      },
+      {
+        "name": "ENZO II",
+        "code": "FRA000653113"
+      },
+      {
+        "name": "GENEVIEVE",
+        "code": "FRA000362038"
+      },
+      {
+        "name": "JEAN-FRANCOIS EMMANUELLE",
+        "code": "FRA000172514"
+      },
+      {
+        "name": "KALON ISLAND",
+        "code": "FRA000933569"
+      },
+      {
+        "name": "L'INFERNAL",
+        "code": "FRA000900272"
+      },
+      {
+        "name": "LAURINE",
+        "code": "FRA000910501"
+      },
+      {
+        "name": "LE JEAN FOLCO II",
+        "code": "FRA000902285"
+      },
+      {
+        "name": "LE LIBERTE",
+        "code": "FRA000706872"
+      },
+      {
+        "name": "LE LOVARA",
+        "code": "FRA000938513"
+      },
+      {
+        "name": "LE MARCO III",
+        "code": "FRA000937591"
+      },
+      {
+        "name": "LE TOURNEVIRE III",
+        "code": "FRA000598337"
+      },
+      {
+        "name": "LORENZO I",
+        "code": "FRA000935676"
+      },
+      {
+        "name": "LUCAS",
+        "code": "FRA000926650"
+      },
+      {
+        "name": "MAELU II",
+        "code": "FRA000865745"
+      },
+      {
+        "name": "MAGALI LUCIE MANON",
+        "code": "FRA000938787"
+      },
+      {
+        "name": "MARIE 3",
+        "code": "FRA000819523"
+      },
+      {
+        "name": "MARIE ANNONCIADE II",
+        "code": "FRA000925302"
+      },
+      {
+        "name": "MIMOSETTE II",
+        "code": "FRA000916528"
+      },
+      {
+        "name": "MORGANE",
+        "code": "FRA000733736"
+      },
+      {
+        "name": "MORGANE II",
+        "code": "FRA000924873"
+      },
+      {
+        "name": "NEPTUNE 3",
+        "code": "FRA000859093"
+      },
+      {
+        "name": "OLGA",
+        "code": "FRA000859056"
+      },
+      {
+        "name": "P'TIT MANU",
+        "code": "FRA000422825"
+      },
+      {
+        "name": "P'TIT MANU III",
+        "code": "FRA000657538"
+      },
+      {
+        "name": "PANTHERE III",
+        "code": "FRA000926014"
+      },
+      {
+        "name": "PHOENIX",
+        "code": "FRA000923573"
+      },
+      {
+        "name": "PHYDO II",
+        "code": "FRA0007340909"
+      },
+      {
+        "name": "POULP'OR II",
+        "code": "FRA000928660"
+      },
+      {
+        "name": "RAFIKI",
+        "code": "FRA000928791"
+      },
+      {
+        "name": "RESKATOR",
+        "code": "FRA000734089"
+      },
+      {
+        "name": "SABRINA FRANCK II",
+        "code": "FRA000931150"
+      },
+      {
+        "name": "ST FRANCOIS PERE II",
+        "code": "FRA000701739"
+      },
+      {
+        "name": "THOYAN III",
+        "code": "FRA000781490"
+      },
+      {
+        "name": "TROIS FRERES II",
+        "code": "FRA000916523"
+      },
+      {
+        "name": "VAMF",
+        "code": "FRA000631277"
+      },
+      {
+        "name": "VINCENT THOMAS",
+        "code": "FRA000934576"
+      }
+    ],
+    "date": "2026-07-17T14:36:46.458Z",
+    "month_label": "July 2026",
+    "pdf_name": "MSC-F-31486 v2.0.pdf",
+    "added": [],
+    "removed": []
+  },
+  "status": "active"
 }
