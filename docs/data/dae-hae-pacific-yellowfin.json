@@ -1,0 +1,44 @@
+{
+  "name": "Dae Hae Pacific Yellowfin, Bigeye, and Albacore Longline",
+  "slug": "dae-hae-pacific-yellowfin",
+  "baseline": {
+    "vessels": [
+      {
+        "name": "NO.201 DAE HWA",
+        "code": "8911293"
+      },
+      {
+        "name": "NO.202 DAE HWA",
+        "code": "8911308"
+      },
+      {
+        "name": "NO.302 DAE HWA",
+        "code": "8811120"
+      },
+      {
+        "name": "NO.303 DAE HWA",
+        "code": "8714047"
+      },
+      {
+        "name": "NO.306 DAE HWA",
+        "code": "8709054"
+      },
+      {
+        "name": "NO.308 DAE HWA",
+        "code": "8805327"
+      },
+      {
+        "name": "NO.309 DAE HWA",
+        "code": "8605052"
+      },
+      {
+        "name": "NO.313 DAE HWA",
+        "code": "9031868"
+      }
+    ],
+    "date": "2026-07-17T12:58:13.500Z",
+    "month_label": "May 2025",
+    "pdf_name": "05_05_26 (1).pdf"
+  },
+  "current": null
+}
