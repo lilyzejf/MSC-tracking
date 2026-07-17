@@ -1,0 +1,168 @@
+{
+  "name": "SZLC, CSFC, FMLC & MIFV RMI EEZ longline yellowfin, bigeye and albacore tuna",
+  "slug": "szlc-csfc-fmlc-mifv-rmi",
+  "baseline": {
+    "vessels": [
+      {
+        "name": "CFA 22",
+        "code": "36214"
+      },
+      {
+        "name": "CFA 23",
+        "code": "36242"
+      },
+      {
+        "name": "CFA 25",
+        "code": "36244"
+      },
+      {
+        "name": "CFA 26",
+        "code": "35939"
+      },
+      {
+        "name": "CFA 27",
+        "code": "35940"
+      },
+      {
+        "name": "HUA NAN YU 702",
+        "code": "36778"
+      },
+      {
+        "name": "HUA NAN YU 703",
+        "code": "36779"
+      },
+      {
+        "name": "HUA NAN YU 705",
+        "code": "36927"
+      },
+      {
+        "name": "HUA NAN YU 761",
+        "code": "36753"
+      },
+      {
+        "name": "HUA NAN YU 762",
+        "code": "36754"
+      },
+      {
+        "name": "HUA NAN YU 766",
+        "code": "36755"
+      },
+      {
+        "name": "HUA NAN YU 767",
+        "code": "36756"
+      },
+      {
+        "name": "HUA NAN YU 768",
+        "code": "36757"
+      },
+      {
+        "name": "HUA NAN YU 769",
+        "code": "36758"
+      },
+      {
+        "name": "Missluen",
+        "code": "35110"
+      },
+      {
+        "name": "SHEN LIAN CHENG 601",
+        "code": "37095"
+      },
+      {
+        "name": "SHEN LIAN CHENG 602",
+        "code": "37225"
+      },
+      {
+        "name": "SHEN LIAN CHENG 603",
+        "code": "37240"
+      },
+      {
+        "name": "SHEN LIAN CHENG 605",
+        "code": "37413"
+      },
+      {
+        "name": "SHEN LIAN CHENG 606",
+        "code": "37414"
+      },
+      {
+        "name": "SHEN LIAN CHENG 607",
+        "code": "37415"
+      },
+      {
+        "name": "SHEN LIAN CHENG 760",
+        "code": "36212"
+      },
+      {
+        "name": "SHEN LIAN CHENG 761",
+        "code": "36208"
+      },
+      {
+        "name": "Shen Lian Cheng 781",
+        "code": "36769"
+      },
+      {
+        "name": "Shen Lian Cheng 782",
+        "code": "36770"
+      },
+      {
+        "name": "Shen Lian Cheng 783",
+        "code": "36839"
+      },
+      {
+        "name": "Shen Lian Cheng 784",
+        "code": "36860"
+      },
+      {
+        "name": "Shen Lian Cheng 785",
+        "code": "36863"
+      },
+      {
+        "name": "Shen Lian Cheng 786",
+        "code": "36861"
+      },
+      {
+        "name": "SHEN LIAN CHENG 787",
+        "code": "36928"
+      },
+      {
+        "name": "SHEN LIAN CHENG 788",
+        "code": "36929"
+      },
+      {
+        "name": "SHEN LIAN CHENG 790",
+        "code": "37096"
+      },
+      {
+        "name": "SHEN LIAN CHENG 791",
+        "code": "36776"
+      },
+      {
+        "name": "SHEN LIAN CHENG 792",
+        "code": "36777"
+      },
+      {
+        "name": "SHEN LIAN CHENG 793",
+        "code": "36820"
+      },
+      {
+        "name": "SHEN LIAN CHENG 796",
+        "code": "36851"
+      },
+      {
+        "name": "SHEN LIAN CHENG 797",
+        "code": "36852"
+      },
+      {
+        "name": "SLC722",
+        "code": "35639"
+      },
+      {
+        "name": "SLC723",
+        "code": "35640"
+      }
+    ],
+    "date": "2026-07-17T13:22:19.857Z",
+    "month_label": "May 2025",
+    "pdf_name": "05_05_26 (1).pdf"
+  },
+  "current": null
+}
