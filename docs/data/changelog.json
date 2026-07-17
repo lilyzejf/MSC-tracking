@@ -1,5 +1,22 @@
 [
   {
+    "date": "2026-07-17T14:26:29.339Z",
+    "fishery": "Fukuichi WCPO purse seine and longline yellowfin, skipjack, albacore and bigeye tuna fishery",
+    "slug": "fukuichi-wcpo",
+    "month_label": "July 2026",
+    "added": [],
+    "removed": [
+      {
+        "name": "Fukuyo -maru No.7",
+        "code": "7JPQ"
+      },
+      {
+        "name": "Kin'ei – maru No.135",
+        "code": "JGCF"
+      }
+    ]
+  },
+  {
     "date": "2026-07-17T13:53:23.417Z",
     "fishery": "Consolidated Pacific Ocean albacore, bigeye, and yellowfin tuna fishery",
     "slug": "consolidated-pacific-ocean-albacore",
