@@ -1,5 +1,63 @@
 [
   {
+    "date": "2026-07-17T14:50:12.208Z",
+    "fishery": "Tri Marine Pacific Ocean longline tuna fishery",
+    "slug": "tri-marine-pacific-ocean",
+    "month_label": "July 2026",
+    "added": [
+      {
+        "name": "Jin Jinn Yi 268",
+        "code": "8792960"
+      },
+      {
+        "name": "Jin Jinn Yi 626",
+        "code": "8629266"
+      },
+      {
+        "name": "Jin Jinn Yi 668",
+        "code": "8524284"
+      },
+      {
+        "name": "Jin Jinn Yi 828",
+        "code": "9639000"
+      },
+      {
+        "name": "Yi Man 3",
+        "code": "8778380"
+      },
+      {
+        "name": "Yi Man 8",
+        "code": "8788878"
+      }
+    ],
+    "removed": [
+      {
+        "name": "Jin Jinn Yi No. 668",
+        "code": "8524284"
+      },
+      {
+        "name": "Jin Jinn Yi No.268",
+        "code": "8792960"
+      },
+      {
+        "name": "Jin Jinn Yi No.626",
+        "code": "8629266"
+      },
+      {
+        "name": "Jin Jinn Yi No.828",
+        "code": "9639000"
+      },
+      {
+        "name": "Yi Man No.3",
+        "code": "8778380"
+      },
+      {
+        "name": "Yi Man No.8",
+        "code": "8788878"
+      }
+    ]
+  },
+  {
     "date": "2026-07-17T14:26:29.339Z",
     "fishery": "Fukuichi WCPO purse seine and longline yellowfin, skipjack, albacore and bigeye tuna fishery",
     "slug": "fukuichi-wcpo",
