@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-17T13:19:55.950Z",
+  "last_updated": "2026-07-17T13:20:57.270Z",
   "fisheries": [
     {
       "name": "American Samoa EEZ tuna longline fishery",
@@ -191,11 +191,11 @@
     {
       "name": "SZLC, CSFC & FMLC Cook Islands EEZ albacore, yellowfin and bigeye longline",
       "slug": "szlc-csfc-cook-islands",
-      "has_baseline": false,
-      "baseline_month": null,
+      "has_baseline": true,
+      "baseline_month": "May 2025",
       "has_current": false,
       "current_month": null,
-      "vessel_count": 0,
+      "vessel_count": 31,
       "added_count": 0,
       "removed_count": 0
     },
