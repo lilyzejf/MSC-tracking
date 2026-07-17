@@ -118,7 +118,7 @@ async function loadFishery(slug) {
 async function init() {
   let summary, changelog;
   try {
-    [summary, changelog] = await Promise.all([load('data/summary.json'), load('data/changelog.json')]);
+[summary, changelog] = await Promise.all([load('docs/data/summary.json'), load('docs/data/changelog.json')]);
   } catch {
     $('#meta').textContent = 'No data yet';
     $('#panel-fisheries').innerHTML = '<div class="empty">No data uploaded yet. The upload tool will appear here once the first PDFs are processed.</div>';
