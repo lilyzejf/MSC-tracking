@@ -174,7 +174,7 @@ method:'POST',
     headers:{'Content-Type':'application/json','x-api-key':geminiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
     body:JSON.stringify({
       model:'claude-haiku-4-5-20251001',
-      max_tokens:2000,
+      max_tokens:8096,
       messages:[{role:'user',content:[
         {type:'document',source:{type:'base64',media_type:'application/pdf',data:base64}},
         {type:'text',text:`Extract ONLY the vessel/boat names and their registration or identification codes from this fishing vessel list document. Return a JSON array of objects with exactly two fields: "name" (the vessel name) and "code" (the registration/ID code, or null). Do NOT include company names, addresses, legal text, certifier names, column headers, or fishery names. Return ONLY a valid JSON array, nothing else.`}
