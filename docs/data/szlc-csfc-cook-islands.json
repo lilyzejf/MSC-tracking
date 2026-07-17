@@ -1,0 +1,136 @@
+{
+  "name": "SZLC, CSFC & FMLC Cook Islands EEZ albacore, yellowfin and bigeye longline",
+  "slug": "szlc-csfc-cook-islands",
+  "baseline": {
+    "vessels": [
+      {
+        "name": "HAI XING 715",
+        "code": "BZ7VG"
+      },
+      {
+        "name": "HAI XING 716",
+        "code": "BZ8VG"
+      },
+      {
+        "name": "HAI XING 717",
+        "code": "BZ9VG"
+      },
+      {
+        "name": "HAI XING 718",
+        "code": "BZ1VH"
+      },
+      {
+        "name": "HAI XING 815",
+        "code": "BZU6B"
+      },
+      {
+        "name": "HAI XING 817",
+        "code": "BZU8B"
+      },
+      {
+        "name": "HONG YANG 11",
+        "code": "BZU4B"
+      },
+      {
+        "name": "HUA NAN YU 711",
+        "code": "BZXD22"
+      },
+      {
+        "name": "HUA NAN YU 712",
+        "code": "BZXD23"
+      },
+      {
+        "name": "HUA NAN YU 716",
+        "code": "BZXD24"
+      },
+      {
+        "name": "HUA NAN YU 718",
+        "code": "BZXD26"
+      },
+      {
+        "name": "HUA NAN YU 719",
+        "code": "BZXD27"
+      },
+      {
+        "name": "HUA NAN YU 721",
+        "code": "BZXD28"
+      },
+      {
+        "name": "HUA NAN YU 722",
+        "code": "BZXD29"
+      },
+      {
+        "name": "HUA NAN YU 723",
+        "code": "BZXD32"
+      },
+      {
+        "name": "HUA NAN YU 731",
+        "code": "BZXD33"
+      },
+      {
+        "name": "HUA NAN YU 732",
+        "code": "BZXD34"
+      },
+      {
+        "name": "HUA NAN YU 736",
+        "code": "BZXD35"
+      },
+      {
+        "name": "HUA NAN YU 737",
+        "code": "BZXD36"
+      },
+      {
+        "name": "HUA NAN YU 738",
+        "code": "BZXD37"
+      },
+      {
+        "name": "HUA NAN YU 739",
+        "code": "BZXD38"
+      },
+      {
+        "name": "JIN XIANG 7",
+        "code": "BZYB7"
+      },
+      {
+        "name": "JINYANG 805",
+        "code": "BBLY1"
+      },
+      {
+        "name": "JINYANG 808",
+        "code": "BBLZ6"
+      },
+      {
+        "name": "JINYANG 809",
+        "code": "BBLZ7"
+      },
+      {
+        "name": "SHEN LIAN CHENG 881",
+        "code": "BZXD92"
+      },
+      {
+        "name": "SHEN LIAN CHENG 882",
+        "code": "BZXD93"
+      },
+      {
+        "name": "SHEN LIAN CHENG 883",
+        "code": "BZXD94"
+      },
+      {
+        "name": "SHEN LIAN CHENG 884",
+        "code": "BZXD95"
+      },
+      {
+        "name": "SHEN LIAN CHENG 885",
+        "code": "BZXD96"
+      },
+      {
+        "name": "XIN SHI JI 215",
+        "code": "BZ2VY"
+      }
+    ],
+    "date": "2026-07-17T13:20:57.270Z",
+    "month_label": "May 2025",
+    "pdf_name": "05_05_26 (1).pdf"
+  },
+  "current": null
+}
