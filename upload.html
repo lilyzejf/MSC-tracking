@@ -163,7 +163,7 @@ const FISHERIES=[
   {name:"Usufuku Honten Northeast Atlantic longline bluefin tuna fishery",slug:"usufuku-honten"}
 ];
 
-function norm(s){return String(s).replace(/\.\s*/g,'. ').replace(/\s+/g,' ').trim().toLowerCase();}
+function norm(s){return String(s).replace(/\bno\.?\s*/gi,'').replace(/\.\s*/g,'. ').replace(/\s+/g,' ').trim().toLowerCase();}
 function getToken(){return localStorage.getItem('msc_gh_token');}
 function getGeminiKey(){return localStorage.getItem('msc_gemini_key');}
 
