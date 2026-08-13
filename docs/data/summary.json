@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-17T14:52:04.664Z",
+  "last_updated": "2026-08-13T14:30:59.872Z",
   "fisheries": [
     {
       "name": "American Samoa EEZ tuna longline fishery",
@@ -8,7 +8,7 @@
       "has_baseline": true,
       "baseline_month": "May 2025",
       "has_current": true,
-      "current_month": "July 2026",
+      "current_month": "August 2026",
       "vessel_count": 14,
       "added_count": 0,
       "removed_count": 0
