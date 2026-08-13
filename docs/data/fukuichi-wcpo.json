@@ -57,20 +57,20 @@
       {
         "name": "Fukuyo – maru No.5",
         "code": "7KIK"
+      },
+      {
+        "name": "Kin'ei – maru No.135",
+        "code": "JGCF"
       }
     ],
-    "date": "2026-07-17T14:26:29.339Z",
-    "month_label": "July 2026",
-    "pdf_name": "MSC-F-31621 v1.5.pdf",
+    "date": "2026-08-13T15:54:10.699Z",
+    "month_label": "August 2026",
+    "pdf_name": "MSC-F-31621 v1.6.pdf",
     "added": [],
     "removed": [
       {
         "name": "Fukuyo -maru No.7",
         "code": "7JPQ"
-      },
-      {
-        "name": "Kin'ei – maru No.135",
-        "code": "JGCF"
       }
     ]
   },
