@@ -200,27 +200,27 @@
       },
       {
         "name": "HUA NAN YU 761",
-        "code": "(YUESHEN) CHUAN DENG (JI) (2021)FT-200039"
+        "code": "(YUE)CHUANDENG(JI)(2026)FT-200005"
       },
       {
         "name": "HUA NAN YU 762",
-        "code": "(YUESHEN) CHUAN DENG (JI)(2021)FT-200038"
+        "code": "(YUE)CHUANDENG(JI)(2026)FT-200008"
       },
       {
         "name": "HUA NAN YU 766",
-        "code": "(YUESHEN) CHUAN DENG (JI) (2021)FT-200029"
+        "code": "(YUE)CHUANDENG(JI)(2026)FT-200009"
       },
       {
         "name": "HUA NAN YU 767",
-        "code": "(YUESHEN) CHUAN DENG (JI) (2021)FT-200041"
+        "code": "(YUE)CHUANDENG(JI)(2026)FT-200010"
       },
       {
         "name": "HUA NAN YU 768",
-        "code": "(YUESHEN) CHUAN DENG (JI) (2021)FT-200024"
+        "code": "(YUE)CHUANDENG(JI)(2026)FT-200011"
       },
       {
         "name": "HUA NAN YU 769",
-        "code": "(YUESHEN)CHUANDENG(JI)(2022)FT-200009"
+        "code": "(YUE)CHUANDENG(JI)(2026)FT-200012"
       },
       {
         "name": "Missluen",
@@ -228,7 +228,7 @@
       },
       {
         "name": "SHEN LIAN CHENG 601",
-        "code": "(YUE) CHUANDENG (JI) (2023) FT-200017"
+        "code": "(YUE)CHUANDENG(JI)(2023)FT-200017"
       },
       {
         "name": "SHEN LIAN CHENG 602",
@@ -251,6 +251,14 @@
         "code": "(YUESHEN)CHUANDENG(JI)(2025)FT-200001"
       },
       {
+        "name": "SHEN LIAN CHENG 608",
+        "code": "(YUE)CHUANDENG(JI)(2025)FT-200104"
+      },
+      {
+        "name": "SHEN LIAN CHENG 609",
+        "code": "(YUE)CHUANDENG(JI)(2026)FT-200007"
+      },
+      {
         "name": "SHEN LIAN CHENG 760",
         "code": "(YUE)CHUANDENG(JI)(2023)FT-200122"
       },
@@ -260,11 +268,11 @@
       },
       {
         "name": "Shen Lian Cheng 781",
-        "code": "(YUESHEN)CHUANDENG(JI)(2021)FT-200014"
+        "code": "(YUE)CHUANDENG(JI)(2026)FT-200020"
       },
       {
         "name": "Shen Lian Cheng 782",
-        "code": "(YUESHEN)CHUANDENG(JI)(2021)FT-200031"
+        "code": "(YUE)CHUANDENG(JI)(2026)FT-200021"
       },
       {
         "name": "Shen Lian Cheng 783",
@@ -323,10 +331,19 @@
         "code": "VR0131"
       }
     ],
-    "date": "2026-07-17T14:42:10.629Z",
-    "month_label": "July 2026",
-    "pdf_name": "MSC-F-31440_V1.11.pdf",
-    "added": [],
+    "date": "2026-08-13T16:11:02.174Z",
+    "month_label": "August 2026",
+    "pdf_name": "MSC-F-31440_V1.12.pdf",
+    "added": [
+      {
+        "name": "SHEN LIAN CHENG 608",
+        "code": "(YUE)CHUANDENG(JI)(2025)FT-200104"
+      },
+      {
+        "name": "SHEN LIAN CHENG 609",
+        "code": "(YUE)CHUANDENG(JI)(2026)FT-200007"
+      }
+    ],
     "removed": []
   },
   "status": "active"
