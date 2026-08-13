@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-08-13T16:24:30.968Z",
+    "fishery": "Tuna Alliance Atlantic albacore longline fishery",
+    "slug": "tuna-alliance-atlantic",
+    "month_label": "August 2026",
+    "added": [
+      {
+        "name": "Kuang Sheng No. 12",
+        "code": "1167623"
+      }
+    ],
+    "removed": []
+  },
+  {
     "date": "2026-08-13T16:11:02.174Z",
     "fishery": "SZLC, CSFC, FMLC & MIFV RMI EEZ longline yellowfin, bigeye and albacore tuna",
     "slug": "szlc-csfc-fmlc-mifv-rmi",
