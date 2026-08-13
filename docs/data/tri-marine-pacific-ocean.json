@@ -563,61 +563,11 @@
         "code": "8526062"
       }
     ],
-    "date": "2026-07-17T14:50:12.208Z",
-    "month_label": "July 2026",
+    "date": "2026-08-13T16:23:18.321Z",
+    "month_label": "August 2026",
     "pdf_name": "LRQA MSC Vessel List - Tri Marine PO LL June 26.pdf",
-    "added": [
-      {
-        "name": "Jin Jinn Yi 268",
-        "code": "8792960"
-      },
-      {
-        "name": "Jin Jinn Yi 626",
-        "code": "8629266"
-      },
-      {
-        "name": "Jin Jinn Yi 668",
-        "code": "8524284"
-      },
-      {
-        "name": "Jin Jinn Yi 828",
-        "code": "9639000"
-      },
-      {
-        "name": "Yi Man 3",
-        "code": "8778380"
-      },
-      {
-        "name": "Yi Man 8",
-        "code": "8788878"
-      }
-    ],
-    "removed": [
-      {
-        "name": "Jin Jinn Yi No. 668",
-        "code": "8524284"
-      },
-      {
-        "name": "Jin Jinn Yi No.268",
-        "code": "8792960"
-      },
-      {
-        "name": "Jin Jinn Yi No.626",
-        "code": "8629266"
-      },
-      {
-        "name": "Jin Jinn Yi No.828",
-        "code": "9639000"
-      },
-      {
-        "name": "Yi Man No.3",
-        "code": "8778380"
-      },
-      {
-        "name": "Yi Man No.8",
-        "code": "8788878"
-      }
-    ]
+    "added": [],
+    "removed": []
   },
   "status": "active"
 }
