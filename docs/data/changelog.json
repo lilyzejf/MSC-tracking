@@ -1,5 +1,22 @@
 [
   {
+    "date": "2026-08-13T16:11:02.174Z",
+    "fishery": "SZLC, CSFC, FMLC & MIFV RMI EEZ longline yellowfin, bigeye and albacore tuna",
+    "slug": "szlc-csfc-fmlc-mifv-rmi",
+    "month_label": "August 2026",
+    "added": [
+      {
+        "name": "SHEN LIAN CHENG 608",
+        "code": "(YUE)CHUANDENG(JI)(2025)FT-200104"
+      },
+      {
+        "name": "SHEN LIAN CHENG 609",
+        "code": "(YUE)CHUANDENG(JI)(2026)FT-200007"
+      }
+    ],
+    "removed": []
+  },
+  {
     "date": "2026-08-13T15:54:10.699Z",
     "fishery": "Fukuichi WCPO purse seine and longline yellowfin, skipjack, albacore and bigeye tuna fishery",
     "slug": "fukuichi-wcpo",
