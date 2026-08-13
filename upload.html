@@ -359,13 +359,18 @@ function renderResults(vessels,baselineVessels,fileName,hasBaseline){
     area.innerHTML=html;
     return;
   }
-  const prevNames=new Set(baselineVessels.map(function(v){return v.name||v;}));
-  const currNames=new Set(vessels.map(function(v){return v.name;}));
-  const prevMap={};
-  (baselineVessels||[]).forEach(function(v){if(typeof v==='string')prevMap[v]=null;else prevMap[v.name]=v.code;});
-  const added=vessels.filter(function(v){return!prevNames.has(v.name);});
-  const removed=[...prevNames].filter(function(n){return!currNames.has(n);}).map(function(n){return{name:n,code:prevMap[n]};});
-  const unchanged=vessels.filter(function(v){return prevNames.has(v.name);});
+function norm(s){return s.replace(/\.\s+/g,'. ').replace(/\s+/g,' ').trim().toLowerCase();}
+const prevNorm={};
+baselineVessels.forEach(function(v){const n=v.name||v;prevNorm[norm(n)]=n;});
+const prevNames=new Set(Object.keys(prevNorm));
+const currNorm={};
+vessels.forEach(function(v){currNorm[norm(v.name)]=v;});
+const currNames=new Set(Object.keys(currNorm));
+const prevMap={};
+(baselineVessels||[]).forEach(function(v){if(typeof v==='string')prevMap[norm(v)]=null;else prevMap[norm(v.name)]=v.code;});
+const added=vessels.filter(function(v){return!prevNames.has(norm(v.name));});
+const removed=[...prevNames].filter(function(n){return!currNames.has(n);}).map(function(n){return{name:prevNorm[n],code:prevMap[n]};});
+const unchanged=vessels.filter(function(v){return prevNames.has(norm(v.name));});
   const noChanges=added.length===0&&removed.length===0;
   let html='<div class="result-header" style="margin-top:20px">';
   html+='<span class="pill total">'+vessels.length+' vessels total</span>';
@@ -407,12 +412,13 @@ async function publish(isBaseline,fileName){
     }else{
       if(!existing||!existing.baseline)throw new Error("No baseline saved yet. Please upload May's list first.");
       const baseVessels=existing.baseline.vessels;
-      const prevNames=new Set(baseVessels.map(function(v){return v.name||v;}));
-      const currNames=new Set(pendingVessels.map(function(v){return v.name;}));
-      const prevMap={};
-      baseVessels.forEach(function(v){if(typeof v==='string')prevMap[v]=null;else prevMap[v.name]=v.code;});
-      const added=pendingVessels.filter(function(v){return!prevNames.has(v.name);});
-      const removed=[...prevNames].filter(function(n){return!currNames.has(n);}).map(function(n){return{name:n,code:prevMap[n]};});
+     function norm(s){return s.replace(/\.\s+/g,'. ').replace(/\s+/g,' ').trim().toLowerCase();}
+const prevMap={};
+baseVessels.forEach(function(v){if(typeof v==='string')prevMap[norm(v)]=null;else prevMap[norm(v.name)]=v.code;});
+const prevNames=new Set(Object.keys(prevMap));
+const currNames=new Set(pendingVessels.map(function(v){return norm(v.name);}));
+const added=pendingVessels.filter(function(v){return!prevNames.has(norm(v.name));});
+const removed=[...prevNames].filter(function(n){return!currNames.has(n);}).map(function(n){return{name:n,code:prevMap[n]};});
       fileData=Object.assign({},existing,{status:status,current:{vessels:pendingVessels,date:now,month_label:monthLabel(now),pdf_name:fileName,added:added,removed:removed}});
     }
     showProgress(40);
