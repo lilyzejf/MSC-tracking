@@ -75,10 +75,6 @@
         "code": "HLJC"
       },
       {
-        "name": "No. 36 Hansung",
-        "code": "HLWD"
-      },
-      {
         "name": "No. 38 Hansung",
         "code": "HLJB"
       },
@@ -129,12 +125,17 @@
       {
         "name": "No. 651 Dong Won",
         "code": "6KAE"
+      },
+      {
+        "name": "No.36 Hansung",
+        "code": "HLWD"
       }
     ],
-    "date": "2026-07-17T13:55:58.851Z",
-    "month_label": "July 2026",
+    "date": "2026-08-13T15:28:42.898Z",
+    "month_label": "August 2026",
     "pdf_name": "MSC-F-31600 v1.4.pdf",
     "added": [],
     "removed": []
-  }
+  },
+  "status": "active"
 }
