@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-08-13T15:54:10.699Z",
+    "fishery": "Fukuichi WCPO purse seine and longline yellowfin, skipjack, albacore and bigeye tuna fishery",
+    "slug": "fukuichi-wcpo",
+    "month_label": "August 2026",
+    "added": [],
+    "removed": [
+      {
+        "name": "Fukuyo -maru No.7",
+        "code": "7JPQ"
+      }
+    ]
+  },
+  {
     "date": "2026-08-13T15:44:33.383Z",
     "fishery": "Fiji Albacore, Yellowfin and Bigeye Tuna longline",
     "slug": "fiji-albacore-yellowfin-and-bigeye-tuna-longline",
