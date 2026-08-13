@@ -1,5 +1,26 @@
 [
   {
+    "date": "2026-08-13T15:44:33.383Z",
+    "fishery": "Fiji Albacore, Yellowfin and Bigeye Tuna longline",
+    "slug": "fiji-albacore-yellowfin-and-bigeye-tuna-longline",
+    "month_label": "August 2026",
+    "added": [],
+    "removed": [
+      {
+        "name": "Sunshine 86",
+        "code": "000816"
+      },
+      {
+        "name": "Sunshine 89",
+        "code": "000818"
+      },
+      {
+        "name": "Win Star 1",
+        "code": "000421"
+      }
+    ]
+  },
+  {
     "date": "2026-08-13T14:41:16.839Z",
     "fishery": "Consolidated Pacific Ocean albacore, bigeye, and yellowfin tuna fishery",
     "slug": "consolidated-pacific-ocean-albacore",
