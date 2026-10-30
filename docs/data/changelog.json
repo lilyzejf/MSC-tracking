@@ -1,5 +1,42 @@
 [
   {
+    "date": "2026-10-30T11:16:46.155Z",
+    "fishery": "Australia southern bluefin tuna longline and minor line fishery",
+    "slug": "australia-southern-bluefin-tuna-longline",
+    "month_label": "October 2026",
+    "added": [],
+    "removed": [
+      {
+        "name": "Assassin",
+        "code": "LFB 12904"
+      },
+      {
+        "name": "Calibre",
+        "code": "RFB12913"
+      },
+      {
+        "name": "Claudarah",
+        "code": "LFB11733"
+      },
+      {
+        "name": "Reminisce",
+        "code": "856660"
+      },
+      {
+        "name": "Salvatore",
+        "code": "457592"
+      },
+      {
+        "name": "Savannah Gale",
+        "code": null
+      },
+      {
+        "name": "Strikeforce",
+        "code": "LFB12297"
+      }
+    ]
+  },
+  {
     "date": "2026-10-30T11:14:40.015Z",
     "fishery": "Australia Eastern Tuna and Billfish Fishery",
     "slug": "australia-eastern-tuna-and-billfish-fishery",
