@@ -143,18 +143,6 @@
         "code": "447872"
       },
       {
-        "name": "Assassin",
-        "code": "LFB12904"
-      },
-      {
-        "name": "Calibre",
-        "code": "RFB12913"
-      },
-      {
-        "name": "Claudarah",
-        "code": "LFB11733"
-      },
-      {
         "name": "Derwent Venture",
         "code": "8019966"
       },
@@ -215,24 +203,12 @@
         "code": "O509"
       },
       {
-        "name": "Reminisce",
-        "code": "856660"
-      },
-      {
-        "name": "Salvatore",
-        "code": "457592"
-      },
-      {
         "name": "Samurai",
         "code": "443196"
       },
       {
         "name": "Santa Lucia",
         "code": "RFB13129"
-      },
-      {
-        "name": "Savannah Gale",
-        "code": null
       },
       {
         "name": "Scorpion II",
@@ -251,19 +227,44 @@
         "code": "LFB13064"
       },
       {
-        "name": "Strikeforce",
-        "code": "LFB12297"
-      },
-      {
         "name": "Total",
         "code": "LFB11735"
       }
     ],
-    "date": "2026-08-13T14:33:05.389Z",
-    "month_label": "August 2026",
-    "pdf_name": "21_400EN_MSC_Vessel List_ETBF_2026-05-01.pdf",
+    "date": "2026-10-30T11:14:40.015Z",
+    "month_label": "October 2026",
+    "pdf_name": "21_400EN_MSC_Vessel List_ETBF_2026-08-27.pdf",
     "added": [],
-    "removed": []
+    "removed": [
+      {
+        "name": "Assassin",
+        "code": "LFB12904"
+      },
+      {
+        "name": "Calibre",
+        "code": "RFB12913"
+      },
+      {
+        "name": "Claudarah",
+        "code": "LFB11733"
+      },
+      {
+        "name": "Reminisce",
+        "code": "856660"
+      },
+      {
+        "name": "Salvatore",
+        "code": "457592"
+      },
+      {
+        "name": "Savannah Gale",
+        "code": null
+      },
+      {
+        "name": "Strikeforce",
+        "code": "LFB12297"
+      }
+    ]
   },
   "status": "active"
 }
